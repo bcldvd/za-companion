@@ -236,10 +236,10 @@
 					class="w-full px-4 py-3 rounded-lg bg-blue-800/50 border border-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg min-h-[44px]"
 					autocomplete="off"
 				/>
-				{#if searchQuery && !selectedPokemon}
+				{#if searchQuery || selectedPokemon}
 					<button
 						onclick={clearSelection}
-						class="absolute right-3 top-1/2 -translate-y-1/2 text-blue-300 hover:text-white"
+						class="absolute right-3 top-1/2 -translate-y-1/2 text-blue-300 hover:text-white text-xl leading-none"
 						aria-label="Clear search"
 					>
 						✕
@@ -288,12 +288,6 @@
 							{$_('pokemon.regional')} {selectedPokemon.regionalNumber} • {getLocalizedTypes(selectedPokemon.types).join(', ')}
 						</p>
 					</div>
-					<button
-						onclick={clearSelection}
-						class="px-4 py-2 bg-blue-700 hover:bg-blue-600 rounded-lg transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
-					>
-						{$_('button.clear')}
-					</button>
 				</div>
 
 				<!-- Text Placement Info -->
