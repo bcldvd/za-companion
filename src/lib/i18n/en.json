@@ -18,7 +18,8 @@
 		"notFound": "No Pokemon found matching",
 		"loading": "Loading Pokemon data...",
 		"searchPrompt": "Search for a Pokemon to find its box placement",
-		"startPrompt": "Type a Pokemon name to get started"
+		"startPrompt": "Type a Pokemon name to get started",
+		"backToSearch": "Back to Search"
 	},
 	"button": {
 		"clear": "Clear"
