@@ -8,12 +8,13 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const DATA_DIR = join(__dirname, '..', 'data');
+const STATIC_DIR = join(__dirname, '..', '..', 'static');
 
 const LUMIOSE_URL = 'https://www.serebii.net/legendsz-a/availablepokemon.shtml';
 const HYPERSPACE_URL = 'https://www.serebii.net/legendsz-a/hyperspacepokedex.shtml';
 
-const LUMIOSE_OUTPUT = join(DATA_DIR, 'pokedex.json');
-const HYPERSPACE_OUTPUT = join(DATA_DIR, 'hyperspace-pokedex.json');
+const LUMIOSE_OUTPUT = join(STATIC_DIR, 'pokedex.json');
+const HYPERSPACE_OUTPUT = join(STATIC_DIR, 'hyperspace-pokedex.json');
 
 async function scrapeDex(name: string, url: string, outputFile: string) {
 	console.log(`\n📖 Scraping ${name} Pokédex...`);

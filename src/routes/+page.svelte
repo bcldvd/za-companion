@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import type { Pokemon } from '$lib/types/pokemon.js';
 	import { calculateBoxPosition } from '$lib/utils/boxCalculator.js';
+	import { loadPokedex, searchPokemonByName } from '$lib/utils/pokedex.js';
 
 	let searchQuery = $state('');
 	let searchResults = $state<Pokemon[]>([]);
@@ -9,6 +10,8 @@
 	let boxPosition = $state<ReturnType<typeof calculateBoxPosition> | null>(null);
 	let showDropdown = $state(false);
 	let searchTimeout: ReturnType<typeof setTimeout> | null = null;
+	let pokedex = $state<Pokemon[] | null>(null);
+	let isLoading = $state(true);
 
 	async function searchPokemon(query: string) {
 		if (!query.trim()) {
@@ -17,9 +20,21 @@
 			return;
 		}
 
+		// Ensure pokedex is loaded
+		if (!pokedex) {
+			try {
+				pokedex = await loadPokedex();
+			} catch (error) {
+				console.error('Error loading pokedex:', error);
+				searchResults = [];
+				showDropdown = false;
+				return;
+			}
+		}
+
+		// Perform client-side search
 		try {
-			const response = await fetch(`/api/pokedex?search=${encodeURIComponent(query)}`);
-			const results: Pokemon[] = await response.json();
+			const results = searchPokemonByName(query, pokedex);
 			searchResults = results.slice(0, 10); // Limit to 10 results
 			showDropdown = true;
 		} catch (error) {
@@ -66,8 +81,18 @@
 		}
 	}
 
-	onMount(() => {
+	onMount(async () => {
 		document.addEventListener('click', handleClickOutside);
+		
+		// Load pokedex data on mount
+		try {
+			pokedex = await loadPokedex();
+		} catch (error) {
+			console.error('Error loading pokedex:', error);
+		} finally {
+			isLoading = false;
+		}
+		
 		return () => {
 			document.removeEventListener('click', handleClickOutside);
 		};
@@ -222,6 +247,10 @@
 		{:else if searchQuery && searchResults.length === 0 && !showDropdown}
 			<div class="text-center py-8 text-blue-300">
 				<p>No Pokemon found matching "{searchQuery}"</p>
+			</div>
+		{:else if isLoading}
+			<div class="text-center py-12 text-blue-300">
+				<p class="text-lg mb-2">Loading Pokemon data...</p>
 			</div>
 		{:else}
 			<div class="text-center py-12 text-blue-300">
