@@ -1,0 +1,2214 @@
+[
+  {
+    "regionalNumber": 1,
+    "nationalNumber": 152,
+    "name": "Chikorita",
+    "types": [
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/152.png"
+  },
+  {
+    "regionalNumber": 2,
+    "nationalNumber": 153,
+    "name": "Bayleef",
+    "types": [
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/153.png"
+  },
+  {
+    "regionalNumber": 3,
+    "nationalNumber": 154,
+    "name": "Meganium",
+    "types": [
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/154.png"
+  },
+  {
+    "regionalNumber": 4,
+    "nationalNumber": 498,
+    "name": "Tepig",
+    "types": [
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/498.png"
+  },
+  {
+    "regionalNumber": 5,
+    "nationalNumber": 499,
+    "name": "Pignite",
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/499.png"
+  },
+  {
+    "regionalNumber": 6,
+    "nationalNumber": 500,
+    "name": "Emboar",
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/500.png"
+  },
+  {
+    "regionalNumber": 7,
+    "nationalNumber": 158,
+    "name": "Totodile",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/158.png"
+  },
+  {
+    "regionalNumber": 8,
+    "nationalNumber": 159,
+    "name": "Croconaw",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/159.png"
+  },
+  {
+    "regionalNumber": 9,
+    "nationalNumber": 160,
+    "name": "Feraligatr",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/160.png"
+  },
+  {
+    "regionalNumber": 10,
+    "nationalNumber": 661,
+    "name": "Fletchling",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/661.png"
+  },
+  {
+    "regionalNumber": 11,
+    "nationalNumber": 662,
+    "name": "Fletchinder",
+    "types": [
+      "Fire",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/662.png"
+  },
+  {
+    "regionalNumber": 12,
+    "nationalNumber": 663,
+    "name": "Talonflame",
+    "types": [
+      "Fire",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/663.png"
+  },
+  {
+    "regionalNumber": 13,
+    "nationalNumber": 659,
+    "name": "Bunnelby",
+    "types": [
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/659.png"
+  },
+  {
+    "regionalNumber": 14,
+    "nationalNumber": 660,
+    "name": "Diggersby",
+    "types": [
+      "Normal",
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/660.png"
+  },
+  {
+    "regionalNumber": 15,
+    "nationalNumber": 664,
+    "name": "Scatterbug",
+    "types": [
+      "Bug"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/664.png"
+  },
+  {
+    "regionalNumber": 16,
+    "nationalNumber": 665,
+    "name": "Spewpa",
+    "types": [
+      "Bug"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/665.png"
+  },
+  {
+    "regionalNumber": 17,
+    "nationalNumber": 666,
+    "name": "Vivillon",
+    "types": [
+      "Bug",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/666.png"
+  },
+  {
+    "regionalNumber": 18,
+    "nationalNumber": 13,
+    "name": "Weedle",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/013.png"
+  },
+  {
+    "regionalNumber": 19,
+    "nationalNumber": 14,
+    "name": "Kakuna",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/014.png"
+  },
+  {
+    "regionalNumber": 20,
+    "nationalNumber": 15,
+    "name": "Beedrill",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/015.png"
+  },
+  {
+    "regionalNumber": 21,
+    "nationalNumber": 16,
+    "name": "Pidgey",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/016.png"
+  },
+  {
+    "regionalNumber": 22,
+    "nationalNumber": 17,
+    "name": "Pidgeotto",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/017.png"
+  },
+  {
+    "regionalNumber": 23,
+    "nationalNumber": 18,
+    "name": "Pidgeot",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/018.png"
+  },
+  {
+    "regionalNumber": 24,
+    "nationalNumber": 179,
+    "name": "Mareep",
+    "types": [
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/179.png"
+  },
+  {
+    "regionalNumber": 25,
+    "nationalNumber": 180,
+    "name": "Flaaffy",
+    "types": [
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/180.png"
+  },
+  {
+    "regionalNumber": 26,
+    "nationalNumber": 181,
+    "name": "Ampharos",
+    "types": [
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/181.png"
+  },
+  {
+    "regionalNumber": 27,
+    "nationalNumber": 504,
+    "name": "Patrat",
+    "types": [
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/504.png"
+  },
+  {
+    "regionalNumber": 28,
+    "nationalNumber": 505,
+    "name": "Watchog",
+    "types": [
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/505.png"
+  },
+  {
+    "regionalNumber": 29,
+    "nationalNumber": 406,
+    "name": "Budew",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/406.png"
+  },
+  {
+    "regionalNumber": 30,
+    "nationalNumber": 315,
+    "name": "Roselia",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/315.png"
+  },
+  {
+    "regionalNumber": 31,
+    "nationalNumber": 407,
+    "name": "Roserade",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/407.png"
+  },
+  {
+    "regionalNumber": 32,
+    "nationalNumber": 129,
+    "name": "Magikarp",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/129.png"
+  },
+  {
+    "regionalNumber": 33,
+    "nationalNumber": 130,
+    "name": "Gyarados",
+    "types": [
+      "Water",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/130.png"
+  },
+  {
+    "regionalNumber": 34,
+    "nationalNumber": 688,
+    "name": "Binacle",
+    "types": [
+      "Rock",
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/688.png"
+  },
+  {
+    "regionalNumber": 35,
+    "nationalNumber": 689,
+    "name": "Barbaracle",
+    "types": [
+      "Rock",
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/689.png"
+  },
+  {
+    "regionalNumber": 36,
+    "nationalNumber": 120,
+    "name": "Staryu",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/120.png"
+  },
+  {
+    "regionalNumber": 37,
+    "nationalNumber": 121,
+    "name": "Starmie",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/121.png"
+  },
+  {
+    "regionalNumber": 38,
+    "nationalNumber": 669,
+    "name": "Flabébé",
+    "types": [
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/669.png"
+  },
+  {
+    "regionalNumber": 39,
+    "nationalNumber": 670,
+    "name": "Floette",
+    "types": [
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/670.png"
+  },
+  {
+    "regionalNumber": 40,
+    "nationalNumber": 671,
+    "name": "Florges",
+    "types": [
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/671.png"
+  },
+  {
+    "regionalNumber": 41,
+    "nationalNumber": 672,
+    "name": "Skiddo",
+    "types": [
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/672.png"
+  },
+  {
+    "regionalNumber": 42,
+    "nationalNumber": 673,
+    "name": "Gogoat",
+    "types": [
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/673.png"
+  },
+  {
+    "regionalNumber": 43,
+    "nationalNumber": 677,
+    "name": "Espurr",
+    "types": [
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/677.png"
+  },
+  {
+    "regionalNumber": 44,
+    "nationalNumber": 678,
+    "name": "Meowstic",
+    "types": [
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/678.png"
+  },
+  {
+    "regionalNumber": 45,
+    "nationalNumber": 667,
+    "name": "Litleo",
+    "types": [
+      "Fire",
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/667.png"
+  },
+  {
+    "regionalNumber": 46,
+    "nationalNumber": 668,
+    "name": "Pyroar",
+    "types": [
+      "Fire",
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/668.png"
+  },
+  {
+    "regionalNumber": 47,
+    "nationalNumber": 674,
+    "name": "Pancham",
+    "types": [
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/674.png"
+  },
+  {
+    "regionalNumber": 48,
+    "nationalNumber": 675,
+    "name": "Pangoro",
+    "types": [
+      "Fighting",
+      "Dark"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/675.png"
+  },
+  {
+    "regionalNumber": 49,
+    "nationalNumber": 568,
+    "name": "Trubbish",
+    "types": [
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/568.png"
+  },
+  {
+    "regionalNumber": 50,
+    "nationalNumber": 569,
+    "name": "Garbodor",
+    "types": [
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/569.png"
+  },
+  {
+    "regionalNumber": 51,
+    "nationalNumber": 702,
+    "name": "Dedenne",
+    "types": [
+      "Electric",
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/702.png"
+  },
+  {
+    "regionalNumber": 52,
+    "nationalNumber": 172,
+    "name": "Pichu",
+    "types": [
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/172.png"
+  },
+  {
+    "regionalNumber": 53,
+    "nationalNumber": 25,
+    "name": "Pikachu",
+    "types": [
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/025.png"
+  },
+  {
+    "regionalNumber": 54,
+    "nationalNumber": 26,
+    "name": "Raichu",
+    "types": [
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/026.png"
+  },
+  {
+    "regionalNumber": 55,
+    "nationalNumber": 173,
+    "name": "Cleffa",
+    "types": [
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/173.png"
+  },
+  {
+    "regionalNumber": 56,
+    "nationalNumber": 35,
+    "name": "Clefairy",
+    "types": [
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/035.png"
+  },
+  {
+    "regionalNumber": 57,
+    "nationalNumber": 36,
+    "name": "Clefable",
+    "types": [
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/036.png"
+  },
+  {
+    "regionalNumber": 58,
+    "nationalNumber": 167,
+    "name": "Spinarak",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/167.png"
+  },
+  {
+    "regionalNumber": 59,
+    "nationalNumber": 168,
+    "name": "Ariados",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/168.png"
+  },
+  {
+    "regionalNumber": 60,
+    "nationalNumber": 23,
+    "name": "Ekans",
+    "types": [
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/023.png"
+  },
+  {
+    "regionalNumber": 61,
+    "nationalNumber": 24,
+    "name": "Arbok",
+    "types": [
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/024.png"
+  },
+  {
+    "regionalNumber": 62,
+    "nationalNumber": 63,
+    "name": "Abra",
+    "types": [
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/063.png"
+  },
+  {
+    "regionalNumber": 63,
+    "nationalNumber": 64,
+    "name": "Kadabra",
+    "types": [
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/064.png"
+  },
+  {
+    "regionalNumber": 64,
+    "nationalNumber": 65,
+    "name": "Alakazam",
+    "types": [
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/065.png"
+  },
+  {
+    "regionalNumber": 65,
+    "nationalNumber": 92,
+    "name": "Gastly",
+    "types": [
+      "Ghost",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/092.png"
+  },
+  {
+    "regionalNumber": 66,
+    "nationalNumber": 93,
+    "name": "Haunter",
+    "types": [
+      "Ghost",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/093.png"
+  },
+  {
+    "regionalNumber": 67,
+    "nationalNumber": 94,
+    "name": "Gengar",
+    "types": [
+      "Ghost",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/094.png"
+  },
+  {
+    "regionalNumber": 68,
+    "nationalNumber": 543,
+    "name": "Venipede",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/543.png"
+  },
+  {
+    "regionalNumber": 69,
+    "nationalNumber": 544,
+    "name": "Whirlipede",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/544.png"
+  },
+  {
+    "regionalNumber": 70,
+    "nationalNumber": 545,
+    "name": "Scolipede",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/545.png"
+  },
+  {
+    "regionalNumber": 71,
+    "nationalNumber": 679,
+    "name": "Honedge",
+    "types": [
+      "Steel",
+      "Ghost"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/679.png"
+  },
+  {
+    "regionalNumber": 72,
+    "nationalNumber": 680,
+    "name": "Doublade",
+    "types": [
+      "Steel",
+      "Ghost"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/680.png"
+  },
+  {
+    "regionalNumber": 73,
+    "nationalNumber": 681,
+    "name": "Aegislash",
+    "types": [
+      "Steel",
+      "Ghost"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/681.png"
+  },
+  {
+    "regionalNumber": 74,
+    "nationalNumber": 69,
+    "name": "Bellsprout",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/069.png"
+  },
+  {
+    "regionalNumber": 75,
+    "nationalNumber": 70,
+    "name": "Weepinbell",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/070.png"
+  },
+  {
+    "regionalNumber": 76,
+    "nationalNumber": 71,
+    "name": "Victreebel",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/071.png"
+  },
+  {
+    "regionalNumber": 77,
+    "nationalNumber": 511,
+    "name": "Pansage",
+    "types": [
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/511.png"
+  },
+  {
+    "regionalNumber": 78,
+    "nationalNumber": 512,
+    "name": "Simisage",
+    "types": [
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/512.png"
+  },
+  {
+    "regionalNumber": 79,
+    "nationalNumber": 513,
+    "name": "Pansear",
+    "types": [
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/513.png"
+  },
+  {
+    "regionalNumber": 80,
+    "nationalNumber": 514,
+    "name": "Simisear",
+    "types": [
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/514.png"
+  },
+  {
+    "regionalNumber": 81,
+    "nationalNumber": 515,
+    "name": "Panpour",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/515.png"
+  },
+  {
+    "regionalNumber": 82,
+    "nationalNumber": 516,
+    "name": "Simipour",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/516.png"
+  },
+  {
+    "regionalNumber": 83,
+    "nationalNumber": 307,
+    "name": "Meditite",
+    "types": [
+      "Fighting",
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/307.png"
+  },
+  {
+    "regionalNumber": 84,
+    "nationalNumber": 308,
+    "name": "Medicham",
+    "types": [
+      "Fighting",
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/308.png"
+  },
+  {
+    "regionalNumber": 85,
+    "nationalNumber": 309,
+    "name": "Electrike",
+    "types": [
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/309.png"
+  },
+  {
+    "regionalNumber": 86,
+    "nationalNumber": 310,
+    "name": "Manectric",
+    "types": [
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/310.png"
+  },
+  {
+    "regionalNumber": 87,
+    "nationalNumber": 280,
+    "name": "Ralts",
+    "types": [
+      "Psychic",
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/280.png"
+  },
+  {
+    "regionalNumber": 88,
+    "nationalNumber": 281,
+    "name": "Kirlia",
+    "types": [
+      "Psychic",
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/281.png"
+  },
+  {
+    "regionalNumber": 89,
+    "nationalNumber": 282,
+    "name": "Gardevoir",
+    "types": [
+      "Psychic",
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/282.png"
+  },
+  {
+    "regionalNumber": 90,
+    "nationalNumber": 475,
+    "name": "Gallade",
+    "types": [
+      "Psychic",
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/475.png"
+  },
+  {
+    "regionalNumber": 91,
+    "nationalNumber": 228,
+    "name": "Houndour",
+    "types": [
+      "Dark",
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/228.png"
+  },
+  {
+    "regionalNumber": 92,
+    "nationalNumber": 229,
+    "name": "Houndoom",
+    "types": [
+      "Dark",
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/229.png"
+  },
+  {
+    "regionalNumber": 93,
+    "nationalNumber": 333,
+    "name": "Swablu",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/333.png"
+  },
+  {
+    "regionalNumber": 94,
+    "nationalNumber": 334,
+    "name": "Altaria",
+    "types": [
+      "Dragon",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/334.png"
+  },
+  {
+    "regionalNumber": 95,
+    "nationalNumber": 531,
+    "name": "Audino",
+    "types": [
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/531.png"
+  },
+  {
+    "regionalNumber": 96,
+    "nationalNumber": 682,
+    "name": "Spritzee",
+    "types": [
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/682.png"
+  },
+  {
+    "regionalNumber": 97,
+    "nationalNumber": 683,
+    "name": "Aromatisse",
+    "types": [
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/683.png"
+  },
+  {
+    "regionalNumber": 98,
+    "nationalNumber": 684,
+    "name": "Swirlix",
+    "types": [
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/684.png"
+  },
+  {
+    "regionalNumber": 99,
+    "nationalNumber": 685,
+    "name": "Slurpuff",
+    "types": [
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/685.png"
+  },
+  {
+    "regionalNumber": 100,
+    "nationalNumber": 133,
+    "name": "Eevee",
+    "types": [
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/133.png"
+  },
+  {
+    "regionalNumber": 101,
+    "nationalNumber": 134,
+    "name": "Vaporeon",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/134.png"
+  },
+  {
+    "regionalNumber": 102,
+    "nationalNumber": 135,
+    "name": "Jolteon",
+    "types": [
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/135.png"
+  },
+  {
+    "regionalNumber": 103,
+    "nationalNumber": 136,
+    "name": "Flareon",
+    "types": [
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/136.png"
+  },
+  {
+    "regionalNumber": 104,
+    "nationalNumber": 196,
+    "name": "Espeon",
+    "types": [
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/196.png"
+  },
+  {
+    "regionalNumber": 105,
+    "nationalNumber": 197,
+    "name": "Umbreon",
+    "types": [
+      "Dark"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/197.png"
+  },
+  {
+    "regionalNumber": 106,
+    "nationalNumber": 470,
+    "name": "Leafeon",
+    "types": [
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/470.png"
+  },
+  {
+    "regionalNumber": 107,
+    "nationalNumber": 471,
+    "name": "Glaceon",
+    "types": [
+      "Ice"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/471.png"
+  },
+  {
+    "regionalNumber": 108,
+    "nationalNumber": 700,
+    "name": "Sylveon",
+    "types": [
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/700.png"
+  },
+  {
+    "regionalNumber": 109,
+    "nationalNumber": 427,
+    "name": "Buneary",
+    "types": [
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/427.png"
+  },
+  {
+    "regionalNumber": 110,
+    "nationalNumber": 428,
+    "name": "Lopunny",
+    "types": [
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/428.png"
+  },
+  {
+    "regionalNumber": 111,
+    "nationalNumber": 353,
+    "name": "Shuppet",
+    "types": [
+      "Ghost"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/353.png"
+  },
+  {
+    "regionalNumber": 112,
+    "nationalNumber": 354,
+    "name": "Banette",
+    "types": [
+      "Ghost"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/354.png"
+  },
+  {
+    "regionalNumber": 113,
+    "nationalNumber": 582,
+    "name": "Vanillite",
+    "types": [
+      "Ice"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/582.png"
+  },
+  {
+    "regionalNumber": 114,
+    "nationalNumber": 583,
+    "name": "Vanillish",
+    "types": [
+      "Ice"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/583.png"
+  },
+  {
+    "regionalNumber": 115,
+    "nationalNumber": 584,
+    "name": "Vanilluxe",
+    "types": [
+      "Ice"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/584.png"
+  },
+  {
+    "regionalNumber": 116,
+    "nationalNumber": 322,
+    "name": "Numel",
+    "types": [
+      "Fire",
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/322.png"
+  },
+  {
+    "regionalNumber": 117,
+    "nationalNumber": 323,
+    "name": "Camerupt",
+    "types": [
+      "Fire",
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/323.png"
+  },
+  {
+    "regionalNumber": 118,
+    "nationalNumber": 449,
+    "name": "Hippopotas",
+    "types": [
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/449.png"
+  },
+  {
+    "regionalNumber": 119,
+    "nationalNumber": 450,
+    "name": "Hippowdon",
+    "types": [
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/450.png"
+  },
+  {
+    "regionalNumber": 120,
+    "nationalNumber": 529,
+    "name": "Drilbur",
+    "types": [
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/529.png"
+  },
+  {
+    "regionalNumber": 121,
+    "nationalNumber": 530,
+    "name": "Excadrill",
+    "types": [
+      "Ground",
+      "Steel"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/530.png"
+  },
+  {
+    "regionalNumber": 122,
+    "nationalNumber": 551,
+    "name": "Sandile",
+    "types": [
+      "Ground",
+      "Dark"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/551.png"
+  },
+  {
+    "regionalNumber": 123,
+    "nationalNumber": 552,
+    "name": "Krokorok",
+    "types": [
+      "Ground",
+      "Dark"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/552.png"
+  },
+  {
+    "regionalNumber": 124,
+    "nationalNumber": 553,
+    "name": "Krookodile",
+    "types": [
+      "Ground",
+      "Dark"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/553.png"
+  },
+  {
+    "regionalNumber": 125,
+    "nationalNumber": 66,
+    "name": "Machop",
+    "types": [
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/066.png"
+  },
+  {
+    "regionalNumber": 126,
+    "nationalNumber": 67,
+    "name": "Machoke",
+    "types": [
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/067.png"
+  },
+  {
+    "regionalNumber": 127,
+    "nationalNumber": 68,
+    "name": "Machamp",
+    "types": [
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/068.png"
+  },
+  {
+    "regionalNumber": 128,
+    "nationalNumber": 443,
+    "name": "Gible",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/443.png"
+  },
+  {
+    "regionalNumber": 129,
+    "nationalNumber": 444,
+    "name": "Gabite",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/444.png"
+  },
+  {
+    "regionalNumber": 130,
+    "nationalNumber": 445,
+    "name": "Garchomp",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/445.png"
+  },
+  {
+    "regionalNumber": 131,
+    "nationalNumber": 703,
+    "name": "Carbink",
+    "types": [
+      "Rock",
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/703.png"
+  },
+  {
+    "regionalNumber": 132,
+    "nationalNumber": 302,
+    "name": "Sableye",
+    "types": [
+      "Dark",
+      "Ghost"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/302.png"
+  },
+  {
+    "regionalNumber": 133,
+    "nationalNumber": 303,
+    "name": "Mawile",
+    "types": [
+      "Steel",
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/303.png"
+  },
+  {
+    "regionalNumber": 134,
+    "nationalNumber": 359,
+    "name": "Absol",
+    "types": [
+      "Dark"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/359.png"
+  },
+  {
+    "regionalNumber": 135,
+    "nationalNumber": 447,
+    "name": "Riolu",
+    "types": [
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/447.png"
+  },
+  {
+    "regionalNumber": 136,
+    "nationalNumber": 448,
+    "name": "Lucario",
+    "types": [
+      "Fighting",
+      "Steel"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/448.png"
+  },
+  {
+    "regionalNumber": 137,
+    "nationalNumber": 79,
+    "name": "Slowpoke",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/079.png"
+  },
+  {
+    "regionalNumber": 138,
+    "nationalNumber": 80,
+    "name": "Slowbro",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/080.png"
+  },
+  {
+    "regionalNumber": 139,
+    "nationalNumber": 199,
+    "name": "Slowking",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/199.png"
+  },
+  {
+    "regionalNumber": 140,
+    "nationalNumber": 318,
+    "name": "Carvanha",
+    "types": [
+      "Water",
+      "Dark"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/318.png"
+  },
+  {
+    "regionalNumber": 141,
+    "nationalNumber": 319,
+    "name": "Sharpedo",
+    "types": [
+      "Water",
+      "Dark"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/319.png"
+  },
+  {
+    "regionalNumber": 142,
+    "nationalNumber": 602,
+    "name": "Tynamo",
+    "types": [
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/602.png"
+  },
+  {
+    "regionalNumber": 143,
+    "nationalNumber": 603,
+    "name": "Eelektrik",
+    "types": [
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/603.png"
+  },
+  {
+    "regionalNumber": 144,
+    "nationalNumber": 604,
+    "name": "Eelektross",
+    "types": [
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/604.png"
+  },
+  {
+    "regionalNumber": 145,
+    "nationalNumber": 147,
+    "name": "Dratini",
+    "types": [
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/147.png"
+  },
+  {
+    "regionalNumber": 146,
+    "nationalNumber": 148,
+    "name": "Dragonair",
+    "types": [
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/148.png"
+  },
+  {
+    "regionalNumber": 147,
+    "nationalNumber": 149,
+    "name": "Dragonite",
+    "types": [
+      "Dragon",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/149.png"
+  },
+  {
+    "regionalNumber": 148,
+    "nationalNumber": 1,
+    "name": "Bulbasaur",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/001.png"
+  },
+  {
+    "regionalNumber": 149,
+    "nationalNumber": 2,
+    "name": "Ivysaur",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/002.png"
+  },
+  {
+    "regionalNumber": 150,
+    "nationalNumber": 3,
+    "name": "Venusaur",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/003.png"
+  },
+  {
+    "regionalNumber": 151,
+    "nationalNumber": 4,
+    "name": "Charmander",
+    "types": [
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/004.png"
+  },
+  {
+    "regionalNumber": 152,
+    "nationalNumber": 5,
+    "name": "Charmeleon",
+    "types": [
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/005.png"
+  },
+  {
+    "regionalNumber": 153,
+    "nationalNumber": 6,
+    "name": "Charizard",
+    "types": [
+      "Fire",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/006.png"
+  },
+  {
+    "regionalNumber": 154,
+    "nationalNumber": 7,
+    "name": "Squirtle",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/007.png"
+  },
+  {
+    "regionalNumber": 155,
+    "nationalNumber": 8,
+    "name": "Wartortle",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/008.png"
+  },
+  {
+    "regionalNumber": 156,
+    "nationalNumber": 9,
+    "name": "Blastoise",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/009.png"
+  },
+  {
+    "regionalNumber": 157,
+    "nationalNumber": 618,
+    "name": "Stunfisk",
+    "types": [
+      "Ground",
+      "Electric"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/618.png"
+  },
+  {
+    "regionalNumber": 158,
+    "nationalNumber": 676,
+    "name": "Furfrou",
+    "types": [
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/676.png"
+  },
+  {
+    "regionalNumber": 159,
+    "nationalNumber": 686,
+    "name": "Inkay",
+    "types": [
+      "Dark",
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/686.png"
+  },
+  {
+    "regionalNumber": 160,
+    "nationalNumber": 687,
+    "name": "Malamar",
+    "types": [
+      "Dark",
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/687.png"
+  },
+  {
+    "regionalNumber": 161,
+    "nationalNumber": 690,
+    "name": "Skrelp",
+    "types": [
+      "Poison",
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/690.png"
+  },
+  {
+    "regionalNumber": 162,
+    "nationalNumber": 691,
+    "name": "Dragalge",
+    "types": [
+      "Poison",
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/691.png"
+  },
+  {
+    "regionalNumber": 163,
+    "nationalNumber": 692,
+    "name": "Clauncher",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/692.png"
+  },
+  {
+    "regionalNumber": 164,
+    "nationalNumber": 693,
+    "name": "Clawitzer",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/693.png"
+  },
+  {
+    "regionalNumber": 165,
+    "nationalNumber": 704,
+    "name": "Goomy",
+    "types": [
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/704.png"
+  },
+  {
+    "regionalNumber": 166,
+    "nationalNumber": 705,
+    "name": "Sliggoo",
+    "types": [
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/705.png"
+  },
+  {
+    "regionalNumber": 167,
+    "nationalNumber": 706,
+    "name": "Goodra",
+    "types": [
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/706.png"
+  },
+  {
+    "regionalNumber": 168,
+    "nationalNumber": 225,
+    "name": "Delibird",
+    "types": [
+      "Ice",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/225.png"
+  },
+  {
+    "regionalNumber": 169,
+    "nationalNumber": 361,
+    "name": "Snorunt",
+    "types": [
+      "Ice"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/361.png"
+  },
+  {
+    "regionalNumber": 170,
+    "nationalNumber": 362,
+    "name": "Glalie",
+    "types": [
+      "Ice"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/362.png"
+  },
+  {
+    "regionalNumber": 171,
+    "nationalNumber": 478,
+    "name": "Froslass",
+    "types": [
+      "Ice",
+      "Ghost"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/478.png"
+  },
+  {
+    "regionalNumber": 172,
+    "nationalNumber": 459,
+    "name": "Snover",
+    "types": [
+      "Grass",
+      "Ice"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/459.png"
+  },
+  {
+    "regionalNumber": 173,
+    "nationalNumber": 460,
+    "name": "Abomasnow",
+    "types": [
+      "Grass",
+      "Ice"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/460.png"
+  },
+  {
+    "regionalNumber": 174,
+    "nationalNumber": 712,
+    "name": "Bergmite",
+    "types": [
+      "Ice"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/712.png"
+  },
+  {
+    "regionalNumber": 175,
+    "nationalNumber": 713,
+    "name": "Avalugg",
+    "types": [
+      "Ice"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/713.png"
+  },
+  {
+    "regionalNumber": 176,
+    "nationalNumber": 123,
+    "name": "Scyther",
+    "types": [
+      "Bug",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/123.png"
+  },
+  {
+    "regionalNumber": 177,
+    "nationalNumber": 212,
+    "name": "Scizor",
+    "types": [
+      "Bug",
+      "Steel"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/212.png"
+  },
+  {
+    "regionalNumber": 178,
+    "nationalNumber": 127,
+    "name": "Pinsir",
+    "types": [
+      "Bug"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/127.png"
+  },
+  {
+    "regionalNumber": 179,
+    "nationalNumber": 214,
+    "name": "Heracross",
+    "types": [
+      "Bug",
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/214.png"
+  },
+  {
+    "regionalNumber": 180,
+    "nationalNumber": 587,
+    "name": "Emolga",
+    "types": [
+      "Electric",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/587.png"
+  },
+  {
+    "regionalNumber": 181,
+    "nationalNumber": 701,
+    "name": "Hawlucha",
+    "types": [
+      "Fighting",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/701.png"
+  },
+  {
+    "regionalNumber": 182,
+    "nationalNumber": 708,
+    "name": "Phantump",
+    "types": [
+      "Ghost",
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/708.png"
+  },
+  {
+    "regionalNumber": 183,
+    "nationalNumber": 709,
+    "name": "Trevenant",
+    "types": [
+      "Ghost",
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/709.png"
+  },
+  {
+    "regionalNumber": 184,
+    "nationalNumber": 559,
+    "name": "Scraggy",
+    "types": [
+      "Dark",
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/559.png"
+  },
+  {
+    "regionalNumber": 185,
+    "nationalNumber": 560,
+    "name": "Scrafty",
+    "types": [
+      "Dark",
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/560.png"
+  },
+  {
+    "regionalNumber": 186,
+    "nationalNumber": 714,
+    "name": "Noibat",
+    "types": [
+      "Flying",
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/714.png"
+  },
+  {
+    "regionalNumber": 187,
+    "nationalNumber": 715,
+    "name": "Noivern",
+    "types": [
+      "Flying",
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/715.png"
+  },
+  {
+    "regionalNumber": 188,
+    "nationalNumber": 707,
+    "name": "Klefki",
+    "types": [
+      "Steel",
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/707.png"
+  },
+  {
+    "regionalNumber": 189,
+    "nationalNumber": 607,
+    "name": "Litwick",
+    "types": [
+      "Ghost",
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/607.png"
+  },
+  {
+    "regionalNumber": 190,
+    "nationalNumber": 608,
+    "name": "Lampent",
+    "types": [
+      "Ghost",
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/608.png"
+  },
+  {
+    "regionalNumber": 191,
+    "nationalNumber": 609,
+    "name": "Chandelure",
+    "types": [
+      "Ghost",
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/609.png"
+  },
+  {
+    "regionalNumber": 192,
+    "nationalNumber": 142,
+    "name": "Aerodactyl",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/142.png"
+  },
+  {
+    "regionalNumber": 193,
+    "nationalNumber": 696,
+    "name": "Tyrunt",
+    "types": [
+      "Rock",
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/696.png"
+  },
+  {
+    "regionalNumber": 194,
+    "nationalNumber": 697,
+    "name": "Tyrantrum",
+    "types": [
+      "Rock",
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/697.png"
+  },
+  {
+    "regionalNumber": 195,
+    "nationalNumber": 698,
+    "name": "Amaura",
+    "types": [
+      "Rock",
+      "Ice"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/698.png"
+  },
+  {
+    "regionalNumber": 196,
+    "nationalNumber": 699,
+    "name": "Aurorus",
+    "types": [
+      "Rock",
+      "Ice"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/699.png"
+  },
+  {
+    "regionalNumber": 197,
+    "nationalNumber": 95,
+    "name": "Onix",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/095.png"
+  },
+  {
+    "regionalNumber": 198,
+    "nationalNumber": 208,
+    "name": "Steelix",
+    "types": [
+      "Steel",
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/208.png"
+  },
+  {
+    "regionalNumber": 199,
+    "nationalNumber": 304,
+    "name": "Aron",
+    "types": [
+      "Steel",
+      "Rock"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/304.png"
+  },
+  {
+    "regionalNumber": 200,
+    "nationalNumber": 305,
+    "name": "Lairon",
+    "types": [
+      "Steel",
+      "Rock"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/305.png"
+  },
+  {
+    "regionalNumber": 201,
+    "nationalNumber": 306,
+    "name": "Aggron",
+    "types": [
+      "Steel",
+      "Rock"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/306.png"
+  },
+  {
+    "regionalNumber": 202,
+    "nationalNumber": 694,
+    "name": "Helioptile",
+    "types": [
+      "Electric",
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/694.png"
+  },
+  {
+    "regionalNumber": 203,
+    "nationalNumber": 695,
+    "name": "Heliolisk",
+    "types": [
+      "Electric",
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/695.png"
+  },
+  {
+    "regionalNumber": 204,
+    "nationalNumber": 710,
+    "name": "Pumpkaboo",
+    "types": [
+      "Ghost",
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/710.png"
+  },
+  {
+    "regionalNumber": 205,
+    "nationalNumber": 711,
+    "name": "Gourgeist",
+    "types": [
+      "Ghost",
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/711.png"
+  },
+  {
+    "regionalNumber": 206,
+    "nationalNumber": 246,
+    "name": "Larvitar",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/246.png"
+  },
+  {
+    "regionalNumber": 207,
+    "nationalNumber": 247,
+    "name": "Pupitar",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/247.png"
+  },
+  {
+    "regionalNumber": 208,
+    "nationalNumber": 248,
+    "name": "Tyranitar",
+    "types": [
+      "Rock",
+      "Dark"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/248.png"
+  },
+  {
+    "regionalNumber": 209,
+    "nationalNumber": 656,
+    "name": "Froakie",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/656.png"
+  },
+  {
+    "regionalNumber": 210,
+    "nationalNumber": 657,
+    "name": "Frogadier",
+    "types": [
+      "Water"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/657.png"
+  },
+  {
+    "regionalNumber": 211,
+    "nationalNumber": 658,
+    "name": "Greninja",
+    "types": [
+      "Water",
+      "Dark"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/658.png"
+  },
+  {
+    "regionalNumber": 212,
+    "nationalNumber": 870,
+    "name": "Falinks",
+    "types": [
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/870.png"
+  },
+  {
+    "regionalNumber": 213,
+    "nationalNumber": 650,
+    "name": "Chespin",
+    "types": [
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/650.png"
+  },
+  {
+    "regionalNumber": 214,
+    "nationalNumber": 651,
+    "name": "Quilladin",
+    "types": [
+      "Grass"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/651.png"
+  },
+  {
+    "regionalNumber": 215,
+    "nationalNumber": 652,
+    "name": "Chesnaught",
+    "types": [
+      "Grass",
+      "Fighting"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/652.png"
+  },
+  {
+    "regionalNumber": 216,
+    "nationalNumber": 227,
+    "name": "Skarmory",
+    "types": [
+      "Steel",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/227.png"
+  },
+  {
+    "regionalNumber": 217,
+    "nationalNumber": 653,
+    "name": "Fennekin",
+    "types": [
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/653.png"
+  },
+  {
+    "regionalNumber": 218,
+    "nationalNumber": 654,
+    "name": "Braixen",
+    "types": [
+      "Fire"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/654.png"
+  },
+  {
+    "regionalNumber": 219,
+    "nationalNumber": 655,
+    "name": "Delphox",
+    "types": [
+      "Fire",
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/655.png"
+  },
+  {
+    "regionalNumber": 220,
+    "nationalNumber": 371,
+    "name": "Bagon",
+    "types": [
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/371.png"
+  },
+  {
+    "regionalNumber": 221,
+    "nationalNumber": 372,
+    "name": "Shelgon",
+    "types": [
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/372.png"
+  },
+  {
+    "regionalNumber": 222,
+    "nationalNumber": 373,
+    "name": "Salamence",
+    "types": [
+      "Dragon",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/373.png"
+  },
+  {
+    "regionalNumber": 223,
+    "nationalNumber": 115,
+    "name": "Kangaskhan",
+    "types": [
+      "Normal"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/115.png"
+  },
+  {
+    "regionalNumber": 224,
+    "nationalNumber": 780,
+    "name": "Drampa",
+    "types": [
+      "Normal",
+      "Dragon"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/780.png"
+  },
+  {
+    "regionalNumber": 225,
+    "nationalNumber": 374,
+    "name": "Beldum",
+    "types": [
+      "Steel",
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/374.png"
+  },
+  {
+    "regionalNumber": 226,
+    "nationalNumber": 375,
+    "name": "Metang",
+    "types": [
+      "Steel",
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/375.png"
+  },
+  {
+    "regionalNumber": 227,
+    "nationalNumber": 376,
+    "name": "Metagross",
+    "types": [
+      "Steel",
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/376.png"
+  },
+  {
+    "regionalNumber": 228,
+    "nationalNumber": 716,
+    "name": "Xerneas",
+    "types": [
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/716.png"
+  },
+  {
+    "regionalNumber": 229,
+    "nationalNumber": 717,
+    "name": "Yveltal",
+    "types": [
+      "Dark",
+      "Flying"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/717.png"
+  },
+  {
+    "regionalNumber": 230,
+    "nationalNumber": 718,
+    "name": "Zygarde",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/718.png"
+  },
+  {
+    "regionalNumber": 231,
+    "nationalNumber": 719,
+    "name": "Diancie",
+    "types": [
+      "Rock",
+      "Fairy"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/719.png"
+  },
+  {
+    "regionalNumber": 232,
+    "nationalNumber": 150,
+    "name": "Mewtwo",
+    "types": [
+      "Psychic"
+    ],
+    "imageUrl": "https://www.serebii.net/legendsz-a/pokemon/small/150.png"
+  }
+]

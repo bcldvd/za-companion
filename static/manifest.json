@@ -1,0 +1,19 @@
+{
+	"name": "Pokemon Legends ZA Box Sorter",
+	"short_name": "Legends ZA Helper",
+	"description": "Helper tool for organizing Pokemon boxes in Pokemon Legends ZA",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#1e3a8a",
+	"theme_color": "#1e3a8a",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "/favicon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "any maskable"
+		}
+	]
+}
+

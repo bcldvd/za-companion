@@ -1,0 +1,19 @@
+{
+	"name": "@legends-za/data",
+	"version": "0.0.1",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"scrape": "tsx scripts/scrape.ts",
+		"build": "npm run scrape"
+	},
+	"dependencies": {
+		"cheerio": "^1.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.2",
+		"tsx": "^4.19.2",
+		"typescript": "^5.9.3"
+	}
+}
+
