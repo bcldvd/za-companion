@@ -22,6 +22,11 @@
 	},
 	"button": {
 		"clear": "Clear"
+	},
+	"shiny": {
+		"toggle": "Shiny",
+		"enabled": "Shiny mode enabled",
+		"disabled": "Shiny mode disabled"
 	}
 }
 

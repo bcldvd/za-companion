@@ -157,7 +157,18 @@ export function getPokedex(): Pokemon[] | null {
 }
 
 /**
- * Search Pokemon by name (case-insensitive)
+ * Normalize a string by removing accents and converting to lowercase
+ * This makes search accent-insensitive (e.g., "leviator" matches "léviator")
+ */
+function normalizeString(str: string): string {
+	return str
+		.normalize('NFD') // Decompose characters into base + combining marks
+		.replace(/[\u0300-\u036f]/g, '') // Remove combining diacritical marks (accents)
+		.toLowerCase();
+}
+
+/**
+ * Search Pokemon by name (case-insensitive and accent-insensitive)
  * Searches in both original and translated names
  * Requires pokedex to be loaded first via loadPokedex()
  */
@@ -166,16 +177,17 @@ export function searchPokemonByName(query: string, pokedex: Pokemon[]): Pokemon[
 		return [];
 	}
 	
-	const lowerQuery = query.toLowerCase();
+	const normalizedQuery = normalizeString(query);
 	return pokedex.filter(pokemon => {
-		const originalMatch = pokemon.name.toLowerCase().includes(lowerQuery);
+		// Search in original name
+		const originalMatch = normalizeString(pokemon.name).includes(normalizedQuery);
 		if (originalMatch) return true;
 
 		// Also search in translated names
-		const enName = getLocalizedPokemonName(pokemon, 'en').toLowerCase();
-		const frName = getLocalizedPokemonName(pokemon, 'fr').toLowerCase();
+		const enName = normalizeString(getLocalizedPokemonName(pokemon, 'en'));
+		const frName = normalizeString(getLocalizedPokemonName(pokemon, 'fr'));
 		
-		return enName.includes(lowerQuery) || frName.includes(lowerQuery);
+		return enName.includes(normalizedQuery) || frName.includes(normalizedQuery);
 	});
 }
 

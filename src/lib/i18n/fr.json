@@ -22,6 +22,11 @@
 	},
 	"button": {
 		"clear": "Effacer"
+	},
+	"shiny": {
+		"toggle": "Chromatique",
+		"enabled": "Mode chromatique activé",
+		"disabled": "Mode chromatique désactivé"
 	}
 }
 
