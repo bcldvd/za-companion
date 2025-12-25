@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
 	import { _ } from 'svelte-i18n';
 	import type { Pokemon } from '$lib/types/pokemon.js';
-	import { calculateBoxPosition } from '$lib/utils/boxCalculator.js';
 	import { loadPokedex, searchPokemonByName, getLocalizedPokemonName, getLocalizedTypes } from '$lib/utils/pokedex.js';
 	import { getPokemonSprite } from '$lib/utils/pokeapi.js';
 	import LanguageToggle from '$lib/components/LanguageToggle.svelte';
@@ -10,8 +10,6 @@
 
 	let searchQuery = $state('');
 	let searchResults = $state<Pokemon[]>([]);
-	let selectedPokemon = $state<Pokemon | null>(null);
-	let boxPosition = $state<ReturnType<typeof calculateBoxPosition> | null>(null);
 	let showDropdown = $state(false);
 	let searchTimeout: ReturnType<typeof setTimeout> | null = null;
 	let pokedex = $state<Pokemon[] | null>(null);
@@ -26,10 +24,6 @@
 
 	// Map to store sprite URLs for each pokemon (key: nationalNumber, value: { default: string, shiny: string })
 	let spriteUrls = $state<Map<number, { default: string; shiny: string }>>(new Map());
-
-	// Extract translation values at top level for use in loops (Svelte 5 requirement)
-	let colLabel = $derived($_('pokemon.colLabel'));
-	let rowLabel = $derived($_('pokemon.rowLabel'));
 
 	/**
 	 * Gets the sprite URL synchronously from cache if available
@@ -78,24 +72,6 @@
 			return pokemon.imageUrl;
 		}
 	}
-
-	// Reactive sprite URL getter for selected pokemon
-	let selectedPokemonSpriteUrl = $derived.by(() => {
-		if (!selectedPokemon) return null;
-		const cached = getCachedSpriteUrl(selectedPokemon);
-		return cached || selectedPokemon.imageUrl; // Fallback to serebii while loading
-	});
-
-	// Update sprite URL when selectedPokemon changes (fetch if not cached)
-	$effect(() => {
-		if (selectedPokemon) {
-			const cached = spriteUrls.get(selectedPokemon.nationalNumber);
-			if (!cached) {
-				// Fetch sprites if not cached
-				fetchSpriteUrl(selectedPokemon);
-			}
-		}
-	});
 
 	// Reactive sprite URLs for search results - derived from cache
 	let searchResultSpriteUrls = $derived.by(() => {
@@ -166,17 +142,11 @@
 	}
 
 	function selectPokemon(pokemon: Pokemon) {
-		selectedPokemon = pokemon;
-		boxPosition = calculateBoxPosition(pokemon.regionalNumber);
-		// Use localized name for search query
-		searchQuery = getLocalizedPokemonName(pokemon);
-		showDropdown = false;
-		searchResults = [];
+		// Navigate to the Pokémon detail page using nationalNumber (i18n compatible)
+		goto(`/pokemon/${pokemon.nationalNumber}`);
 	}
 
 	function clearSelection() {
-		selectedPokemon = null;
-		boxPosition = null;
 		searchQuery = '';
 		searchResults = [];
 		showDropdown = false;
@@ -236,7 +206,7 @@
 					class="w-full px-4 py-3 rounded-lg bg-blue-800/50 border border-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg min-h-[44px]"
 					autocomplete="off"
 				/>
-				{#if searchQuery || selectedPokemon}
+				{#if searchQuery}
 					<button
 						onclick={clearSelection}
 						class="absolute right-3 top-1/2 -translate-y-1/2 text-blue-300 hover:text-white text-xl leading-none"
@@ -273,92 +243,7 @@
 			{/if}
 		</div>
 
-		<!-- Selected Pokemon Info -->
-		{#if selectedPokemon && boxPosition}
-			<div class="mb-6 p-4 bg-blue-800/50 rounded-lg border border-blue-700">
-				<div class="flex items-center gap-4 mb-4">
-					<img
-						src={selectedPokemonSpriteUrl || selectedPokemon.imageUrl}
-						alt={getLocalizedPokemonName(selectedPokemon)}
-						class="w-20 h-20 object-contain"
-					/>
-					<div class="flex-1">
-						<h3 class="text-2xl font-bold">{getLocalizedPokemonName(selectedPokemon)}</h3>
-						<p class="text-blue-200">
-							{$_('pokemon.regional')} {selectedPokemon.regionalNumber} • {getLocalizedTypes(selectedPokemon.types).join(', ')}
-						</p>
-					</div>
-				</div>
-
-				<!-- Text Placement Info -->
-				<div class="text-center py-3 bg-blue-900/50 rounded-lg">
-					<p class="text-lg font-semibold">
-						{$_('pokemon.placeIn')} <span class="text-yellow-300">{$_('pokemon.box')} {boxPosition.box}</span>,{' '}
-						<span class="text-yellow-300">{$_('pokemon.row')} {boxPosition.row}</span>,{' '}
-						<span class="text-yellow-300">{$_('pokemon.column')} {boxPosition.column}</span>
-					</p>
-				</div>
-			</div>
-
-			<!-- Visual Box Representation -->
-			<div class="bg-blue-800/50 rounded-lg border border-blue-700 p-4">
-				<div class="text-center mb-4">
-					<h3 class="text-xl font-bold">{$_('pokemon.box')} {boxPosition.box}</h3>
-					<p class="text-sm text-blue-200">{$_('pokemon.gridSize')}</p>
-				</div>
-
-				<!-- Grid with Labels -->
-				<div class="max-w-md mx-auto">
-					<!-- Column Labels -->
-					<div class="grid grid-cols-[auto_1fr] gap-2 mb-2">
-						<!-- Empty space for row labels column -->
-						<div class="w-12"></div>
-						<!-- Column labels aligned with grid -->
-						<div class="grid grid-cols-6 gap-2">
-							{#each Array(6) as _, colIndex}
-								<div class="text-center text-xs text-blue-300 font-semibold">
-									{colLabel} {colIndex + 1}
-								</div>
-							{/each}
-						</div>
-					</div>
-
-					<!-- Box Grid with Row Labels -->
-					<div class="grid grid-cols-[auto_1fr] gap-2">
-						<!-- Row Labels -->
-						<div class="flex flex-col gap-2 justify-center w-12">
-							{#each Array(5) as _, rowIndex}
-								<div class="text-xs text-blue-300 font-semibold flex items-center h-full min-h-[calc((100%-2rem)/5)]">
-									{rowLabel} {rowIndex + 1}
-								</div>
-							{/each}
-						</div>
-
-						<!-- Box Grid -->
-						<div class="grid grid-cols-6 gap-2">
-							{#each Array(30) as _, index}
-								{@const isTargetSlot = index === boxPosition.slotIndex}
-								<div
-									class="aspect-square rounded-lg border-2 transition-all {isTargetSlot
-										? 'bg-yellow-400 border-yellow-300 shadow-lg shadow-yellow-500/50 scale-110 z-10'
-										: 'bg-blue-700/30 border-blue-600'}"
-								>
-									{#if isTargetSlot}
-										<div class="w-full h-full flex flex-col items-center justify-center p-1">
-											<img
-												src={selectedPokemonSpriteUrl || selectedPokemon.imageUrl}
-												alt={getLocalizedPokemonName(selectedPokemon)}
-												class="w-full h-full object-contain"
-											/>
-										</div>
-									{/if}
-								</div>
-							{/each}
-						</div>
-					</div>
-				</div>
-			</div>
-		{:else if searchQuery && searchResults.length === 0 && !showDropdown}
+		{#if searchQuery && searchResults.length === 0 && !showDropdown}
 			<div class="text-center py-8 text-blue-300">
 				<p>{$_('pokemon.notFound')} "{searchQuery}"</p>
 			</div>

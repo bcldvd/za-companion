@@ -18,7 +18,8 @@
 		"notFound": "Aucun Pokémon trouvé correspondant à",
 		"loading": "Chargement des données Pokémon...",
 		"searchPrompt": "Recherchez un Pokémon pour trouver son emplacement dans la boîte",
-		"startPrompt": "Tapez un nom de Pokémon pour commencer"
+		"startPrompt": "Tapez un nom de Pokémon pour commencer",
+		"backToSearch": "Retour à la recherche"
 	},
 	"button": {
 		"clear": "Effacer"
