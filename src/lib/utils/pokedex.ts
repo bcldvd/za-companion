@@ -1,14 +1,97 @@
 import type { Pokemon } from '../types/pokemon.js';
+import { getCurrentLanguage } from '../i18n/index.js';
 
 // Client-side cache for pokedex data
 let cachedPokedex: Pokemon[] | null = null;
 let loadPromise: Promise<Pokemon[]> | null = null;
+
+// Cache for translations
+let pokemonNameTranslations: { en: Record<number, string>; fr: Record<number, string> } | null = null;
+let typeTranslations: { en: Record<string, string>; fr: Record<string, string> } | null = null;
+let translationLoadPromise: Promise<void> | null = null;
+
+/**
+ * Load Pokemon name and type translations
+ */
+async function loadTranslations(): Promise<void> {
+	if (pokemonNameTranslations !== null && typeTranslations !== null) {
+		return;
+	}
+
+	if (translationLoadPromise !== null) {
+		return translationLoadPromise;
+	}
+
+	translationLoadPromise = (async () => {
+		try {
+			const [pokemonEnResponse, pokemonFrResponse, typesEnResponse, typesFrResponse] = await Promise.all([
+				fetch('/pokemon-names-en.json'),
+				fetch('/pokemon-names-fr.json'),
+				fetch('/pokemon-types-en.json'),
+				fetch('/pokemon-types-fr.json')
+			]);
+
+			if (!pokemonEnResponse.ok || !pokemonFrResponse.ok || !typesEnResponse.ok || !typesFrResponse.ok) {
+				console.warn('Failed to load some translation files, using fallbacks');
+				pokemonNameTranslations = { en: {}, fr: {} };
+				typeTranslations = { en: {}, fr: {} };
+				return;
+			}
+
+			pokemonNameTranslations = {
+				en: await pokemonEnResponse.json(),
+				fr: await pokemonFrResponse.json()
+			};
+
+			typeTranslations = {
+				en: await typesEnResponse.json(),
+				fr: await typesFrResponse.json()
+			};
+		} catch (error) {
+			console.error('Error loading translations:', error);
+			pokemonNameTranslations = { en: {}, fr: {} };
+			typeTranslations = { en: {}, fr: {} };
+		}
+	})();
+
+	return translationLoadPromise;
+}
+
+/**
+ * Get localized Pokemon name
+ */
+export function getLocalizedPokemonName(pokemon: Pokemon, locale?: 'en' | 'fr'): string {
+	if (!pokemonNameTranslations) {
+		return pokemon.name; // Fallback to original name
+	}
+
+	const lang = locale || getCurrentLanguage();
+	// Translation files use string keys, so convert nationalNumber to string
+	const translation = pokemonNameTranslations[lang]?.[String(pokemon.nationalNumber)];
+	return translation || pokemon.name;
+}
+
+/**
+ * Get localized type names
+ */
+export function getLocalizedTypes(types: string[], locale?: 'en' | 'fr'): string[] {
+	if (!typeTranslations) {
+		return types; // Fallback to original types
+	}
+
+	const lang = locale || getCurrentLanguage();
+	return types.map(type => {
+		const translation = typeTranslations[lang]?.[type];
+		return translation || type;
+	});
+}
 
 /**
  * Load pokedex data from static JSON files with client-side caching
  * Combines regional pokedex and hyperspace pokedex, with hyperspace pokemon
  * continuing from where regional pokemon end (starting at 233)
  * Fetches once and caches in memory for subsequent calls
+ * Also loads translations in parallel
  */
 export async function loadPokedex(): Promise<Pokemon[]> {
 	// Return cached data if available
@@ -24,10 +107,11 @@ export async function loadPokedex(): Promise<Pokemon[]> {
 	// Start loading
 	loadPromise = (async () => {
 		try {
-			// Load both pokedexes in parallel
+			// Load translations and pokedex data in parallel
 			const [regionalResponse, hyperspaceResponse] = await Promise.all([
 				fetch('/pokedex.json'),
-				fetch('/hyperspace-pokedex.json')
+				fetch('/hyperspace-pokedex.json'),
+				loadTranslations() // Load translations in parallel
 			]);
 
 			if (!regionalResponse.ok) {
@@ -74,6 +158,7 @@ export function getPokedex(): Pokemon[] | null {
 
 /**
  * Search Pokemon by name (case-insensitive)
+ * Searches in both original and translated names
  * Requires pokedex to be loaded first via loadPokedex()
  */
 export function searchPokemonByName(query: string, pokedex: Pokemon[]): Pokemon[] {
@@ -82,9 +167,16 @@ export function searchPokemonByName(query: string, pokedex: Pokemon[]): Pokemon[
 	}
 	
 	const lowerQuery = query.toLowerCase();
-	return pokedex.filter(pokemon => 
-		pokemon.name.toLowerCase().includes(lowerQuery)
-	);
+	return pokedex.filter(pokemon => {
+		const originalMatch = pokemon.name.toLowerCase().includes(lowerQuery);
+		if (originalMatch) return true;
+
+		// Also search in translated names
+		const enName = getLocalizedPokemonName(pokemon, 'en').toLowerCase();
+		const frName = getLocalizedPokemonName(pokemon, 'fr').toLowerCase();
+		
+		return enName.includes(lowerQuery) || frName.includes(lowerQuery);
+	});
 }
 
 /**

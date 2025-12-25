@@ -1,0 +1,27 @@
+{
+	"app": {
+		"title": "Pokemon Legends ZA",
+		"subtitle": "Box Sorter"
+	},
+	"search": {
+		"placeholder": "Search Pokemon by name..."
+	},
+	"pokemon": {
+		"regional": "Regional #",
+		"placeIn": "Place in",
+		"box": "Box",
+		"row": "Row",
+		"column": "Column",
+		"gridSize": "6 columns × 5 rows",
+		"colLabel": "Col",
+		"rowLabel": "Row",
+		"notFound": "No Pokemon found matching",
+		"loading": "Loading Pokemon data...",
+		"searchPrompt": "Search for a Pokemon to find its box placement",
+		"startPrompt": "Type a Pokemon name to get started"
+	},
+	"button": {
+		"clear": "Clear"
+	}
+}
+

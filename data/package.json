@@ -5,6 +5,7 @@
 	"private": true,
 	"scripts": {
 		"scrape": "tsx scripts/scrape.ts",
+		"translate": "tsx scripts/translate-pokemon.ts",
 		"build": "npm run scrape"
 	},
 	"dependencies": {

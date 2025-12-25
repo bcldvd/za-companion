@@ -1,0 +1,27 @@
+{
+	"app": {
+		"title": "Pokemon Legends ZA",
+		"subtitle": "Tri de Boîtes"
+	},
+	"search": {
+		"placeholder": "Rechercher un Pokémon par nom..."
+	},
+	"pokemon": {
+		"regional": "Régional #",
+		"placeIn": "Placer dans",
+		"box": "Boîte",
+		"row": "Ligne",
+		"column": "Colonne",
+		"gridSize": "6 colonnes × 5 lignes",
+		"colLabel": "Col",
+		"rowLabel": "Ligne",
+		"notFound": "Aucun Pokémon trouvé correspondant à",
+		"loading": "Chargement des données Pokémon...",
+		"searchPrompt": "Recherchez un Pokémon pour trouver son emplacement dans la boîte",
+		"startPrompt": "Tapez un nom de Pokémon pour commencer"
+	},
+	"button": {
+		"clear": "Effacer"
+	}
+}
+
