@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { _ } from 'svelte-i18n';
 	import type { Pokemon } from '$lib/types/pokemon.js';
@@ -12,15 +13,12 @@
 	let searchResults = $state<Pokemon[]>([]);
 	let showDropdown = $state(false);
 	let searchTimeout: ReturnType<typeof setTimeout> | null = null;
+	let searchRequestId = 0;
 	let pokedex = $state<Pokemon[] | null>(null);
 	let isLoading = $state(true);
 	
 	// Initialize isShiny from localStorage
-	let isShiny = $state<boolean>(() => {
-		if (typeof window === 'undefined') return false;
-		const stored = localStorage.getItem('pokemon-legends-za-shiny');
-		return stored === 'true';
-	});
+	let isShiny = $state(false);
 
 	// Map to store sprite URLs for each pokemon (key: nationalNumber, value: { default: string, shiny: string })
 	let spriteUrls = $state<Map<number, { default: string; shiny: string }>>(new Map());
@@ -97,7 +95,7 @@
 		}
 	});
 
-	async function searchPokemon(query: string) {
+	async function searchPokemon(query: string, requestId: number) {
 		if (!query.trim()) {
 			searchResults = [];
 			showDropdown = false;
@@ -108,6 +106,7 @@
 		if (!pokedex) {
 			try {
 				pokedex = await loadPokedex();
+				if (requestId !== searchRequestId) return;
 			} catch (error) {
 				console.error('Error loading pokedex:', error);
 				searchResults = [];
@@ -118,7 +117,9 @@
 
 		// Perform client-side search
 		try {
+			if (requestId !== searchRequestId) return;
 			const results = searchPokemonByName(query, pokedex);
+			if (requestId !== searchRequestId) return;
 			searchResults = results.slice(0, 10); // Limit to 10 results
 			showDropdown = true;
 		} catch (error) {
@@ -132,24 +133,58 @@
 		const target = event.target as HTMLInputElement;
 		searchQuery = target.value;
 
+		// Update URL with search query
+		const params = new URLSearchParams($page.url.searchParams);
+		if (searchQuery) {
+			params.set('q', searchQuery);
+		} else {
+			params.delete('q');
+		}
+		const queryString = params.toString();
+		const newUrl = queryString ? `/?${queryString}` : '/';
+		goto(newUrl, { replaceState: true, noScroll: true, keepFocus: true });
+
 		if (searchTimeout) {
 			clearTimeout(searchTimeout);
 		}
 
+		const requestId = ++searchRequestId;
 		searchTimeout = setTimeout(() => {
-			searchPokemon(searchQuery);
+			void searchPokemon(searchQuery, requestId);
 		}, 300); // Debounce 300ms
 	}
 
 	function selectPokemon(pokemon: Pokemon) {
+		// Close dropdown immediately to avoid it lingering during navigation
+		showDropdown = false;
+		if (searchTimeout) {
+			clearTimeout(searchTimeout);
+			searchTimeout = null;
+		}
+		searchRequestId++;
+
 		// Navigate to the Pokémon detail page using nationalNumber (i18n compatible)
-		goto(`/pokemon/${pokemon.nationalNumber}`);
+		// Preserve search query in URL
+		const params = new URLSearchParams();
+		if (searchQuery) {
+			params.set('q', searchQuery);
+		}
+		const queryString = params.toString();
+		goto(queryString ? `/pokemon/${pokemon.nationalNumber}?${queryString}` : `/pokemon/${pokemon.nationalNumber}`);
 	}
 
 	function clearSelection() {
 		searchQuery = '';
 		searchResults = [];
 		showDropdown = false;
+		searchRequestId++;
+		
+		// Update URL to remove search query
+		const params = new URLSearchParams($page.url.searchParams);
+		params.delete('q');
+		const queryString = params.toString();
+		const newUrl = queryString ? `/?${queryString}` : '/';
+		goto(newUrl, { replaceState: true, noScroll: true, keepFocus: true });
 	}
 
 	// Close dropdown when clicking outside
@@ -160,17 +195,33 @@
 		}
 	}
 
-	onMount(async () => {
+	// Initialize search query from URL params
+	$effect(() => {
+		const query = $page.url.searchParams.get('q') || '';
+		if (query && query !== searchQuery) {
+			searchQuery = query;
+			const requestId = ++searchRequestId;
+			void searchPokemon(query, requestId);
+		}
+	});
+
+	onMount(() => {
 		document.addEventListener('click', handleClickOutside);
+
+		// Initialize isShiny from localStorage (client-only)
+		const stored = localStorage.getItem('pokemon-legends-za-shiny');
+		isShiny = stored === 'true';
 		
 		// Load pokedex data on mount
-		try {
-			pokedex = await loadPokedex();
-		} catch (error) {
-			console.error('Error loading pokedex:', error);
-		} finally {
-			isLoading = false;
-		}
+		void (async () => {
+			try {
+				pokedex = await loadPokedex();
+			} catch (error) {
+				console.error('Error loading pokedex:', error);
+			} finally {
+				isLoading = false;
+			}
+		})();
 		
 		return () => {
 			document.removeEventListener('click', handleClickOutside);
@@ -178,18 +229,17 @@
 	});
 </script>
 
-	<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 text-white p-4">
+	<div class="min-h-screen bg-linear-to-b from-blue-900 to-blue-950 text-white p-4">
 		<div class="max-w-2xl mx-auto">
 		<header class="mb-6">
-			<div class="flex justify-between items-center mb-4">
-				<div class="flex items-center gap-4">
+			<div class="grid grid-cols-[auto_1fr_auto] items-center mb-4 gap-4">
+				<div class="flex items-center">
 					<ShinyToggle bind:isShiny={isShiny} />
-					<div class="text-center flex-1">
-						<h1 class="text-3xl font-bold mb-2">{$_('app.title')}</h1>
-						<h2 class="text-xl text-blue-200">{$_('app.subtitle')}</h2>
-					</div>
 				</div>
-				<div class="ml-4">
+				<div class="text-center">
+					<h1 class="text-3xl font-bold mb-2">ZA Companion</h1>
+				</div>
+				<div class="justify-self-end">
 					<LanguageToggle />
 				</div>
 			</div>
