@@ -228,59 +228,8 @@
 	});
 </script>
 
-<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 text-white p-4">
+<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 text-white p-4 pb-16">
 	<div class="max-w-2xl mx-auto">
-		<!-- Search Section -->
-		<div class="mb-6 search-container relative">
-			<div class="flex items-center gap-3">
-				<ShinyToggle bind:isShiny={isShiny} />
-				<div class="relative flex-1">
-				<input
-					type="text"
-					placeholder={$_('search.placeholder')}
-					value={searchQuery}
-					oninput={handleSearchInput}
-					class="w-full px-4 py-3 rounded-lg bg-blue-800/50 border border-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg min-h-[44px]"
-					autocomplete="off"
-				/>
-				{#if searchQuery}
-					<button
-						onclick={clearSelection}
-						class="absolute right-3 top-1/2 -translate-y-1/2 text-blue-300 hover:text-white text-xl leading-none"
-						aria-label="Clear search"
-					>
-						✕
-					</button>
-				{/if}
-				</div>
-			</div>
-
-			<!-- Autocomplete Dropdown -->
-			{#if showDropdown && searchResults.length > 0}
-				<div class="absolute z-50 w-full mt-2 bg-blue-800 rounded-lg border border-blue-700 shadow-xl max-h-80 overflow-y-auto">
-					{#each searchResults as pokemon}
-						{@const spriteUrl = searchResultSpriteUrls.get(pokemon.nationalNumber) || pokemon.imageUrl}
-						<button
-							onclick={() => selectPokemon(pokemon)}
-							class="w-full px-4 py-3 flex items-center gap-3 hover:bg-blue-700 active:bg-blue-600 transition-colors text-left border-b border-blue-700 last:border-b-0 min-h-[60px] touch-manipulation"
-						>
-							<img
-								src={spriteUrl}
-								alt={getLocalizedPokemonName(pokemon)}
-								class="w-12 h-12 object-contain"
-							/>
-							<div class="flex-1">
-								<div class="font-semibold text-white">{getLocalizedPokemonName(pokemon)}</div>
-								<div class="text-sm text-blue-300">
-									{$_('pokemon.regional')} {String(pokemon.regionalNumber).padStart(3, '0')} • {getLocalizedTypes(pokemon.types).join(', ')}
-								</div>
-							</div>
-						</button>
-					{/each}
-				</div>
-			{/if}
-		</div>
-
 		{#if searchQuery && searchResults.length === 0 && !showDropdown}
 			<div class="text-center py-8 text-blue-300">
 				<p>{$_('pokemon.notFound')} "{searchQuery}"</p>
@@ -295,5 +244,71 @@
 				<p class="text-sm">{$_('pokemon.startPrompt')}</p>
 			</div>
 		{/if}
+	</div>
+
+	<!-- Search Section (fixed to bottom for mobile comfort) -->
+	<div
+		class="search-container fixed left-0 right-0 z-40"
+		style="bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px));"
+	>
+		<div class="mx-auto max-w-2xl px-4">
+			<div class="relative">
+				<div
+					class="flex items-center gap-3 rounded-xl border border-blue-700 bg-blue-900/95 p-3 backdrop-blur-sm"
+				>
+					<ShinyToggle bind:isShiny={isShiny} />
+					<div class="relative flex-1">
+						<input
+							type="text"
+							placeholder={$_('search.placeholder')}
+							value={searchQuery}
+							oninput={handleSearchInput}
+							class="w-full px-4 py-3 rounded-lg bg-blue-800/50 border border-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg min-h-[44px]"
+							autocomplete="off"
+						/>
+						{#if searchQuery}
+							<button
+								onclick={clearSelection}
+								class="absolute right-3 top-1/2 -translate-y-1/2 text-blue-300 hover:text-white text-xl leading-none"
+								aria-label="Clear search"
+							>
+								✕
+							</button>
+						{/if}
+					</div>
+				</div>
+
+				<!-- Autocomplete Dropdown -->
+				{#if showDropdown && searchResults.length > 0}
+					<div
+						class="absolute bottom-full z-50 w-full mb-2 bg-blue-800 rounded-lg border border-blue-700 shadow-xl max-h-80 overflow-y-auto"
+					>
+						{#each searchResults as pokemon}
+							{@const spriteUrl =
+								searchResultSpriteUrls.get(pokemon.nationalNumber) || pokemon.imageUrl}
+							<button
+								onclick={() => selectPokemon(pokemon)}
+								class="w-full px-4 py-3 flex items-center gap-3 hover:bg-blue-700 active:bg-blue-600 transition-colors text-left border-b border-blue-700 last:border-b-0 min-h-[60px] touch-manipulation"
+							>
+								<img
+									src={spriteUrl}
+									alt={getLocalizedPokemonName(pokemon)}
+									class="w-12 h-12 object-contain"
+								/>
+								<div class="flex-1">
+									<div class="font-semibold text-white">{getLocalizedPokemonName(pokemon)}</div>
+									<div class="text-sm text-blue-300">
+										{$_('pokemon.regional')}
+										{String(pokemon.regionalNumber).padStart(3, '0')} • {getLocalizedTypes(
+											pokemon.types
+										).join(', ')}
+									</div>
+								</div>
+							</button>
+						{/each}
+					</div>
+				{/if}
+			</div>
+		</div>
 	</div>
 </div>

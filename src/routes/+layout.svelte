@@ -25,7 +25,9 @@
 {#if isLocaleReady}
 	<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 text-white flex flex-col">
 		<!-- Sticky Header -->
-		<header class="sticky top-0 z-50 bg-blue-900/95 backdrop-blur-sm border-b border-blue-700">
+		<header
+			class="safe-area-inset-top sticky top-0 z-50 bg-blue-900/95 backdrop-blur-sm border-b border-blue-700"
+		>
 			<div class="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
 				<div class="flex items-center gap-3">
 					<img src="/icons/icon-192.png" alt="ZA Companion" class="w-8 h-8" />
@@ -104,5 +106,9 @@
 	/* Safe area inset for devices with notches/home indicators */
 	.safe-area-inset-bottom {
 		padding-bottom: env(safe-area-inset-bottom, 0);
+	}
+
+	.safe-area-inset-top {
+		padding-top: calc(env(safe-area-inset-top, 0px) + 0.5rem);
 	}
 </style>
