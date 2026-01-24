@@ -28,6 +28,57 @@
 		"toggle": "Shiny",
 		"enabled": "Shiny mode enabled",
 		"disabled": "Shiny mode disabled"
+	},
+	"hyperspace": {
+		"title": "Hyperspace Shiny Timer",
+		"subtitle": "Calculate time to reach your shiny probability targets",
+		"method": {
+			"label": "Method",
+			"auto": "Auto teleport loop",
+			"manual": "Manual map warp"
+		},
+		"shinyDonut": {
+			"label": "Shiny Donut Level"
+		},
+		"alphaDonut": {
+			"label": "Alpha Donut Level"
+		},
+		"level": {
+			"off": "Off",
+			"lv": "Lv{level}"
+		},
+		"charm": {
+			"label": "Shiny Charm",
+			"on": "On",
+			"off": "Off"
+		},
+		"pokemonPerReset": {
+			"label": "Pokémon per reset (within ~50m)",
+			"hint": "Enter a number between 1 and 50"
+		},
+		"results": {
+			"title": "Results",
+			"howItWorks": "How it works",
+			"primaryLabel": "99% chance in",
+			"average": "Average",
+			"shalphaTitle": "Shalpha (Shiny + Alpha)",
+			"footnote": "Assumes continuous resets using your method and settings.",
+			"enterValid": "Enter valid inputs to see results"
+		},
+		"modal": {
+			"title": "How it works",
+			"intro": "The calculator estimates how long it takes to reach a given probability of encountering at least one shiny Pokémon using the teleport-reset method.",
+			"encounterRateTitle": "Encounter Rate",
+			"encounterRateFormula": "Encounter rate = resets/min × Pokémon/reset",
+			"currentRate": "Currently: {rate} encounters/min",
+			"probabilityTitle": "Probability Model",
+			"probabilityBody": "The probability of encountering at least one shiny after N encounters is:",
+			"probabilityExplain": "where p is the shiny probability per encounter.",
+			"timeTitle": "Time Calculation",
+			"timeBody": "Times shown correspond to the time required to reach 50%, 90%, 95%, or 99% chance of encountering at least one shiny. These are probabilities, not guarantees.",
+			"shalphaTitle": "Shalpha Probability",
+			"shalphaBody": "Shalpha (shiny + alpha) probability is calculated as:"
+		}
 	}
 }
 

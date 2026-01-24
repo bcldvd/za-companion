@@ -28,6 +28,57 @@
 		"toggle": "Chromatique",
 		"enabled": "Mode chromatique activé",
 		"disabled": "Mode chromatique désactivé"
+	},
+	"hyperspace": {
+		"title": "Minuteur Chromatique Hyperspace",
+		"subtitle": "Calculez le temps pour atteindre vos objectifs de probabilité chromatique",
+		"method": {
+			"label": "Méthode",
+			"auto": "Boucle de téléportation auto",
+			"manual": "Téléportation manuelle"
+		},
+		"shinyDonut": {
+			"label": "Niveau de Donut Chromatique"
+		},
+		"alphaDonut": {
+			"label": "Niveau de Donut Alpha"
+		},
+		"level": {
+			"off": "Désactivé",
+			"lv": "Niv{level}"
+		},
+		"charm": {
+			"label": "Charme Chroma",
+			"on": "Activé",
+			"off": "Désactivé"
+		},
+		"pokemonPerReset": {
+			"label": "Pokémon par reset (dans ~50m)",
+			"hint": "Entrez un nombre entre 1 et 50"
+		},
+		"results": {
+			"title": "Résultats",
+			"howItWorks": "Comment ça marche",
+			"primaryLabel": "99% de chance en",
+			"average": "Moyenne",
+			"shalphaTitle": "Shalpha (Chroma + Alpha)",
+			"footnote": "Suppose des resets continus avec votre méthode et vos réglages.",
+			"enterValid": "Entrez des valeurs valides pour voir les résultats"
+		},
+		"modal": {
+			"title": "Comment ça marche",
+			"intro": "Le calculateur estime le temps nécessaire pour atteindre une probabilité donnée de rencontrer au moins un Pokémon chromatique via la méthode téléportation-reset.",
+			"encounterRateTitle": "Taux de rencontres",
+			"encounterRateFormula": "Taux de rencontres = resets/min × Pokémon/reset",
+			"currentRate": "Actuellement : {rate} rencontres/min",
+			"probabilityTitle": "Modèle de probabilité",
+			"probabilityBody": "La probabilité de rencontrer au moins un chromatique après N rencontres est :",
+			"probabilityExplain": "où p est la probabilité chromatique par rencontre.",
+			"timeTitle": "Calcul du temps",
+			"timeBody": "Les temps affichés correspondent au temps nécessaire pour atteindre 50%, 90%, 95% ou 99% de chance de rencontrer au moins un chromatique. Ce sont des probabilités, pas des garanties.",
+			"shalphaTitle": "Probabilité Shalpha",
+			"shalphaBody": "La probabilité Shalpha (chroma + alpha) est calculée comme suit :"
+		}
 	}
 }
 

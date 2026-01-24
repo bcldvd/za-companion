@@ -1,0 +1,11 @@
+---
+description: SvelteKit app structure and organization conventions
+category: shared
+globs: ['**/*.{ts,tsx,svelte}']
+alwaysApply: true
+priority: 10
+tags: ['typescript', 'sveltekit', 'best-practices']
+---
+
+- Organize SvelteKit apps with src/routes for top-level pages, src/lib/features for cohesive, feature-specific components and logic, and src/lib/components for generic UI elements.
+- To maximize testability, extract all business logic and side effects (API calls, storage) into dedicated `.ts` modules inside `src/lib`. Svelte `<script>` blocks should only contain the minimal "UI glue" logic needed to call these external functions. This allows pure logic to be unit-tested directly and side effects to be easily mocked for component tests.
