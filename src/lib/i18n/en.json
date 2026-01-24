@@ -60,6 +60,8 @@
 			"title": "Results",
 			"howItWorks": "How it works",
 			"primaryLabel": "99% chance in",
+			"encountersRequired": "Encounters needed: {count}",
+			"encountersSince": "≈ {count} encounters",
 			"average": "Average",
 			"shalphaTitle": "Shalpha (Shiny + Alpha)",
 			"footnote": "Assumes continuous resets using your method and settings.",
