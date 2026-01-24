@@ -6,7 +6,8 @@ let cachedPokedex: Pokemon[] | null = null;
 let loadPromise: Promise<Pokemon[]> | null = null;
 
 // Cache for translations
-let pokemonNameTranslations: { en: Record<number, string>; fr: Record<number, string> } | null = null;
+let pokemonNameTranslations: { en: Record<string, string>; fr: Record<string, string> } | null =
+	null;
 let typeTranslations: { en: Record<string, string>; fr: Record<string, string> } | null = null;
 let translationLoadPromise: Promise<void> | null = null;
 
@@ -24,14 +25,20 @@ async function loadTranslations(): Promise<void> {
 
 	translationLoadPromise = (async () => {
 		try {
-			const [pokemonEnResponse, pokemonFrResponse, typesEnResponse, typesFrResponse] = await Promise.all([
-				fetch('/pokemon-names-en.json'),
-				fetch('/pokemon-names-fr.json'),
-				fetch('/pokemon-types-en.json'),
-				fetch('/pokemon-types-fr.json')
-			]);
+			const [pokemonEnResponse, pokemonFrResponse, typesEnResponse, typesFrResponse] =
+				await Promise.all([
+					fetch('/pokemon-names-en.json'),
+					fetch('/pokemon-names-fr.json'),
+					fetch('/pokemon-types-en.json'),
+					fetch('/pokemon-types-fr.json')
+				]);
 
-			if (!pokemonEnResponse.ok || !pokemonFrResponse.ok || !typesEnResponse.ok || !typesFrResponse.ok) {
+			if (
+				!pokemonEnResponse.ok ||
+				!pokemonFrResponse.ok ||
+				!typesEnResponse.ok ||
+				!typesFrResponse.ok
+			) {
 				console.warn('Failed to load some translation files, using fallbacks');
 				pokemonNameTranslations = { en: {}, fr: {} };
 				typeTranslations = { en: {}, fr: {} };
@@ -61,13 +68,14 @@ async function loadTranslations(): Promise<void> {
  * Get localized Pokemon name
  */
 export function getLocalizedPokemonName(pokemon: Pokemon, locale?: 'en' | 'fr'): string {
-	if (!pokemonNameTranslations) {
+	const translations = pokemonNameTranslations;
+	if (!translations) {
 		return pokemon.name; // Fallback to original name
 	}
 
 	const lang = locale || getCurrentLanguage();
 	// Translation files use string keys, so convert nationalNumber to string
-	const translation = pokemonNameTranslations[lang]?.[String(pokemon.nationalNumber)];
+	const translation = translations[lang]?.[String(pokemon.nationalNumber)];
 	return translation || pokemon.name;
 }
 
@@ -75,13 +83,14 @@ export function getLocalizedPokemonName(pokemon: Pokemon, locale?: 'en' | 'fr'):
  * Get localized type names
  */
 export function getLocalizedTypes(types: string[], locale?: 'en' | 'fr'): string[] {
-	if (!typeTranslations) {
+	const translations = typeTranslations;
+	if (!translations) {
 		return types; // Fallback to original types
 	}
 
 	const lang = locale || getCurrentLanguage();
-	return types.map(type => {
-		const translation = typeTranslations[lang]?.[type];
+	return types.map((type) => {
+		const translation = translations[lang]?.[type];
 		return translation || type;
 	});
 }
@@ -125,12 +134,11 @@ export async function loadPokedex(): Promise<Pokemon[]> {
 			const hyperspaceData: Pokemon[] = await hyperspaceResponse.json();
 
 			// Find the last regional number to determine the offset
-			const lastRegionalNumber = regionalData.length > 0 
-				? Math.max(...regionalData.map(p => p.regionalNumber))
-				: 0;
+			const lastRegionalNumber =
+				regionalData.length > 0 ? Math.max(...regionalData.map((p) => p.regionalNumber)) : 0;
 
 			// Adjust hyperspace pokemon regional numbers to continue from regional pokedex
-			const adjustedHyperspace = hyperspaceData.map(pokemon => ({
+			const adjustedHyperspace = hyperspaceData.map((pokemon) => ({
 				...pokemon,
 				regionalNumber: lastRegionalNumber + pokemon.regionalNumber
 			}));
@@ -176,9 +184,9 @@ export function searchPokemonByName(query: string, pokedex: Pokemon[]): Pokemon[
 	if (!query.trim()) {
 		return [];
 	}
-	
+
 	const normalizedQuery = normalizeString(query);
-	return pokedex.filter(pokemon => {
+	return pokedex.filter((pokemon) => {
 		// Search in original name
 		const originalMatch = normalizeString(pokemon.name).includes(normalizedQuery);
 		if (originalMatch) return true;
@@ -186,7 +194,7 @@ export function searchPokemonByName(query: string, pokedex: Pokemon[]): Pokemon[
 		// Also search in translated names
 		const enName = normalizeString(getLocalizedPokemonName(pokemon, 'en'));
 		const frName = normalizeString(getLocalizedPokemonName(pokemon, 'fr'));
-		
+
 		return enName.includes(normalizedQuery) || frName.includes(normalizedQuery);
 	});
 }
@@ -199,25 +207,28 @@ export function filterPokemonByType(types: string[], pokedex: Pokemon[]): Pokemo
 	if (types.length === 0) {
 		return pokedex;
 	}
-	
-	return pokedex.filter(pokemon =>
-		types.some(type => pokemon.types.includes(type))
-	);
+
+	return pokedex.filter((pokemon) => types.some((type) => pokemon.types.includes(type)));
 }
 
 /**
  * Get Pokemon by regional number
  * Requires pokedex to be loaded first via loadPokedex()
  */
-export function getPokemonByRegionalNumber(regionalNumber: number, pokedex: Pokemon[]): Pokemon | undefined {
-	return pokedex.find(p => p.regionalNumber === regionalNumber);
+export function getPokemonByRegionalNumber(
+	regionalNumber: number,
+	pokedex: Pokemon[]
+): Pokemon | undefined {
+	return pokedex.find((p) => p.regionalNumber === regionalNumber);
 }
 
 /**
  * Get Pokemon by national number
  * Requires pokedex to be loaded first via loadPokedex()
  */
-export function getPokemonByNationalNumber(nationalNumber: number, pokedex: Pokemon[]): Pokemon | undefined {
-	return pokedex.find(p => p.nationalNumber === nationalNumber);
+export function getPokemonByNationalNumber(
+	nationalNumber: number,
+	pokedex: Pokemon[]
+): Pokemon | undefined {
+	return pokedex.find((p) => p.nationalNumber === nationalNumber);
 }
-

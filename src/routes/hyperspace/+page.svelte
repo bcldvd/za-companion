@@ -156,9 +156,9 @@
 			<div class="order-2 space-y-6 lg:order-1">
 				<!-- Method Selection -->
 				<div>
-					<label class="mb-2 block text-sm font-medium text-blue-200"
-						>{$_('hyperspace.method.label')}</label
-					>
+					<div class="mb-2 block text-sm font-medium text-blue-200">
+						{$_('hyperspace.method.label')}
+					</div>
 					<div class="flex gap-2 rounded-lg border border-blue-700 bg-blue-800/50 p-1">
 						<button
 							type="button"
@@ -185,9 +185,9 @@
 
 				<!-- Shiny Donut Level -->
 				<div>
-					<label class="mb-2 block text-sm font-medium text-blue-200"
-						>{$_('hyperspace.shinyDonut.label')}</label
-					>
+					<div class="mb-2 block text-sm font-medium text-blue-200">
+						{$_('hyperspace.shinyDonut.label')}
+					</div>
 					<div class="flex flex-wrap gap-2">
 						{#each [0, 1, 2, 3] as level}
 							{@const isSelected = shinyDonutLevel === level}
@@ -208,9 +208,9 @@
 
 				<!-- Alpha Donut Level -->
 				<div>
-					<label class="mb-2 block text-sm font-medium text-blue-200"
-						>{$_('hyperspace.alphaDonut.label')}</label
-					>
+					<div class="mb-2 block text-sm font-medium text-blue-200">
+						{$_('hyperspace.alphaDonut.label')}
+					</div>
 					<div class="flex flex-wrap gap-2">
 						{#each [0, 1, 2, 3] as level}
 							{@const isSelected = alphaDonutLevel === level}
@@ -231,11 +231,12 @@
 
 				<!-- Pokémon per Reset -->
 				<div>
-					<label class="mb-2 block text-sm font-medium text-blue-200">
+					<label for="pokemon-per-reset" class="mb-2 block text-sm font-medium text-blue-200">
 						{$_('hyperspace.pokemonPerReset.label')}
 					</label>
 					<div class="flex items-center gap-2">
 						<input
+							id="pokemon-per-reset"
 							type="number"
 							min="1"
 							max="50"
@@ -264,9 +265,9 @@
 
 				<!-- Shiny Charm -->
 				<div>
-					<label class="mb-2 block text-sm font-medium text-blue-200"
-						>{$_('hyperspace.charm.label')}</label
-					>
+					<div class="mb-2 block text-sm font-medium text-blue-200">
+						{$_('hyperspace.charm.label')}
+					</div>
 					<div class="flex gap-2 rounded-lg border border-blue-700 bg-blue-800/50 p-1">
 						<button
 							type="button"
@@ -298,13 +299,22 @@
 	<div
 		class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
 		onclick={() => (showHowItWorks = false)}
+		onkeydown={(e) => {
+			if (e.key === 'Escape') showHowItWorks = false;
+		}}
 		role="dialog"
+		tabindex="-1"
 		aria-modal="true"
 		aria-labelledby="modal-title"
 	>
 		<div
 			class="w-full max-w-lg space-y-4 rounded-lg border border-blue-700 bg-blue-900 p-6"
 			onclick={(e) => e.stopPropagation()}
+			onkeydown={(e) => {
+				if (e.key === 'Escape') showHowItWorks = false;
+			}}
+			role="document"
+			tabindex="0"
 		>
 			<div class="flex items-center justify-between">
 				<h2 id="modal-title" class="text-xl font-bold">{$_('hyperspace.modal.title')}</h2>

@@ -5,7 +5,13 @@
 	import { _ } from 'svelte-i18n';
 	import type { Pokemon } from '$lib/types/pokemon.js';
 	import { calculateBoxPosition } from '$lib/utils/boxCalculator.js';
-	import { loadPokedex, getPokemonByNationalNumber, getLocalizedPokemonName, getLocalizedTypes, searchPokemonByName } from '$lib/utils/pokedex.js';
+	import {
+		loadPokedex,
+		getPokemonByNationalNumber,
+		getLocalizedPokemonName,
+		getLocalizedTypes,
+		searchPokemonByName
+	} from '$lib/utils/pokedex.js';
 	import { getPokemonSprite } from '$lib/utils/pokeapi.js';
 	import ShinyToggle from '$lib/components/ShinyToggle.svelte';
 
@@ -15,24 +21,20 @@
 	let isLoading = $state(true);
 	let notFound = $state(false);
 	let pokedex = $state<Pokemon[] | null>(null);
-	
+
 	// Search functionality
 	let searchQuery = $state('');
 	let searchResults = $state<Pokemon[]>([]);
 	let showDropdown = $state(false);
 	let searchTimeout: ReturnType<typeof setTimeout> | null = null;
 	let searchRequestId = 0;
-	
+
 	// Initialize isShiny from localStorage
-	let isShiny = $state<boolean>(() => {
-		if (typeof window === 'undefined') return false;
-		const stored = localStorage.getItem('pokemon-legends-za-shiny');
-		return stored === 'true';
-	});
+	let isShiny = $state(false);
 
 	// Map to store sprite URLs for each pokemon (key: nationalNumber, value: { default: string, shiny: string })
 	let spriteUrls = $state<Map<number, { default: string; shiny: string }>>(new Map());
-	
+
 	// Map to store sprite URLs for search results
 	let searchResultSpriteUrls = $state<Map<number, string>>(new Map());
 
@@ -105,44 +107,56 @@
 	});
 
 	// Load Pokémon when ID changes
-	$effect(async () => {
-		// Ensure dropdown doesn't persist across route param changes
-		showDropdown = false;
+	$effect(() => {
+		let cancelled = false;
 
-		if (!pokemonId || isNaN(pokemonId)) {
-			notFound = true;
-			isLoading = false;
-			return;
-		}
+		void (async () => {
+			// Ensure dropdown doesn't persist across route param changes
+			showDropdown = false;
 
-		isLoading = true;
-		notFound = false;
-
-		try {
-			// Load pokedex if not already loaded
-			if (!pokedex) {
-				pokedex = await loadPokedex();
+			if (!pokemonId || isNaN(pokemonId)) {
+				notFound = true;
+				isLoading = false;
+				return;
 			}
 
-			// Find Pokémon by national number
-			const pokemon = getPokemonByNationalNumber(pokemonId, pokedex);
-			
-			if (pokemon) {
-				selectedPokemon = pokemon;
-				boxPosition = calculateBoxPosition(pokemon.regionalNumber);
-			} else {
+			isLoading = true;
+			notFound = false;
+
+			try {
+				// Load pokedex if not already loaded
+				if (!pokedex) {
+					pokedex = await loadPokedex();
+				}
+
+				if (cancelled) return;
+
+				// Find Pokémon by national number
+				const pokemon = getPokemonByNationalNumber(pokemonId, pokedex);
+
+				if (pokemon) {
+					selectedPokemon = pokemon;
+					boxPosition = calculateBoxPosition(pokemon.regionalNumber);
+				} else {
+					notFound = true;
+					selectedPokemon = null;
+					boxPosition = null;
+				}
+			} catch (error) {
+				if (cancelled) return;
+				console.error('Error loading Pokemon:', error);
 				notFound = true;
 				selectedPokemon = null;
 				boxPosition = null;
+			} finally {
+				if (cancelled) return;
+				isLoading = false;
 			}
-		} catch (error) {
-			console.error('Error loading Pokemon:', error);
-			notFound = true;
-			selectedPokemon = null;
-			boxPosition = null;
-		} finally {
-			isLoading = false;
-		}
+		})();
+
+		return () => {
+			cancelled = true;
+		};
 	});
 
 	function goHome() {
@@ -153,7 +167,7 @@
 		const queryString = params.toString();
 		goto(queryString ? `/box?${queryString}` : '/box');
 	}
-	
+
 	async function searchPokemon(query: string, requestId: number) {
 		if (!query.trim()) {
 			searchResults = [];
@@ -181,7 +195,7 @@
 			if (requestId !== searchRequestId) return;
 			searchResults = results.slice(0, 10); // Limit to 10 results
 			showDropdown = true;
-			
+
 			// Fetch sprites for search results
 			Promise.all(
 				results.slice(0, 10).map(async (pokemon) => {
@@ -238,7 +252,11 @@
 			params.set('q', searchQuery);
 		}
 		const queryString = params.toString();
-		goto(queryString ? `/box/pokemon/${pokemon.nationalNumber}?${queryString}` : `/box/pokemon/${pokemon.nationalNumber}`);
+		goto(
+			queryString
+				? `/box/pokemon/${pokemon.nationalNumber}?${queryString}`
+				: `/box/pokemon/${pokemon.nationalNumber}`
+		);
 	}
 
 	function clearSearch() {
@@ -246,7 +264,7 @@
 		searchResults = [];
 		showDropdown = false;
 		searchRequestId++;
-		
+
 		// Update URL to remove search query
 		const params = new URLSearchParams($page.url.searchParams);
 		params.delete('q');
@@ -279,59 +297,69 @@
 	});
 
 	onMount(() => {
+		// Initialize shiny toggle from localStorage (client-only)
+		const stored = localStorage.getItem('pokemon-legends-za-shiny');
+		isShiny = stored === 'true';
+
 		document.addEventListener('click', handleClickOutside);
-		
+
 		return () => {
 			document.removeEventListener('click', handleClickOutside);
 		};
 	});
 </script>
 
-<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 text-white p-4">
-	<div class="max-w-2xl mx-auto">
+<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 p-4 text-white">
+	<div class="mx-auto max-w-2xl">
 		<!-- Search Section -->
-		<div class="mb-6 search-container relative">
+		<div class="search-container relative mb-6">
 			<div class="flex items-center gap-3">
-				<ShinyToggle bind:isShiny={isShiny} />
+				<ShinyToggle bind:isShiny />
 				<div class="relative flex-1">
-				<input
-					type="text"
-					placeholder={$_('search.placeholder')}
-					value={searchQuery}
-					oninput={handleSearchInput}
-					class="w-full px-4 py-3 rounded-lg bg-blue-800/50 border border-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg min-h-[44px]"
-					autocomplete="off"
-				/>
-				{#if searchQuery}
-					<button
-						onclick={clearSearch}
-						class="absolute right-3 top-1/2 -translate-y-1/2 text-blue-300 hover:text-white text-xl leading-none"
-						aria-label="Clear search"
-					>
-						✕
-					</button>
-				{/if}
+					<input
+						type="text"
+						placeholder={$_('search.placeholder')}
+						value={searchQuery}
+						oninput={handleSearchInput}
+						class="min-h-[44px] w-full rounded-lg border border-blue-700 bg-blue-800/50 px-4 py-3 text-lg text-white placeholder-blue-300 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none"
+						autocomplete="off"
+					/>
+					{#if searchQuery}
+						<button
+							onclick={clearSearch}
+							class="absolute top-1/2 right-3 -translate-y-1/2 text-xl leading-none text-blue-300 hover:text-white"
+							aria-label="Clear search"
+						>
+							✕
+						</button>
+					{/if}
 				</div>
 			</div>
 
 			<!-- Autocomplete Dropdown -->
 			{#if showDropdown && searchResults.length > 0}
-				<div class="absolute z-50 w-full mt-2 bg-blue-800 rounded-lg border border-blue-700 shadow-xl max-h-80 overflow-y-auto">
+				<div
+					class="absolute z-50 mt-2 max-h-80 w-full overflow-y-auto rounded-lg border border-blue-700 bg-blue-800 shadow-xl"
+				>
 					{#each searchResults as pokemon}
-						{@const spriteUrl = searchResultSpriteUrls.get(pokemon.nationalNumber) || pokemon.imageUrl}
+						{@const spriteUrl =
+							searchResultSpriteUrls.get(pokemon.nationalNumber) || pokemon.imageUrl}
 						<button
 							onclick={() => selectPokemon(pokemon)}
-							class="w-full px-4 py-3 flex items-center gap-3 hover:bg-blue-700 active:bg-blue-600 transition-colors text-left border-b border-blue-700 last:border-b-0 min-h-[60px] touch-manipulation"
+							class="flex min-h-[60px] w-full touch-manipulation items-center gap-3 border-b border-blue-700 px-4 py-3 text-left transition-colors last:border-b-0 hover:bg-blue-700 active:bg-blue-600"
 						>
 							<img
 								src={spriteUrl}
 								alt={getLocalizedPokemonName(pokemon)}
-								class="w-12 h-12 object-contain"
+								class="h-12 w-12 object-contain"
 							/>
 							<div class="flex-1">
 								<div class="font-semibold text-white">{getLocalizedPokemonName(pokemon)}</div>
 								<div class="text-sm text-blue-300">
-									{$_('pokemon.regional')} {String(pokemon.regionalNumber).padStart(3, '0')} • {getLocalizedTypes(pokemon.types).join(', ')}
+									{$_('pokemon.regional')}
+									{String(pokemon.regionalNumber).padStart(3, '0')} • {getLocalizedTypes(
+										pokemon.types
+									).join(', ')}
 								</div>
 							</div>
 						</button>
@@ -341,40 +369,41 @@
 		</div>
 
 		{#if isLoading}
-			<div class="text-center py-12 text-blue-300">
-				<p class="text-lg mb-2">{$_('pokemon.loading')}</p>
+			<div class="py-12 text-center text-blue-300">
+				<p class="mb-2 text-lg">{$_('pokemon.loading')}</p>
 			</div>
 		{:else if notFound}
-			<div class="text-center py-12 text-blue-300">
-				<p class="text-lg mb-2">{$_('pokemon.notFound')} (ID: {pokemonId})</p>
-				<button
-					onclick={goHome}
-					class="mt-4 px-4 py-2 bg-blue-700 hover:bg-blue-600 rounded-lg"
-				>
+			<div class="py-12 text-center text-blue-300">
+				<p class="mb-2 text-lg">{$_('pokemon.notFound')} (ID: {pokemonId})</p>
+				<button onclick={goHome} class="mt-4 rounded-lg bg-blue-700 px-4 py-2 hover:bg-blue-600">
 					{$_('pokemon.backToSearch')}
 				</button>
 			</div>
 		{:else if selectedPokemon && boxPosition}
 			<!-- Selected Pokemon Info -->
-			<div class="mb-6 p-4 bg-blue-800/50 rounded-lg border border-blue-700">
-				<div class="flex items-center gap-4 mb-4">
+			<div class="mb-6 rounded-lg border border-blue-700 bg-blue-800/50 p-4">
+				<div class="mb-4 flex items-center gap-4">
 					<img
 						src={selectedPokemonSpriteUrl || selectedPokemon.imageUrl}
 						alt={getLocalizedPokemonName(selectedPokemon)}
-						class="w-20 h-20 object-contain"
+						class="h-20 w-20 object-contain"
 					/>
 					<div class="flex-1">
 						<h3 class="text-2xl font-bold">{getLocalizedPokemonName(selectedPokemon)}</h3>
 						<p class="text-blue-200">
-							{$_('pokemon.regional')} {selectedPokemon.regionalNumber} • {getLocalizedTypes(selectedPokemon.types).join(', ')}
+							{$_('pokemon.regional')}
+							{selectedPokemon.regionalNumber} • {getLocalizedTypes(selectedPokemon.types).join(
+								', '
+							)}
 						</p>
 					</div>
 				</div>
 
 				<!-- Text Placement Info -->
-				<div class="text-center py-3 bg-blue-900/50 rounded-lg">
+				<div class="rounded-lg bg-blue-900/50 py-3 text-center">
 					<p class="text-lg font-semibold">
-						{$_('pokemon.placeIn')} <span class="text-yellow-300">{$_('pokemon.box')} {boxPosition.box}</span>,{' '}
+						{$_('pokemon.placeIn')}
+						<span class="text-yellow-300">{$_('pokemon.box')} {boxPosition.box}</span>,{' '}
 						<span class="text-yellow-300">{$_('pokemon.row')} {boxPosition.row}</span>,{' '}
 						<span class="text-yellow-300">{$_('pokemon.column')} {boxPosition.column}</span>
 					</p>
@@ -382,22 +411,23 @@
 			</div>
 
 			<!-- Visual Box Representation -->
-			<div class="bg-blue-800/50 rounded-lg border border-blue-700 p-4">
-				<div class="text-center mb-4">
+			<div class="rounded-lg border border-blue-700 bg-blue-800/50 p-4">
+				<div class="mb-4 text-center">
 					<h3 class="text-xl font-bold">{$_('pokemon.box')} {boxPosition.box}</h3>
 				</div>
 
 				<!-- Grid with Labels -->
-				<div class="max-w-md mx-auto">
+				<div class="mx-auto max-w-md">
 					<!-- Column Labels -->
-					<div class="grid grid-cols-[auto_1fr] gap-2 mb-2">
+					<div class="mb-2 grid grid-cols-[auto_1fr] gap-2">
 						<!-- Empty space for row labels column -->
 						<div class="w-12"></div>
 						<!-- Column labels aligned with grid -->
 						<div class="grid grid-cols-6 gap-2">
 							{#each Array(6) as _, colIndex}
-								<div class="text-center text-xs text-blue-300 font-semibold">
-									{colLabel} {colIndex + 1}
+								<div class="text-center text-xs font-semibold text-blue-300">
+									{colLabel}
+									{colIndex + 1}
 								</div>
 							{/each}
 						</div>
@@ -406,10 +436,13 @@
 					<!-- Box Grid with Row Labels -->
 					<div class="grid grid-cols-[auto_1fr] gap-2">
 						<!-- Row Labels -->
-						<div class="flex flex-col gap-2 justify-center w-12">
+						<div class="flex w-12 flex-col justify-center gap-2">
 							{#each Array(5) as _, rowIndex}
-								<div class="text-xs text-blue-300 font-semibold flex items-center h-full min-h-[calc((100%-2rem)/5)]">
-									{rowLabel} {rowIndex + 1}
+								<div
+									class="flex h-full min-h-[calc((100%-2rem)/5)] items-center text-xs font-semibold text-blue-300"
+								>
+									{rowLabel}
+									{rowIndex + 1}
 								</div>
 							{/each}
 						</div>
@@ -420,15 +453,15 @@
 								{@const isTargetSlot = index === boxPosition.slotIndex}
 								<div
 									class="aspect-square rounded-lg border-2 transition-all {isTargetSlot
-										? 'bg-yellow-400 border-yellow-300 shadow-lg shadow-yellow-500/50 scale-110 z-10'
-										: 'bg-blue-700/30 border-blue-600'}"
+										? 'z-10 scale-110 border-yellow-300 bg-yellow-400 shadow-lg shadow-yellow-500/50'
+										: 'border-blue-600 bg-blue-700/30'}"
 								>
 									{#if isTargetSlot}
-										<div class="w-full h-full flex flex-col items-center justify-center p-1">
+										<div class="flex h-full w-full flex-col items-center justify-center p-1">
 											<img
 												src={selectedPokemonSpriteUrl || selectedPokemon.imageUrl}
 												alt={getLocalizedPokemonName(selectedPokemon)}
-												class="w-full h-full object-contain"
+												class="h-full w-full object-contain"
 											/>
 										</div>
 									{/if}
