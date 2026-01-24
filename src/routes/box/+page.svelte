@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { _ } from 'svelte-i18n';
@@ -11,6 +11,7 @@
 	let searchQuery = $state('');
 	let searchResults = $state<Pokemon[]>([]);
 	let showDropdown = $state(false);
+	let searchInput = $state<HTMLInputElement | null>(null);
 	let searchTimeout: ReturnType<typeof setTimeout> | null = null;
 	let searchRequestId = 0;
 	let pokedex = $state<Pokemon[] | null>(null);
@@ -172,7 +173,7 @@
 		goto(queryString ? `/box/pokemon/${pokemon.nationalNumber}?${queryString}` : `/box/pokemon/${pokemon.nationalNumber}`);
 	}
 
-	function clearSelection() {
+	async function clearSelection() {
 		searchQuery = '';
 		searchResults = [];
 		showDropdown = false;
@@ -184,6 +185,9 @@
 		const queryString = params.toString();
 		const newUrl = queryString ? `/box?${queryString}` : '/box';
 		goto(newUrl, { replaceState: true, noScroll: true, keepFocus: true });
+
+		await tick();
+		searchInput?.focus();
 	}
 
 	// Close dropdown when clicking outside
@@ -263,13 +267,16 @@
 							placeholder={$_('search.placeholder')}
 							value={searchQuery}
 							oninput={handleSearchInput}
-							class="w-full px-4 py-3 rounded-lg bg-blue-800/50 border border-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg min-h-[44px]"
+							bind:this={searchInput}
+							class="w-full pl-4 pr-14 py-3 rounded-lg bg-blue-800/50 border border-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg min-h-[44px]"
 							autocomplete="off"
 						/>
 						{#if searchQuery}
 							<button
+								type="button"
+								onpointerdown|preventDefault
 								onclick={clearSelection}
-								class="absolute right-3 top-1/2 -translate-y-1/2 text-blue-300 hover:text-white text-xl leading-none"
+								class="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-blue-500 bg-blue-800/80 px-2.5 py-1 text-xs font-semibold text-blue-100 shadow-sm hover:bg-blue-700 hover:text-white active:bg-blue-600"
 								aria-label="Clear search"
 							>
 								✕

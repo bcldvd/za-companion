@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { _ } from 'svelte-i18n';
@@ -26,6 +26,7 @@
 	let searchQuery = $state('');
 	let searchResults = $state<Pokemon[]>([]);
 	let showDropdown = $state(false);
+	let searchInput = $state<HTMLInputElement | null>(null);
 	let searchTimeout: ReturnType<typeof setTimeout> | null = null;
 	let searchRequestId = 0;
 
@@ -259,7 +260,7 @@
 		);
 	}
 
-	function clearSearch() {
+	async function clearSearch() {
 		searchQuery = '';
 		searchResults = [];
 		showDropdown = false;
@@ -271,6 +272,9 @@
 		const queryString = params.toString();
 		const newUrl = queryString ? `${$page.url.pathname}?${queryString}` : $page.url.pathname;
 		goto(newUrl, { replaceState: true, noScroll: true, keepFocus: true });
+
+		await tick();
+		searchInput?.focus();
 	}
 
 	// Close dropdown when clicking outside
@@ -434,13 +438,16 @@
 							placeholder={$_('search.placeholder')}
 							value={searchQuery}
 							oninput={handleSearchInput}
-							class="min-h-[44px] w-full rounded-lg border border-blue-700 bg-blue-800/50 px-4 py-3 text-lg text-white placeholder-blue-300 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none"
+							bind:this={searchInput}
+							class="min-h-[44px] w-full rounded-lg border border-blue-700 bg-blue-800/50 pl-4 pr-14 py-3 text-lg text-white placeholder-blue-300 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							autocomplete="off"
 						/>
 						{#if searchQuery}
 							<button
+								type="button"
+								onpointerdown|preventDefault
 								onclick={clearSearch}
-								class="absolute top-1/2 right-3 -translate-y-1/2 text-xl leading-none text-blue-300 hover:text-white"
+								class="absolute top-1/2 right-2 -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-blue-500 bg-blue-800/80 px-2.5 py-1 text-xs font-semibold text-blue-100 shadow-sm hover:bg-blue-700 hover:text-white active:bg-blue-600"
 								aria-label="Clear search"
 							>
 								✕
