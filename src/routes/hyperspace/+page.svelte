@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import { computeHyperspaceTimes, type CalculatorInput, type Method, type DonutLevel } from '$lib/hyperspace/hyperspaceCalculator.js';
+	import {
+		computeHyperspaceTimes,
+		type CalculatorInput,
+		type Method,
+		type DonutLevel
+	} from '$lib/hyperspace/hyperspaceCalculator.js';
 
 	// Input state
 	let method = $state<Method>('auto');
@@ -58,23 +63,107 @@
 	});
 </script>
 
-<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 text-white p-4">
-	<div class="max-w-6xl mx-auto">
-		<div class="text-center py-8 mb-8">
-			<h1 class="text-4xl font-bold mb-2">{$_('hyperspace.title')}</h1>
-			<p class="text-blue-300">{$_('hyperspace.subtitle')}</p>
-		</div>
-
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-			<!-- Inputs Section -->
-			<div class="space-y-6">
-				<!-- Method Selection -->
-				<div>
-					<label class="block text-sm font-medium mb-2 text-blue-200">{$_('hyperspace.method.label')}</label>
-					<div class="flex gap-2 bg-blue-800/50 rounded-lg p-1 border border-blue-700">
+<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 p-4 text-white">
+	<div class="mx-auto max-w-6xl">
+		<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+			<!-- Results Section -->
+			<div class="order-1 h-fit lg:sticky lg:top-4 lg:order-2">
+				<div class="space-y-4 rounded-lg border border-blue-700 bg-blue-800/50 p-6">
+					<div class="mb-4 flex items-center justify-between">
+						<h2 class="text-xl font-bold">{$_('hyperspace.results.title')}</h2>
 						<button
 							type="button"
-							class="flex-1 px-4 py-2 rounded-md text-sm font-medium transition-colors {method === 'auto'
+							class="text-sm text-blue-300 underline hover:text-white"
+							onclick={() => (showHowItWorks = true)}
+						>
+							{$_('hyperspace.results.howItWorks')}
+						</button>
+					</div>
+
+					{#if results}
+						<!-- Primary Result: 99% chance -->
+						<div class="rounded-lg border border-blue-600 bg-blue-900/50 p-4">
+							<div class="mb-1 text-sm text-blue-300">{$_('hyperspace.results.primaryLabel')}</div>
+							<div class="text-3xl font-bold">{results.t99Formatted}</div>
+						</div>
+
+						<!-- Secondary Results: 50%, 90%, 95% -->
+						<div class="flex flex-wrap gap-2">
+							<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
+								<div class="text-xs text-blue-300">50%</div>
+								<div class="text-sm font-semibold">{results.t50Formatted}</div>
+							</div>
+							<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
+								<div class="text-xs text-blue-300">90%</div>
+								<div class="text-sm font-semibold">{results.t90Formatted}</div>
+							</div>
+							<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
+								<div class="text-xs text-blue-300">95%</div>
+								<div class="text-sm font-semibold">{results.t95Formatted}</div>
+							</div>
+						</div>
+
+						<!-- Average Time -->
+						<div class="text-sm text-blue-300">
+							{$_('hyperspace.results.average')}:
+							<span class="font-semibold text-white">{results.tAvgFormatted}</span>
+						</div>
+
+						<!-- Shalpha Results (if alpha donut is enabled) -->
+						{#if alphaDonutLevel > 0 && results.shalphaProbability > 0}
+							<div class="border-t border-blue-700 pt-4">
+								<h3 class="mb-3 text-sm font-semibold text-blue-200">
+									{$_('hyperspace.results.shalphaTitle')}
+								</h3>
+								<div class="mb-3 rounded-lg border border-blue-600 bg-blue-900/50 p-4">
+									<div class="mb-1 text-sm text-blue-300">
+										{$_('hyperspace.results.primaryLabel')}
+									</div>
+									<div class="text-2xl font-bold">{results.t99ShalphaFormatted}</div>
+								</div>
+								<div class="flex flex-wrap gap-2">
+									<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
+										<div class="text-xs text-blue-300">50%</div>
+										<div class="text-sm font-semibold">{results.t50ShalphaFormatted}</div>
+									</div>
+									<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
+										<div class="text-xs text-blue-300">90%</div>
+										<div class="text-sm font-semibold">{results.t90ShalphaFormatted}</div>
+									</div>
+									<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
+										<div class="text-xs text-blue-300">95%</div>
+										<div class="text-sm font-semibold">{results.t95ShalphaFormatted}</div>
+									</div>
+								</div>
+								<div class="mt-2 text-sm text-blue-300">
+									{$_('hyperspace.results.average')}:
+									<span class="font-semibold text-white">{results.tAvgShalphaFormatted}</span>
+								</div>
+							</div>
+						{/if}
+
+						<!-- Footnote -->
+						<div class="border-t border-blue-700 pt-2 text-xs text-blue-400">
+							{$_('hyperspace.results.footnote')}
+						</div>
+					{:else}
+						<div class="text-sm text-blue-300">{$_('hyperspace.results.enterValid')}</div>
+					{/if}
+				</div>
+			</div>
+
+			<!-- Inputs Section -->
+			<div class="order-2 space-y-6 lg:order-1">
+				<!-- Method Selection -->
+				<div>
+					<label class="mb-2 block text-sm font-medium text-blue-200"
+						>{$_('hyperspace.method.label')}</label
+					>
+					<div class="flex gap-2 rounded-lg border border-blue-700 bg-blue-800/50 p-1">
+						<button
+							type="button"
+							class="flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors {method ===
+							'auto'
 								? 'bg-blue-600 text-white'
 								: 'text-blue-300 hover:bg-blue-700/50'}"
 							onclick={() => (method = 'auto')}
@@ -83,7 +172,8 @@
 						</button>
 						<button
 							type="button"
-							class="flex-1 px-4 py-2 rounded-md text-sm font-medium transition-colors {method === 'manual'
+							class="flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors {method ===
+							'manual'
 								? 'bg-blue-600 text-white'
 								: 'text-blue-300 hover:bg-blue-700/50'}"
 							onclick={() => (method = 'manual')}
@@ -95,18 +185,22 @@
 
 				<!-- Shiny Donut Level -->
 				<div>
-					<label class="block text-sm font-medium mb-2 text-blue-200">{$_('hyperspace.shinyDonut.label')}</label>
-					<div class="flex gap-2 flex-wrap">
+					<label class="mb-2 block text-sm font-medium text-blue-200"
+						>{$_('hyperspace.shinyDonut.label')}</label
+					>
+					<div class="flex flex-wrap gap-2">
 						{#each [0, 1, 2, 3] as level}
 							{@const isSelected = shinyDonutLevel === level}
 							<button
 								type="button"
-								class="px-4 py-2 rounded-full text-sm font-medium transition-colors {isSelected
+								class="rounded-full px-4 py-2 text-sm font-medium transition-colors {isSelected
 									? 'bg-blue-600 text-white'
-									: 'bg-blue-800/50 text-blue-300 hover:bg-blue-700/50 border border-blue-700'}"
+									: 'border border-blue-700 bg-blue-800/50 text-blue-300 hover:bg-blue-700/50'}"
 								onclick={() => (shinyDonutLevel = level as DonutLevel)}
 							>
-							{level === 0 ? $_('hyperspace.level.off') : $_('hyperspace.level.lv', { values: { level } })}
+								{level === 0
+									? $_('hyperspace.level.off')
+									: $_('hyperspace.level.lv', { values: { level } })}
 							</button>
 						{/each}
 					</div>
@@ -114,61 +208,40 @@
 
 				<!-- Alpha Donut Level -->
 				<div>
-					<label class="block text-sm font-medium mb-2 text-blue-200">{$_('hyperspace.alphaDonut.label')}</label>
-					<div class="flex gap-2 flex-wrap">
+					<label class="mb-2 block text-sm font-medium text-blue-200"
+						>{$_('hyperspace.alphaDonut.label')}</label
+					>
+					<div class="flex flex-wrap gap-2">
 						{#each [0, 1, 2, 3] as level}
 							{@const isSelected = alphaDonutLevel === level}
 							<button
 								type="button"
-								class="px-4 py-2 rounded-full text-sm font-medium transition-colors {isSelected
+								class="rounded-full px-4 py-2 text-sm font-medium transition-colors {isSelected
 									? 'bg-blue-600 text-white'
-									: 'bg-blue-800/50 text-blue-300 hover:bg-blue-700/50 border border-blue-700'}"
+									: 'border border-blue-700 bg-blue-800/50 text-blue-300 hover:bg-blue-700/50'}"
 								onclick={() => (alphaDonutLevel = level as DonutLevel)}
 							>
-							{level === 0 ? $_('hyperspace.level.off') : $_('hyperspace.level.lv', { values: { level } })}
+								{level === 0
+									? $_('hyperspace.level.off')
+									: $_('hyperspace.level.lv', { values: { level } })}
 							</button>
 						{/each}
 					</div>
 				</div>
 
-				<!-- Shiny Charm -->
-				<div>
-					<label class="block text-sm font-medium mb-2 text-blue-200">{$_('hyperspace.charm.label')}</label>
-					<div class="flex gap-2 bg-blue-800/50 rounded-lg p-1 border border-blue-700">
-						<button
-							type="button"
-							class="flex-1 px-4 py-2 rounded-md text-sm font-medium transition-colors {shinyCharm
-								? 'bg-blue-600 text-white'
-								: 'text-blue-300 hover:bg-blue-700/50'}"
-							onclick={() => (shinyCharm = true)}
-						>
-							{$_('hyperspace.charm.on')}
-						</button>
-						<button
-							type="button"
-							class="flex-1 px-4 py-2 rounded-md text-sm font-medium transition-colors {!shinyCharm
-								? 'bg-blue-600 text-white'
-								: 'text-blue-300 hover:bg-blue-700/50'}"
-							onclick={() => (shinyCharm = false)}
-						>
-							{$_('hyperspace.charm.off')}
-						</button>
-					</div>
-				</div>
-
 				<!-- Pokémon per Reset -->
 				<div>
-					<label class="block text-sm font-medium mb-2 text-blue-200">
+					<label class="mb-2 block text-sm font-medium text-blue-200">
 						{$_('hyperspace.pokemonPerReset.label')}
 					</label>
-					<div class="flex gap-2 items-center">
-					<input
-						type="number"
-						min="1"
-						max="50"
-						value={pokemonPerResetInput}
-						oninput={(e) => updatePokemonPerReset(e.currentTarget.value)}
-							class="w-20 px-3 py-2 rounded-lg bg-blue-800/50 border border-blue-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent {!isPokemonPerResetValid
+					<div class="flex items-center gap-2">
+						<input
+							type="number"
+							min="1"
+							max="50"
+							value={pokemonPerResetInput}
+							oninput={(e) => updatePokemonPerReset(e.currentTarget.value)}
+							class="w-20 rounded-lg border border-blue-700 bg-blue-800/50 px-3 py-2 text-white focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none {!isPokemonPerResetValid
 								? 'border-red-500'
 								: ''}"
 						/>
@@ -176,7 +249,7 @@
 							{#each [5, 10, 15, 20] as preset}
 								<button
 									type="button"
-									class="px-3 py-1 text-xs rounded bg-blue-800/50 text-blue-300 hover:bg-blue-700/50 border border-blue-700 transition-colors"
+									class="rounded border border-blue-700 bg-blue-800/50 px-3 py-1 text-xs text-blue-300 transition-colors hover:bg-blue-700/50"
 									onclick={() => setPreset(preset)}
 								>
 									{preset}
@@ -185,88 +258,35 @@
 						</div>
 					</div>
 					{#if !isPokemonPerResetValid}
-						<p class="text-red-400 text-xs mt-1">{$_('hyperspace.pokemonPerReset.hint')}</p>
+						<p class="mt-1 text-xs text-red-400">{$_('hyperspace.pokemonPerReset.hint')}</p>
 					{/if}
 				</div>
-			</div>
 
-			<!-- Results Section -->
-			<div class="lg:sticky lg:top-4 h-fit">
-				<div class="bg-blue-800/50 rounded-lg border border-blue-700 p-6 space-y-4">
-					<div class="flex items-center justify-between mb-4">
-						<h2 class="text-xl font-bold">{$_('hyperspace.results.title')}</h2>
+				<!-- Shiny Charm -->
+				<div>
+					<label class="mb-2 block text-sm font-medium text-blue-200"
+						>{$_('hyperspace.charm.label')}</label
+					>
+					<div class="flex gap-2 rounded-lg border border-blue-700 bg-blue-800/50 p-1">
 						<button
 							type="button"
-							class="text-sm text-blue-300 hover:text-white underline"
-							onclick={() => (showHowItWorks = true)}
+							class="flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors {shinyCharm
+								? 'bg-blue-600 text-white'
+								: 'text-blue-300 hover:bg-blue-700/50'}"
+							onclick={() => (shinyCharm = true)}
 						>
-							{$_('hyperspace.results.howItWorks')}
+							{$_('hyperspace.charm.on')}
+						</button>
+						<button
+							type="button"
+							class="flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors {!shinyCharm
+								? 'bg-blue-600 text-white'
+								: 'text-blue-300 hover:bg-blue-700/50'}"
+							onclick={() => (shinyCharm = false)}
+						>
+							{$_('hyperspace.charm.off')}
 						</button>
 					</div>
-
-					{#if results}
-						<!-- Primary Result: 99% chance -->
-						<div class="bg-blue-900/50 rounded-lg p-4 border border-blue-600">
-							<div class="text-sm text-blue-300 mb-1">{$_('hyperspace.results.primaryLabel')}</div>
-							<div class="text-3xl font-bold">{results.t99Formatted}</div>
-						</div>
-
-						<!-- Secondary Results: 50%, 90%, 95% -->
-						<div class="flex gap-2 flex-wrap">
-							<div class="bg-blue-900/50 rounded px-3 py-2 border border-blue-700">
-							<div class="text-xs text-blue-300">50%</div>
-								<div class="text-sm font-semibold">{results.t50Formatted}</div>
-							</div>
-							<div class="bg-blue-900/50 rounded px-3 py-2 border border-blue-700">
-							<div class="text-xs text-blue-300">90%</div>
-								<div class="text-sm font-semibold">{results.t90Formatted}</div>
-							</div>
-							<div class="bg-blue-900/50 rounded px-3 py-2 border border-blue-700">
-							<div class="text-xs text-blue-300">95%</div>
-								<div class="text-sm font-semibold">{results.t95Formatted}</div>
-							</div>
-						</div>
-
-						<!-- Average Time -->
-						<div class="text-sm text-blue-300">
-							{$_('hyperspace.results.average')}: <span class="font-semibold text-white">{results.tAvgFormatted}</span>
-						</div>
-
-						<!-- Shalpha Results (if alpha donut is enabled) -->
-						{#if alphaDonutLevel > 0 && results.shalphaProbability > 0}
-							<div class="pt-4 border-t border-blue-700">
-								<h3 class="text-sm font-semibold mb-3 text-blue-200">{$_('hyperspace.results.shalphaTitle')}</h3>
-								<div class="bg-blue-900/50 rounded-lg p-4 border border-blue-600 mb-3">
-									<div class="text-sm text-blue-300 mb-1">{$_('hyperspace.results.primaryLabel')}</div>
-									<div class="text-2xl font-bold">{results.t99ShalphaFormatted}</div>
-								</div>
-								<div class="flex gap-2 flex-wrap">
-									<div class="bg-blue-900/50 rounded px-3 py-2 border border-blue-700">
-								<div class="text-xs text-blue-300">50%</div>
-										<div class="text-sm font-semibold">{results.t50ShalphaFormatted}</div>
-									</div>
-									<div class="bg-blue-900/50 rounded px-3 py-2 border border-blue-700">
-								<div class="text-xs text-blue-300">90%</div>
-										<div class="text-sm font-semibold">{results.t90ShalphaFormatted}</div>
-									</div>
-									<div class="bg-blue-900/50 rounded px-3 py-2 border border-blue-700">
-								<div class="text-xs text-blue-300">95%</div>
-										<div class="text-sm font-semibold">{results.t95ShalphaFormatted}</div>
-									</div>
-								</div>
-							<div class="text-sm text-blue-300 mt-2">
-								{$_('hyperspace.results.average')}: <span class="font-semibold text-white">{results.tAvgShalphaFormatted}</span>
-								</div>
-							</div>
-						{/if}
-
-						<!-- Footnote -->
-						<div class="text-xs text-blue-400 pt-2 border-t border-blue-700">
-							{$_('hyperspace.results.footnote')}
-						</div>
-					{:else}
-						<div class="text-blue-300 text-sm">{$_('hyperspace.results.enterValid')}</div>
-					{/if}
 				</div>
 			</div>
 		</div>
@@ -276,21 +296,21 @@
 <!-- How it works Modal -->
 {#if showHowItWorks}
 	<div
-		class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+		class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
 		onclick={() => (showHowItWorks = false)}
 		role="dialog"
 		aria-modal="true"
 		aria-labelledby="modal-title"
 	>
 		<div
-			class="bg-blue-900 rounded-lg border border-blue-700 max-w-lg w-full p-6 space-y-4"
+			class="w-full max-w-lg space-y-4 rounded-lg border border-blue-700 bg-blue-900 p-6"
 			onclick={(e) => e.stopPropagation()}
 		>
 			<div class="flex items-center justify-between">
 				<h2 id="modal-title" class="text-xl font-bold">{$_('hyperspace.modal.title')}</h2>
 				<button
 					type="button"
-					class="text-blue-300 hover:text-white text-2xl leading-none"
+					class="text-2xl leading-none text-blue-300 hover:text-white"
 					onclick={() => (showHowItWorks = false)}
 					aria-label="Close"
 				>
@@ -302,7 +322,7 @@
 				<p>{$_('hyperspace.modal.intro')}</p>
 
 				<div>
-					<h3 class="font-semibold text-white mb-1">{$_('hyperspace.modal.encounterRateTitle')}</h3>
+					<h3 class="mb-1 font-semibold text-white">{$_('hyperspace.modal.encounterRateTitle')}</h3>
 					<p>
 						{$_('hyperspace.modal.encounterRateFormula')}
 						<br />
@@ -315,18 +335,18 @@
 				</div>
 
 				<div>
-					<h3 class="font-semibold text-white mb-1">{$_('hyperspace.modal.probabilityTitle')}</h3>
+					<h3 class="mb-1 font-semibold text-white">{$_('hyperspace.modal.probabilityTitle')}</h3>
 					<p>
 						{$_('hyperspace.modal.probabilityBody')}
 						<br />
-						<code class="bg-blue-950 px-2 py-1 rounded text-blue-100">P(≥1) = 1 − (1 − p)^N</code>
+						<code class="rounded bg-blue-950 px-2 py-1 text-blue-100">P(≥1) = 1 − (1 − p)^N</code>
 						<br />
 						{$_('hyperspace.modal.probabilityExplain')}
 					</p>
 				</div>
 
 				<div>
-					<h3 class="font-semibold text-white mb-1">{$_('hyperspace.modal.timeTitle')}</h3>
+					<h3 class="mb-1 font-semibold text-white">{$_('hyperspace.modal.timeTitle')}</h3>
 					<p>
 						{$_('hyperspace.modal.timeBody')}
 					</p>
@@ -334,11 +354,11 @@
 
 				{#if alphaDonutLevel > 0}
 					<div>
-					<h3 class="font-semibold text-white mb-1">{$_('hyperspace.modal.shalphaTitle')}</h3>
+						<h3 class="mb-1 font-semibold text-white">{$_('hyperspace.modal.shalphaTitle')}</h3>
 						<p>
-						{$_('hyperspace.modal.shalphaBody')}
+							{$_('hyperspace.modal.shalphaBody')}
 							<br />
-							<code class="bg-blue-950 px-2 py-1 rounded text-blue-100">
+							<code class="rounded bg-blue-950 px-2 py-1 text-blue-100">
 								p_shalpha = p_shiny × p_alpha
 							</code>
 						</p>
