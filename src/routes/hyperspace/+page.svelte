@@ -100,6 +100,7 @@
 						{@const encounter50 = isShalpha
 							? results.encounters50ShalphaFormatted
 							: results.encounters50Formatted}
+						{@const footnote = $_('hyperspace.results.footnote')}
 						<div class="mb-3 text-xs text-blue-300">
 							{$_('hyperspace.results.encountersRequired', {
 								values: { count: results.encountersAvgFormatted }
@@ -173,9 +174,11 @@
 						</div>
 
 						<!-- Footnote -->
-						<div class="border-t border-blue-700 pt-2 text-xs text-blue-400">
-							{$_('hyperspace.results.footnote')}
-						</div>
+						{#if footnote}
+							<div class="border-t border-blue-700 pt-2 text-xs text-blue-400">
+								{footnote}
+							</div>
+						{/if}
 					{:else}
 						<div class="text-sm text-blue-300">{$_('hyperspace.results.enterValid')}</div>
 					{/if}
@@ -183,7 +186,7 @@
 			</div>
 
 			<!-- Inputs Section -->
-			<div class="order-2 space-y-6 lg:order-1">
+			<div class="order-2 space-y-6 pb-10 lg:order-1">
 				<!-- Method Selection -->
 				<div>
 					<div class="mb-2 block text-sm font-medium text-blue-200">
@@ -215,9 +218,14 @@
 
 				<!-- Shiny Donut Level -->
 				<div>
-					<div class="mb-2 flex items-center gap-2 text-sm font-medium text-blue-200">
+					<div class="mb-2 text-sm font-medium text-blue-200">
+						{$_('hyperspace.shinyDonut.label')}
+					</div>
+					<div class="flex flex-wrap items-center gap-2">
 						<svg
-							class="h-4 w-4 text-yellow-300"
+							class="h-4 w-4 text-yellow-300 transition-opacity {shinyDonutLevel === 0
+								? 'opacity-40'
+								: 'opacity-100'}"
 							fill="currentColor"
 							viewBox="0 0 24 24"
 							xmlns="http://www.w3.org/2000/svg"
@@ -245,9 +253,6 @@
 								/>
 							</g>
 						</svg>
-						{$_('hyperspace.shinyDonut.label')}
-					</div>
-					<div class="flex flex-wrap gap-2">
 						{#each [0, 1, 2, 3] as level (level)}
 							{@const isSelected = shinyDonutLevel === level}
 							<button
@@ -270,16 +275,18 @@
 
 				<!-- Alpha Donut Level -->
 				<div>
-					<div class="mb-2 flex items-center gap-2 text-sm font-medium text-blue-200">
+					<div class="mb-2 text-sm font-medium text-blue-200">
+						{$_('hyperspace.alphaDonut.label')}
+					</div>
+					<div class="flex flex-wrap items-center gap-2">
 						<img
 							src="/icons/alpha.png"
 							alt=""
-							class="h-4 w-4"
+							class="h-4 w-4 transition-opacity {alphaDonutLevel === 0
+								? 'opacity-40'
+								: 'opacity-100'}"
 							aria-hidden="true"
 						/>
-						{$_('hyperspace.alphaDonut.label')}
-					</div>
-					<div class="flex flex-wrap gap-2">
 						{#each [0, 1, 2, 3] as level (level)}
 							{@const isSelected = alphaDonutLevel === level}
 							<button
@@ -336,27 +343,25 @@
 
 				<!-- Shiny Charm -->
 				<div>
-					<div class="mb-2 block text-sm font-medium text-blue-200">
-						{$_('hyperspace.charm.label')}
-					</div>
-					<div class="flex gap-2 rounded-lg border border-blue-700 bg-blue-800/50 p-1">
+					<div class="flex items-center justify-between rounded-lg border border-blue-700 bg-blue-800/50 px-3 py-2">
+						<div class="flex items-center gap-2 text-sm font-medium text-blue-200">
+							<img
+								src="/icons/chrome-charm.png"
+								alt=""
+								class="h-4 w-4 transition-opacity {shinyCharm ? 'opacity-100' : 'opacity-40'}"
+								aria-hidden="true"
+							/>
+							{$_('hyperspace.charm.label')}
+						</div>
 						<button
 							type="button"
-							class="flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors {shinyCharm
-								? 'bg-blue-600 text-white'
-								: 'text-blue-300 hover:bg-blue-700/50'}"
-							onclick={() => (shinyCharm = true)}
+							class="rounded-full px-3 py-1 text-xs font-semibold transition-colors {shinyCharm
+								? 'bg-yellow-500/20 text-yellow-200'
+								: 'bg-blue-800/60 text-blue-300 hover:text-white'}"
+							aria-pressed={shinyCharm}
+							onclick={() => (shinyCharm = !shinyCharm)}
 						>
-							{$_('hyperspace.charm.on')}
-						</button>
-						<button
-							type="button"
-							class="flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors {!shinyCharm
-								? 'bg-blue-600 text-white'
-								: 'text-blue-300 hover:bg-blue-700/50'}"
-							onclick={() => (shinyCharm = false)}
-						>
-							{$_('hyperspace.charm.off')}
+							{shinyCharm ? $_('hyperspace.charm.on') : $_('hyperspace.charm.off')}
 						</button>
 					</div>
 				</div>
