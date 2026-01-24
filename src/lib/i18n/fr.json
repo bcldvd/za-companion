@@ -64,7 +64,7 @@
 			"encountersSince": "≈ {count} rencontres",
 			"average": "Moyenne",
 			"shalphaTitle": "Shiny Baron",
-			"footnote": "Suppose des resets continus avec votre méthode et vos réglages.",
+			"footnote": "",
 			"enterValid": "Entrez des valeurs valides pour voir les résultats"
 		},
 		"modal": {
