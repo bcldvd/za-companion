@@ -88,6 +88,23 @@
 					{#if results}
 						{@const shalphaAvailable = alphaDonutLevel > 0 && results.shalphaProbability > 0}
 						{@const isShalpha = shalphaAvailable && showShalphaResults}
+						{@const encounter99 = isShalpha
+							? results.encounters99ShalphaFormatted
+							: results.encounters99Formatted}
+						{@const encounter95 = isShalpha
+							? results.encounters95ShalphaFormatted
+							: results.encounters95Formatted}
+						{@const encounter90 = isShalpha
+							? results.encounters90ShalphaFormatted
+							: results.encounters90Formatted}
+						{@const encounter50 = isShalpha
+							? results.encounters50ShalphaFormatted
+							: results.encounters50Formatted}
+						<div class="mb-3 text-xs text-blue-300">
+							{$_('hyperspace.results.encountersRequired', {
+								values: { count: results.encountersAvgFormatted }
+							})}
+						</div>
 						{#if shalphaAvailable}
 							<div class="mb-3 flex items-center justify-between rounded-lg border border-blue-600 bg-blue-900/50 px-3 py-2">
 								<span class="text-sm font-semibold text-blue-200">
@@ -111,6 +128,9 @@
 							<div class="text-3xl font-bold">
 								{isShalpha ? results.t99ShalphaFormatted : results.t99Formatted}
 							</div>
+							<div class="mt-1 text-xs text-blue-300">
+								{$_('hyperspace.results.encountersSince', { values: { count: encounter99 } })}
+							</div>
 						</div>
 
 						<!-- Secondary Results: 50%, 90%, 95% -->
@@ -120,17 +140,26 @@
 								<div class="text-sm font-semibold">
 									{isShalpha ? results.t50ShalphaFormatted : results.t50Formatted}
 								</div>
+								<div class="text-[10px] text-blue-400">
+									{$_('hyperspace.results.encountersSince', { values: { count: encounter50 } })}
+								</div>
 							</div>
 							<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
 								<div class="text-xs text-blue-300">90%</div>
 								<div class="text-sm font-semibold">
 									{isShalpha ? results.t90ShalphaFormatted : results.t90Formatted}
 								</div>
+								<div class="text-[10px] text-blue-400">
+									{$_('hyperspace.results.encountersSince', { values: { count: encounter90 } })}
+								</div>
 							</div>
 							<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
 								<div class="text-xs text-blue-300">95%</div>
 								<div class="text-sm font-semibold">
 									{isShalpha ? results.t95ShalphaFormatted : results.t95Formatted}
+								</div>
+								<div class="text-[10px] text-blue-400">
+									{$_('hyperspace.results.encountersSince', { values: { count: encounter95 } })}
 								</div>
 							</div>
 						</div>

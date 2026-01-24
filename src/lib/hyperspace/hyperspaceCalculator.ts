@@ -26,6 +26,16 @@ export interface ComputedTimes {
 	t95Formatted: string;
 	t99Formatted: string;
 	tAvgFormatted: string;
+	encounters50: number;
+	encounters90: number;
+	encounters95: number;
+	encounters99: number;
+	encountersAvg: number;
+	encounters50Formatted: string;
+	encounters90Formatted: string;
+	encounters95Formatted: string;
+	encounters99Formatted: string;
+	encountersAvgFormatted: string;
 	encountersPerMinute: number;
 	shinyProbability: number;
 	shalphaProbability: number;
@@ -40,6 +50,16 @@ export interface ComputedTimes {
 	t95ShalphaFormatted: string;
 	t99ShalphaFormatted: string;
 	tAvgShalphaFormatted: string;
+	encounters50Shalpha: number;
+	encounters90Shalpha: number;
+	encounters95Shalpha: number;
+	encounters99Shalpha: number;
+	encountersAvgShalpha: number;
+	encounters50ShalphaFormatted: string;
+	encounters90ShalphaFormatted: string;
+	encounters95ShalphaFormatted: string;
+	encounters99ShalphaFormatted: string;
+	encountersAvgShalphaFormatted: string;
 }
 
 // Resets per minute constants
@@ -109,6 +129,29 @@ export function formatDuration(minutes: number): string {
 }
 
 /**
+ * Format encounter counts as a compact string
+ */
+export function formatEncounters(count: number): string {
+	if (!isFinite(count) || count <= 0) {
+		return '—';
+	}
+
+	const rounded = Math.round(count);
+
+	if (rounded < 10000) {
+		return String(rounded);
+	}
+
+	if (rounded < 1_000_000) {
+		const compact = (rounded / 1000).toFixed(1);
+		return `${compact.endsWith('.0') ? compact.slice(0, -2) : compact}k`;
+	}
+
+	const compact = (rounded / 1_000_000).toFixed(1);
+	return `${compact.endsWith('.0') ? compact.slice(0, -2) : compact}M`;
+}
+
+/**
  * Compute time required to reach a given confidence level
  * Formula: t = ln(1 - C) / (r * k * ln(1 - p))
  * where C = confidence, r = resets/min, k = pokemon/reset, p = shiny probability
@@ -163,6 +206,39 @@ function computeAverageTime(
 }
 
 /**
+ * Compute number of encounters required to reach a confidence level
+ * Formula: N = ln(1 - C) / ln(1 - p)
+ */
+function computeEncountersForConfidence(confidence: number, shinyProbability: number): number {
+	if (shinyProbability <= 0 || shinyProbability >= 1) {
+		return Infinity;
+	}
+	if (confidence <= 0 || confidence >= 1) {
+		return Infinity;
+	}
+
+	const numerator = Math.log(1 - confidence);
+	const denominator = Math.log(1 - shinyProbability);
+
+	if (denominator === 0 || !isFinite(denominator)) {
+		return Infinity;
+	}
+
+	return numerator / denominator;
+}
+
+/**
+ * Compute average encounters (approximation: 1 / p)
+ */
+function computeAverageEncounters(shinyProbability: number): number {
+	if (shinyProbability <= 0 || shinyProbability >= 1) {
+		return Infinity;
+	}
+
+	return 1 / shinyProbability;
+}
+
+/**
  * Main calculation function: computes all times for given inputs
  */
 export function computeHyperspaceTimes(input: CalculatorInput): ComputedTimes {
@@ -186,6 +262,11 @@ export function computeHyperspaceTimes(input: CalculatorInput): ComputedTimes {
 	const t95 = computeTimeForConfidence(0.95, resetsPerMinute, pokemonPerReset, shinyProbability);
 	const t99 = computeTimeForConfidence(0.99, resetsPerMinute, pokemonPerReset, shinyProbability);
 	const tAvg = computeAverageTime(resetsPerMinute, pokemonPerReset, shinyProbability);
+	const encounters50 = computeEncountersForConfidence(0.5, shinyProbability);
+	const encounters90 = computeEncountersForConfidence(0.9, shinyProbability);
+	const encounters95 = computeEncountersForConfidence(0.95, shinyProbability);
+	const encounters99 = computeEncountersForConfidence(0.99, shinyProbability);
+	const encountersAvg = computeAverageEncounters(shinyProbability);
 
 	// Compute shalpha times if alpha donut is enabled
 	const t50Shalpha = alphaDonutLevel > 0
@@ -203,6 +284,21 @@ export function computeHyperspaceTimes(input: CalculatorInput): ComputedTimes {
 	const tAvgShalpha = alphaDonutLevel > 0
 		? computeAverageTime(resetsPerMinute, pokemonPerReset, shalphaProbability)
 		: Infinity;
+	const encounters50Shalpha = alphaDonutLevel > 0
+		? computeEncountersForConfidence(0.5, shalphaProbability)
+		: Infinity;
+	const encounters90Shalpha = alphaDonutLevel > 0
+		? computeEncountersForConfidence(0.9, shalphaProbability)
+		: Infinity;
+	const encounters95Shalpha = alphaDonutLevel > 0
+		? computeEncountersForConfidence(0.95, shalphaProbability)
+		: Infinity;
+	const encounters99Shalpha = alphaDonutLevel > 0
+		? computeEncountersForConfidence(0.99, shalphaProbability)
+		: Infinity;
+	const encountersAvgShalpha = alphaDonutLevel > 0
+		? computeAverageEncounters(shalphaProbability)
+		: Infinity;
 
 	return {
 		t50,
@@ -215,6 +311,16 @@ export function computeHyperspaceTimes(input: CalculatorInput): ComputedTimes {
 		t95Formatted: formatDuration(t95),
 		t99Formatted: formatDuration(t99),
 		tAvgFormatted: formatDuration(tAvg),
+		encounters50,
+		encounters90,
+		encounters95,
+		encounters99,
+		encountersAvg,
+		encounters50Formatted: formatEncounters(encounters50),
+		encounters90Formatted: formatEncounters(encounters90),
+		encounters95Formatted: formatEncounters(encounters95),
+		encounters99Formatted: formatEncounters(encounters99),
+		encountersAvgFormatted: formatEncounters(encountersAvg),
 		encountersPerMinute,
 		shinyProbability,
 		shalphaProbability: alphaDonutLevel > 0 ? shalphaProbability : 0,
@@ -227,6 +333,16 @@ export function computeHyperspaceTimes(input: CalculatorInput): ComputedTimes {
 		t90ShalphaFormatted: formatDuration(t90Shalpha),
 		t95ShalphaFormatted: formatDuration(t95Shalpha),
 		t99ShalphaFormatted: formatDuration(t99Shalpha),
-		tAvgShalphaFormatted: formatDuration(tAvgShalpha)
+		tAvgShalphaFormatted: formatDuration(tAvgShalpha),
+		encounters50Shalpha,
+		encounters90Shalpha,
+		encounters95Shalpha,
+		encounters99Shalpha,
+		encountersAvgShalpha,
+		encounters50ShalphaFormatted: formatEncounters(encounters50Shalpha),
+		encounters90ShalphaFormatted: formatEncounters(encounters90Shalpha),
+		encounters95ShalphaFormatted: formatEncounters(encounters95Shalpha),
+		encounters99ShalphaFormatted: formatEncounters(encounters99Shalpha),
+		encountersAvgShalphaFormatted: formatEncounters(encountersAvgShalpha)
 	};
 }

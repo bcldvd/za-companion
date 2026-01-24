@@ -60,6 +60,8 @@
 			"title": "Résultats",
 			"howItWorks": "Comment ça marche",
 			"primaryLabel": "99% de chance en",
+			"encountersRequired": "Rencontres nécessaires : {count}",
+			"encountersSince": "≈ {count} rencontres",
 			"average": "Moyenne",
 			"shalphaTitle": "Shiny Baron",
 			"footnote": "Suppose des resets continus avec votre méthode et vos réglages.",
