@@ -22,7 +22,7 @@
 		}
 		return 'en';
 	};
-	let currentLang = $state<'en' | 'fr'>(initialLang);
+	let currentLang = $state<'en' | 'fr'>(initialLang());
 
 	// Subscribe to locale store and update currentLang reactively
 	$effect(() => {

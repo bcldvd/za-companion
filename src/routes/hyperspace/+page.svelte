@@ -36,6 +36,13 @@
 		pokemonPerResetInput = String(value);
 	}
 
+	function handleModalBackdropClick(e: MouseEvent) {
+		// Only close when clicking the backdrop itself (not the modal content)
+		if (e.target === e.currentTarget) {
+			showHowItWorks = false;
+		}
+	}
+
 	// Compute results reactively
 	let computed = $derived.by(() => {
 		const input: CalculatorInput = {
@@ -298,7 +305,7 @@
 {#if showHowItWorks}
 	<div
 		class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
-		onclick={() => (showHowItWorks = false)}
+		onclick={handleModalBackdropClick}
 		onkeydown={(e) => {
 			if (e.key === 'Escape') showHowItWorks = false;
 		}}
@@ -307,15 +314,7 @@
 		aria-modal="true"
 		aria-labelledby="modal-title"
 	>
-		<div
-			class="w-full max-w-lg space-y-4 rounded-lg border border-blue-700 bg-blue-900 p-6"
-			onclick={(e) => e.stopPropagation()}
-			onkeydown={(e) => {
-				if (e.key === 'Escape') showHowItWorks = false;
-			}}
-			role="document"
-			tabindex="0"
-		>
+		<div class="w-full max-w-lg space-y-4 rounded-lg border border-blue-700 bg-blue-900 p-6">
 			<div class="flex items-center justify-between">
 				<h2 id="modal-title" class="text-xl font-bold">{$_('hyperspace.modal.title')}</h2>
 				<button
