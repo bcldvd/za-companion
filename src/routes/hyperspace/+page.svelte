@@ -18,9 +18,10 @@
 
 	// Modal state
 	let showHowItWorks = $state(false);
+	let showShalphaResults = $state(false);
 
 	// Last valid result (for graceful invalid handling)
-	let lastValidResult = $state<ReturnType<typeof computeHyperspaceTimes> | null>(null);
+	let lastValidResult: ReturnType<typeof computeHyperspaceTimes> | null = null;
 
 	// Validate and update pokemonPerReset
 	function updatePokemonPerReset(value: string) {
@@ -44,8 +45,7 @@
 		}
 	}
 
-	// Compute results reactively
-	let computed = $derived.by(() => {
+	let results = $derived.by(() => {
 		const input: CalculatorInput = {
 			method,
 			shinyDonutLevel,
@@ -53,16 +53,13 @@
 			shinyCharm,
 			pokemonPerReset
 		};
-		return computeHyperspaceTimes(input);
-	});
-
-	$effect(() => {
+		const computed = computeHyperspaceTimes(input);
 		if (isPokemonPerResetValid) {
 			lastValidResult = computed;
+			return computed;
 		}
+		return lastValidResult;
 	});
-
-	let results = $derived.by(() => (isPokemonPerResetValid ? computed : lastValidResult));
 
 	// Check if pokemonPerReset is valid
 	let isPokemonPerResetValid = $derived.by(() => {
@@ -89,66 +86,62 @@
 					</div>
 
 					{#if results}
+						{@const shalphaAvailable = alphaDonutLevel > 0 && results.shalphaProbability > 0}
+						{@const isShalpha = shalphaAvailable && showShalphaResults}
+						{#if shalphaAvailable}
+							<div class="mb-3 flex items-center justify-between rounded-lg border border-blue-600 bg-blue-900/50 px-3 py-2">
+								<span class="text-sm font-semibold text-blue-200">
+									{$_('hyperspace.results.shalphaTitle')}
+								</span>
+								<button
+									type="button"
+									class="rounded-full px-3 py-1 text-xs font-semibold transition-colors {showShalphaResults
+										? 'bg-yellow-500/20 text-yellow-200'
+										: 'bg-blue-800/60 text-blue-300 hover:text-white'}"
+									aria-pressed={showShalphaResults}
+									onclick={() => (showShalphaResults = !showShalphaResults)}
+								>
+									{showShalphaResults ? 'ON' : 'OFF'}
+								</button>
+							</div>
+						{/if}
 						<!-- Primary Result: 99% chance -->
 						<div class="rounded-lg border border-blue-600 bg-blue-900/50 p-4">
 							<div class="mb-1 text-sm text-blue-300">{$_('hyperspace.results.primaryLabel')}</div>
-							<div class="text-3xl font-bold">{results.t99Formatted}</div>
+							<div class="text-3xl font-bold">
+								{isShalpha ? results.t99ShalphaFormatted : results.t99Formatted}
+							</div>
 						</div>
 
 						<!-- Secondary Results: 50%, 90%, 95% -->
 						<div class="flex flex-wrap gap-2">
 							<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
 								<div class="text-xs text-blue-300">50%</div>
-								<div class="text-sm font-semibold">{results.t50Formatted}</div>
+								<div class="text-sm font-semibold">
+									{isShalpha ? results.t50ShalphaFormatted : results.t50Formatted}
+								</div>
 							</div>
 							<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
 								<div class="text-xs text-blue-300">90%</div>
-								<div class="text-sm font-semibold">{results.t90Formatted}</div>
+								<div class="text-sm font-semibold">
+									{isShalpha ? results.t90ShalphaFormatted : results.t90Formatted}
+								</div>
 							</div>
 							<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
 								<div class="text-xs text-blue-300">95%</div>
-								<div class="text-sm font-semibold">{results.t95Formatted}</div>
+								<div class="text-sm font-semibold">
+									{isShalpha ? results.t95ShalphaFormatted : results.t95Formatted}
+								</div>
 							</div>
 						</div>
 
 						<!-- Average Time -->
 						<div class="text-sm text-blue-300">
 							{$_('hyperspace.results.average')}:
-							<span class="font-semibold text-white">{results.tAvgFormatted}</span>
+							<span class="font-semibold text-white">
+								{isShalpha ? results.tAvgShalphaFormatted : results.tAvgFormatted}
+							</span>
 						</div>
-
-						<!-- Shalpha Results (if alpha donut is enabled) -->
-						{#if alphaDonutLevel > 0 && results.shalphaProbability > 0}
-							<div class="border-t border-blue-700 pt-4">
-								<h3 class="mb-3 text-sm font-semibold text-blue-200">
-									{$_('hyperspace.results.shalphaTitle')}
-								</h3>
-								<div class="mb-3 rounded-lg border border-blue-600 bg-blue-900/50 p-4">
-									<div class="mb-1 text-sm text-blue-300">
-										{$_('hyperspace.results.primaryLabel')}
-									</div>
-									<div class="text-2xl font-bold">{results.t99ShalphaFormatted}</div>
-								</div>
-								<div class="flex flex-wrap gap-2">
-									<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
-										<div class="text-xs text-blue-300">50%</div>
-										<div class="text-sm font-semibold">{results.t50ShalphaFormatted}</div>
-									</div>
-									<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
-										<div class="text-xs text-blue-300">90%</div>
-										<div class="text-sm font-semibold">{results.t90ShalphaFormatted}</div>
-									</div>
-									<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
-										<div class="text-xs text-blue-300">95%</div>
-										<div class="text-sm font-semibold">{results.t95ShalphaFormatted}</div>
-									</div>
-								</div>
-								<div class="mt-2 text-sm text-blue-300">
-									{$_('hyperspace.results.average')}:
-									<span class="font-semibold text-white">{results.tAvgShalphaFormatted}</span>
-								</div>
-							</div>
-						{/if}
 
 						<!-- Footnote -->
 						<div class="border-t border-blue-700 pt-2 text-xs text-blue-400">
@@ -193,11 +186,40 @@
 
 				<!-- Shiny Donut Level -->
 				<div>
-					<div class="mb-2 block text-sm font-medium text-blue-200">
+					<div class="mb-2 flex items-center gap-2 text-sm font-medium text-blue-200">
+						<svg
+							class="h-4 w-4 text-yellow-300"
+							fill="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg"
+							aria-hidden="true"
+						>
+							<g transform="translate(12 12) scale(1.25) translate(-11.8 -8.6)">
+								<path
+									d="M9.2 4
+									   C9.9 7.3 11.2 8.6 14.5 9.3
+									   C11.2 10.0 9.9 11.3 9.2 14.6
+									   C8.5 11.3 7.2 10.0 3.9 9.3
+									   C7.2 8.6 8.5 7.3 9.2 4
+									   Z"
+									fill="currentColor"
+								/>
+								<path
+									d="M16.8 2.6
+									   C17.2 4.4 17.9 5.1 19.7 5.5
+									   C17.9 5.9 17.2 6.6 16.8 8.4
+									   C16.4 6.6 15.7 5.9 13.9 5.5
+									   C15.7 5.1 16.4 4.4 16.8 2.6
+									   Z"
+									fill="currentColor"
+									opacity="0.95"
+								/>
+							</g>
+						</svg>
 						{$_('hyperspace.shinyDonut.label')}
 					</div>
 					<div class="flex flex-wrap gap-2">
-						{#each [0, 1, 2, 3] as level}
+						{#each [0, 1, 2, 3] as level (level)}
 							{@const isSelected = shinyDonutLevel === level}
 							<button
 								type="button"
@@ -219,11 +241,17 @@
 
 				<!-- Alpha Donut Level -->
 				<div>
-					<div class="mb-2 block text-sm font-medium text-blue-200">
+					<div class="mb-2 flex items-center gap-2 text-sm font-medium text-blue-200">
+						<img
+							src="/icons/alpha.png"
+							alt=""
+							class="h-4 w-4"
+							aria-hidden="true"
+						/>
 						{$_('hyperspace.alphaDonut.label')}
 					</div>
 					<div class="flex flex-wrap gap-2">
-						{#each [0, 1, 2, 3] as level}
+						{#each [0, 1, 2, 3] as level (level)}
 							{@const isSelected = alphaDonutLevel === level}
 							<button
 								type="button"
@@ -261,7 +289,7 @@
 								: ''}"
 						/>
 						<div class="flex gap-1">
-							{#each [5, 10, 15, 20] as preset}
+							{#each [5, 10, 15, 20] as preset (preset)}
 								<button
 									type="button"
 									class="rounded border border-blue-700 bg-blue-800/50 px-3 py-1 text-xs text-blue-300 transition-colors hover:bg-blue-700/50"
