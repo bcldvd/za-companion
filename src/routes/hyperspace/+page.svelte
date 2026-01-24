@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
+	import { CircleOff } from 'lucide-svelte';
 	import {
 		computeHyperspaceTimes,
 		type CalculatorInput,
@@ -205,9 +206,12 @@
 									: 'border border-blue-700 bg-blue-800/50 text-blue-300 hover:bg-blue-700/50'}"
 								onclick={() => (shinyDonutLevel = level as DonutLevel)}
 							>
-								{level === 0
-									? $_('hyperspace.level.off')
-									: $_('hyperspace.level.lv', { values: { level } })}
+								{#if level === 0}
+									<span class="sr-only">{$_('hyperspace.level.off')}</span>
+									<CircleOff class="h-4 w-4" aria-hidden="true" />
+								{:else}
+									{$_('hyperspace.level.lv', { values: { level } })}
+								{/if}
 							</button>
 						{/each}
 					</div>
@@ -228,9 +232,12 @@
 									: 'border border-blue-700 bg-blue-800/50 text-blue-300 hover:bg-blue-700/50'}"
 								onclick={() => (alphaDonutLevel = level as DonutLevel)}
 							>
-								{level === 0
-									? $_('hyperspace.level.off')
-									: $_('hyperspace.level.lv', { values: { level } })}
+								{#if level === 0}
+									<span class="sr-only">{$_('hyperspace.level.off')}</span>
+									<CircleOff class="h-4 w-4" aria-hidden="true" />
+								{:else}
+									{$_('hyperspace.level.lv', { values: { level } })}
+								{/if}
 							</button>
 						{/each}
 					</div>

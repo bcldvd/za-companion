@@ -34,14 +34,14 @@
 		"subtitle": "Calculez le temps pour atteindre vos objectifs de probabilité chromatique",
 		"method": {
 			"label": "Méthode",
-			"auto": "Boucle de téléportation auto",
-			"manual": "Téléportation manuelle"
+			"auto": "Téléporteurs",
+			"manual": "TP Carte"
 		},
 		"shinyDonut": {
-			"label": "Niveau de Donut Chromatique"
+			"label": "Niveau d'Aura Chromatique"
 		},
 		"alphaDonut": {
-			"label": "Niveau de Donut Alpha"
+			"label": "Niveau d'Aura Baron"
 		},
 		"level": {
 			"off": "Désactivé",
@@ -61,7 +61,7 @@
 			"howItWorks": "Comment ça marche",
 			"primaryLabel": "99% de chance en",
 			"average": "Moyenne",
-			"shalphaTitle": "Shalpha (Chroma + Alpha)",
+			"shalphaTitle": "Shiny Baron",
 			"footnote": "Suppose des resets continus avec votre méthode et vos réglages.",
 			"enterValid": "Entrez des valeurs valides pour voir les résultats"
 		},
