@@ -100,6 +100,9 @@
 						{@const encounter50 = isShalpha
 							? results.encounters50ShalphaFormatted
 							: results.encounters50Formatted}
+						{@const encounterAvg = isShalpha
+							? results.encountersAvgShalphaFormatted
+							: results.encountersAvgFormatted}
 						{@const footnote = $_('hyperspace.results.footnote')}
 						<div class="mb-3 text-xs text-blue-300">
 							{$_('hyperspace.results.encountersRequired', {
@@ -171,6 +174,9 @@
 							<span class="font-semibold text-white">
 								{isShalpha ? results.tAvgShalphaFormatted : results.tAvgFormatted}
 							</span>
+						</div>
+						<div class="text-[10px] text-blue-400">
+							{$_('hyperspace.results.encountersSince', { values: { count: encounterAvg } })}
 						</div>
 
 						<!-- Footnote -->
