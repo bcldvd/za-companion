@@ -281,7 +281,7 @@
 						{#if searchQuery}
 							<button
 								type="button"
-								onpointerdown|preventDefault={clearSelection}
+								on:pointerdown|preventDefault={clearSelection}
 								onkeydown={handleClearKeydown}
 								class="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-blue-500 bg-blue-800/80 px-2.5 py-1 text-xs font-semibold text-blue-100 shadow-sm hover:bg-blue-700 hover:text-white active:bg-blue-600"
 								aria-label="Clear search"
