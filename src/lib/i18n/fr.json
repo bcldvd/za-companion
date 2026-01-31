@@ -1,7 +1,8 @@
 {
   "app": {
     "title": "Pokemon Legends ZA",
-    "subtitle": "Tri de Boîtes"
+    "subtitle": "Compagnon ZA",
+    "companionTitle": "Compagnon ZA"
   },
   "search": {
     "placeholder": "Rechercher un Pokémon par nom..."
@@ -26,15 +27,15 @@
   },
   "nav": {
     "home": "Accueil",
-    "box": "Boîtes",
+    "box": "Tri des boîtes",
     "map": "Carte",
-    "perfect": "Parfait",
-    "shiny": "Chromatique",
+    "perfect": "Pokémon Parfait",
+    "shiny": "Extra-dimension",
     "settings": "Paramètres",
     "boxDescription": "Trouvez vite une place dans les boîtes",
     "mapDescription": "Explorez les apparitions de Lumiose",
     "perfectDescription": "Planifiez des EV optimisés",
-    "shinyDescription": "Estimez le temps pour un shiny"
+    "shinyDescription": "Estimez le temps pour un shiny dans l'extra-dimension"
   },
   "settings": {
     "language": "Langue"

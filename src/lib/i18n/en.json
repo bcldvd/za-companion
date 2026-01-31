@@ -1,7 +1,8 @@
 {
   "app": {
     "title": "Pokemon Legends ZA",
-    "subtitle": "Box Sorter"
+    "subtitle": "ZA Companion",
+    "companionTitle": "ZA Companion"
   },
   "search": {
     "placeholder": "Search Pokemon by name..."
@@ -9,7 +10,7 @@
   "pokemon": {
     "regional": "Regional #",
     "placeIn": "Place in",
-    "box": "Box",
+    "box": "Box sorting",
     "row": "Row",
     "column": "Column",
     "gridSize": "6 columns × 5 rows",
@@ -28,8 +29,8 @@
     "home": "Home",
     "box": "Box",
     "map": "Map",
-    "perfect": "Perfect",
-    "shiny": "Shiny",
+    "perfect": "Perfect Pokemon",
+    "shiny": "Hyperspace",
     "settings": "Settings",
     "boxDescription": "Find box placements fast",
     "mapDescription": "Explore Lumiose City spawns",

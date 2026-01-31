@@ -22,6 +22,10 @@
 		return activePath.startsWith(href);
 	};
 
+	const activeModule = $derived(
+		sidebarModules.find((module) => isActiveRoute(module.href)) ?? null
+	);
+
 	onMount(async () => {
 		// Wait for locale to be loaded before rendering
 		await waitForLocale();
@@ -38,8 +42,19 @@
 		>
 			<div class="px-4 py-3 flex items-center justify-between">
 				<div class="flex items-center gap-3">
-					<img src="/icons/icon-192.png" alt="ZA Companion" class="w-8 h-8" />
-					<h1 class="text-xl font-bold">ZA Companion</h1>
+					<img
+						src="/icons/icon-192.png"
+						alt={$_('app.companionTitle')}
+						class="w-8 h-8"
+					/>
+					<h1 class="text-xl font-bold">{$_('app.companionTitle')}</h1>
+					{#if activeModule}
+						<span
+							class="ml-1 inline-flex items-center rounded-full border border-blue-700 bg-blue-800/60 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-blue-100"
+						>
+							{$_(activeModule.labelKey)}
+						</span>
+					{/if}
 				</div>
 				<button
 					class="md:hidden flex min-h-[44px] touch-manipulation items-center justify-center rounded-lg border border-blue-700 bg-blue-800/50 px-3 py-2 text-white transition-colors hover:bg-blue-700"
