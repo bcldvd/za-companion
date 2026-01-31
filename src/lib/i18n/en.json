@@ -31,11 +31,13 @@
     "map": "Map",
     "perfect": "Perfect Pokemon",
     "shiny": "Hyperspace",
+    "donuts": "Donuts",
     "settings": "Settings",
     "boxDescription": "Find box placements fast",
     "mapDescription": "Explore Lumiose City spawns",
     "perfectDescription": "Plan optimized EV spreads",
-    "shinyDescription": "Estimate shiny odds timing"
+    "shinyDescription": "Estimate shiny odds timing",
+    "donutsDescription": "Best recipes and inventory tracking"
   },
   "settings": {
     "language": "Language",
@@ -100,6 +102,156 @@
       "timeBody": "Times shown correspond to the time required to reach 50%, 90%, 95%, or 99% chance of encountering at least one shiny. These are probabilities, not guarantees.",
       "shalphaTitle": "Shalpha Probability",
       "shalphaBody": "Shalpha (shiny + alpha) probability is calculated as:"
+    }
+  },
+  "donuts": {
+    "title": "Donuts",
+    "subtitle": "Recipes and inventory tracking",
+    "tabs": {
+      "recipes": "Recipes",
+      "inventory": "My Donuts"
+    },
+    "recommended": {
+      "title": "Recommended recipes",
+      "subtitle": "Community-tested best options"
+    },
+    "special": {
+      "title": "Special Legendary donuts",
+      "subtitle": "Mission donuts that open legendary portals",
+      "forPokemon": "For {pokemon}",
+      "unknownPokemon": "Unknown Pokémon"
+    },
+    "ingredients": "Ingredients",
+    "flavorValues": "Flavor values",
+    "flavorRequirements": "Flavor requirements",
+    "flavors": {
+      "sweet": "Sweet",
+      "spicy": "Spicy",
+      "sour": "Sour",
+      "bitter": "Bitter",
+      "fresh": "Fresh"
+    },
+    "tags": {
+      "shiny": "Shiny",
+      "alpha": "Alpha",
+      "utility": "Utility",
+      "efficient": "Efficient",
+      "rainbow": "Rainbow",
+      "highCost": "High-cost",
+      "maxRoll": "Max-roll",
+      "berries": "Berries",
+      "specialLegendary": "Special Legendary"
+    },
+    "actions": {
+      "crafted": "I crafted this",
+      "reserve": "Reserve",
+      "changeReservation": "Change reservation",
+      "unreserve": "Unreserve",
+      "consumed": "Consumed",
+      "duplicate": "Duplicate",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "close": "Close"
+    },
+    "inventory": {
+      "title": "My Donuts",
+      "subtitle": "Track your current donuts and reservations.",
+      "reserved": "Reserved",
+      "available": "Available",
+      "emptyReserved": "No reserved donuts yet.",
+      "emptyAvailable": "No available donuts yet.",
+      "sparkling": "✨ Sparkling {level}",
+      "typeChip": "Type: {type}",
+      "quantity": "Qty: {count}",
+      "reservedFor": "Reserved for {pokemon}",
+      "specialConsumeConfirm": "Mark special donut as used? It will be removed from your list."
+    },
+    "sparkling": {
+      "legend": "Sparkling"
+    },
+    "type": {
+      "label": "Type"
+    },
+    "types": {
+      "all": "All types"
+    },
+    "craftModal": {
+      "title": "Craft donut"
+    },
+    "reservationModal": {
+      "title": "Reserve for a Pokémon",
+      "searchLabel": "Search Pokémon",
+      "searchPlaceholder": "Type a Pokémon name...",
+      "loading": "Loading Pokémon data...",
+      "nationalNumber": "National # {number}",
+      "noResults": "No Pokémon found matching \"{query}\"",
+      "startPrompt": "Start typing to search"
+    },
+    "infoModal": {
+      "title": "How donuts work",
+      "flavorPowersTitle": "Flavors & Powers",
+      "flavorPowersIntro": "The dominant flavor determines which powers your donut can have:",
+      "powers": {
+        "sweet": "Sparkling, Alpha, Humungo, Teensy",
+        "spicy": "Move, Attack, Sp. Attack, Speed",
+        "sour": "Item, Mega Charging, Mega Conservation, Big Haul",
+        "bitter": "Defense, Sp. Defense, Resistance",
+        "fresh": "Encounter, Capture"
+      },
+      "levelChancesTitle": "Power Level Chances",
+      "levelChancesIntro": "Higher flavor points = better chances at Level 3 powers:",
+      "thresholds": {
+        "760": "100% Level 3",
+        "700": "67% Level 3",
+        "525": "57% Level 3"
+      },
+      "rainbowNote": "Rainbow donuts (tied flavors) get a bonus to these thresholds.",
+      "moreInfo": "For detailed mechanics:",
+      "serebiiLink": "Serebii's guide"
+    },
+    "recipes": {
+      "eightTanga": {
+        "name": "Eight Tanga Berry Donut (Max Shiny/Alpha)",
+        "bullets": {
+          "breakpoint": "Hits the 760 breakpoint (Budget 9), removing lower-tier rolls.",
+          "strongestOdds": "Used when you want the strongest odds for Sparkling Power + another strong roll (e.g., Alpha)."
+        }
+      },
+      "sixHaban": {
+        "name": "Six Habanero / Two Tanga (High power, better efficiency)",
+        "bullets": {
+          "highTier": "High-tier flavor score while saving Tanga.",
+          "lessExpensive": "Practical “less expensive than 8× Tanga” option when farming attempts."
+        }
+      },
+      "tangaLessRainbow": {
+        "name": "Best Tanga-less Rainbow (Shiny + farming utility)",
+        "bullets": {
+          "rainbowBudget": "Makes a Rainbow donut (Sweet/Sour tie), which increases budget per flavor.",
+          "zeroTanga": "Designed to unlock Level 3 chances while spending 0 Tanga."
+        }
+      },
+      "inventoryBooster": {
+        "name": "Regular Berry “Inventory Booster” Rainbow",
+        "bullets": {
+          "hyperspaceStretch": "Same Rainbow idea, but includes one non-hyperspace berry to stretch hyperspace inventory."
+        }
+      },
+      "badDreams": {
+        "name": "Bad Dreams Cruller"
+      },
+      "deltaOldFashioned": {
+        "name": "Delta Old Fashioned Donut"
+      },
+      "omegaOldFashioned": {
+        "name": "Omega Old Fashioned Donut"
+      },
+      "alphaOldFashioned": {
+        "name": "Alpha Old Fashioned Donut"
+      },
+      "plasmaGlazed": {
+        "name": "Plasma-Glazed Donut"
+      }
     }
   },
   "map": {

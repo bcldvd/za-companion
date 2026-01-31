@@ -1,5 +1,5 @@
 export type NavModule = {
-	id: 'home' | 'box' | 'map' | 'perfect' | 'hyperspace' | 'settings';
+	id: 'home' | 'box' | 'map' | 'perfect' | 'hyperspace' | 'donuts' | 'settings';
 	href: string;
 	labelKey: string;
 	descriptionKey?: string;
@@ -55,6 +55,16 @@ export const navModules: NavModule[] = [
 		labelKey: 'nav.shiny',
 		descriptionKey: 'nav.shinyDescription',
 		iconPath: 'M13 10V3L4 14h7v7l9-11h-7z',
+		showInSidebar: true,
+		showInLaunchpad: true
+	},
+	{
+		id: 'donuts',
+		href: '/donuts',
+		labelKey: 'nav.donuts',
+		descriptionKey: 'nav.donutsDescription',
+		iconPath:
+			'M12 3a9 9 0 100 18 9 9 0 000-18zm0 4a5 5 0 110 10 5 5 0 010-10z',
 		showInSidebar: true,
 		showInLaunchpad: true
 	},

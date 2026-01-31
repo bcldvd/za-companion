@@ -152,6 +152,17 @@
 	background-color: var(--app-accent-strong);
 }
 
+.app-button-destructive {
+	background-color: var(--app-surface-strong);
+	border-color: #dc2626;
+	color: #dc2626;
+}
+
+.app-button-destructive:hover {
+	background-color: #dc2626;
+	color: white;
+}
+
 .app-link {
 	color: var(--app-accent);
 }

@@ -31,11 +31,13 @@
     "map": "Carte",
     "perfect": "Pokémon Parfait",
     "shiny": "Extra-dimension",
+    "donuts": "Donuts",
     "settings": "Paramètres",
     "boxDescription": "Pour savoir dans quelle boite ranger chaque pokémon pour avoir votre living ShinyDex",
     "mapDescription": "Quels pokémons spawn dans les 50m autour de ...",
     "perfectDescription": "Natures, EV, IV et zones idéales pour chaque stat",
-    "shinyDescription": "Estimez le temps pour un shiny dans l'extra-dimension"
+    "shinyDescription": "Estimez le temps pour un shiny dans l'extra-dimension",
+    "donutsDescription": "Meilleures recettes et suivi d'inventaire"
   },
   "settings": {
     "language": "Langue",
@@ -100,6 +102,156 @@
       "timeBody": "Les temps affichés correspondent au temps nécessaire pour atteindre 50%, 90%, 95% ou 99% de chance de rencontrer au moins un chromatique. Ce sont des probabilités, pas des garanties.",
       "shalphaTitle": "Probabilité Shalpha",
       "shalphaBody": "La probabilité Shalpha (chroma + alpha) est calculée comme suit :"
+    }
+  },
+  "donuts": {
+    "title": "Donuts",
+    "subtitle": "Recettes et suivi d'inventaire",
+    "tabs": {
+      "recipes": "Recettes",
+      "inventory": "Mes Donuts"
+    },
+    "recommended": {
+      "title": "Recettes recommandées",
+      "subtitle": "Meilleures options testées par la communauté"
+    },
+    "special": {
+      "title": "Donuts légendaires spéciaux",
+      "subtitle": "Donuts de mission qui ouvrent les portails légendaires",
+      "forPokemon": "Pour {pokemon}",
+      "unknownPokemon": "Pokémon inconnu"
+    },
+    "ingredients": "Ingrédients",
+    "flavorValues": "Valeurs de saveur",
+    "flavorRequirements": "Saveurs requises",
+    "flavors": {
+      "sweet": "Sucré",
+      "spicy": "Épicé",
+      "sour": "Acide",
+      "bitter": "Amer",
+      "fresh": "Frais"
+    },
+    "tags": {
+      "shiny": "Chromatique",
+      "alpha": "Baron",
+      "utility": "Utilitaire",
+      "efficient": "Efficace",
+      "rainbow": "Arc-en-ciel",
+      "highCost": "Coût élevé",
+      "maxRoll": "Max-roll",
+      "berries": "Baies",
+      "specialLegendary": "Légendaire spécial"
+    },
+    "actions": {
+      "crafted": "J'ai fabriqué ça",
+      "reserve": "Réserver",
+      "changeReservation": "Modifier la réservation",
+      "unreserve": "Annuler la réservation",
+      "consumed": "Consommé",
+      "duplicate": "Dupliquer",
+      "cancel": "Annuler",
+      "confirm": "Confirmer",
+      "close": "Fermer"
+    },
+    "inventory": {
+      "title": "Mes Donuts",
+      "subtitle": "Suivez vos donuts actuels et vos réservations.",
+      "reserved": "Réservé",
+      "available": "Disponible",
+      "emptyReserved": "Aucun donut réservé pour le moment.",
+      "emptyAvailable": "Aucun donut disponible pour le moment.",
+      "sparkling": "✨ Aura brillance {level}",
+      "typeChip": "Type : {type}",
+      "quantity": "Qté : {count}",
+      "reservedFor": "Réservé pour {pokemon}",
+      "specialConsumeConfirm": "Marquer ce donut spécial comme utilisé ? Il sera retiré de votre liste."
+    },
+    "sparkling": {
+      "legend": "Aura brillance"
+    },
+    "type": {
+      "label": "Type"
+    },
+    "types": {
+      "all": "Tous les types"
+    },
+    "craftModal": {
+      "title": "Fabriquer un donut"
+    },
+    "reservationModal": {
+      "title": "Réserver pour un Pokémon",
+      "searchLabel": "Rechercher un Pokémon",
+      "searchPlaceholder": "Tapez un nom de Pokémon...",
+      "loading": "Chargement des données Pokémon...",
+      "nationalNumber": "National # {number}",
+      "noResults": "Aucun Pokémon trouvé correspondant à « {query} »",
+      "startPrompt": "Commencez à taper pour rechercher"
+    },
+    "infoModal": {
+      "title": "Comment fonctionnent les donuts",
+      "flavorPowersTitle": "Saveurs et Auras",
+      "flavorPowersIntro": "La saveur dominante détermine les auras possibles de votre donut :",
+      "powers": {
+        "sweet": "Brillance, Baron, Maxi, Mini",
+        "spicy": "Capacité, Attaque, Att. Spé., Vitesse",
+        "sour": "Objet, Méga Charge, Méga Conservation, Butin",
+        "bitter": "Défense, Déf. Spé., Résistance",
+        "fresh": "Rencontre, Capture"
+      },
+      "levelChancesTitle": "Chances de Niveau d'Aura",
+      "levelChancesIntro": "Plus de points de saveur = meilleures chances d'auras Niveau 3 :",
+      "thresholds": {
+        "760": "100% Niveau 3",
+        "700": "67% Niveau 3",
+        "525": "57% Niveau 3"
+      },
+      "rainbowNote": "Les donuts Arc-en-ciel (saveurs à égalité) ont un bonus sur ces seuils.",
+      "moreInfo": "Pour les mécaniques détaillées :",
+      "serebiiLink": "Guide Serebii"
+    },
+    "recipes": {
+      "eightTanga": {
+        "name": "Donut 8 Baies Panga (Max Chromatique/Baron)",
+        "bullets": {
+          "breakpoint": "Atteint le seuil de 760 (100% Niveau 3), supprimant les rolls de bas niveau.",
+          "strongestOdds": "À utiliser pour maximiser les chances d'Aura brillance + un autre bon roll (ex : Baron)."
+        }
+      },
+      "sixHaban": {
+        "name": "Six Fraigo / Deux Panga (Haute puissance, meilleure efficacité)",
+        "bullets": {
+          "highTier": "Score de saveur élevé tout en économisant les Panga.",
+          "lessExpensive": "Option pratique « moins chère que 8× Panga » pour le farming."
+        }
+      },
+      "tangaLessRainbow": {
+        "name": "Meilleur Arc-en-ciel sans Panga (Chromatique + utilitaire)",
+        "bullets": {
+          "rainbowBudget": "Crée un donut Arc-en-ciel (égalité Sucré/Acide), augmentant le budget par saveur.",
+          "zeroTanga": "Conçu pour débloquer les chances Niveau 3 sans dépenser de Panga."
+        }
+      },
+      "inventoryBooster": {
+        "name": "Arc-en-ciel version éco",
+        "bullets": {
+          "hyperspaceStretch": "Même principe Arc-en-ciel, mais inclut une baie classique pour économiser une extra-baie."
+        }
+      },
+      "badDreams": {
+        "name": "Cruller Mauvais Rêve"
+      },
+      "deltaOldFashioned": {
+        "name": "Donut Classique Delta"
+      },
+      "omegaOldFashioned": {
+        "name": "Donut Classique Oméga"
+      },
+      "alphaOldFashioned": {
+        "name": "Donut Classique Alpha"
+      },
+      "plasmaGlazed": {
+        "name": "Donut Glacé Plasma"
+      }
     }
   },
   "map": {
