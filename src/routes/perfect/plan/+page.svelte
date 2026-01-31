@@ -122,15 +122,15 @@ import { onMount } from 'svelte';
 	});
 </script>
 
-<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 p-4 pb-24 text-white">
+<div class="min-h-screen app-shell p-4 pb-24">
 	<div class="mx-auto max-w-2xl space-y-6">
 		<!-- Top Priorities -->
 		<div>
-			<div class="mb-2 flex items-center justify-between text-sm font-medium text-blue-200">
+			<div class="mb-2 flex items-center justify-between text-sm font-medium app-text-muted">
 				<div class="flex flex-wrap items-center gap-2">
 					<span>{$_('perfect.plan.topPriorities')}</span>
 					{#each topPriorities as stat, index (stat)}
-						<div class="rounded-full bg-blue-700 px-3 py-1 text-sm font-medium">
+						<div class="rounded-full app-accent-bg px-3 py-1 text-sm font-medium">
 							{index + 1}. {$_(`perfect.stats.${stat}`)}
 						</div>
 					{/each}
@@ -144,24 +144,24 @@ import { onMount } from 'svelte';
 
 		<!-- Path Selection -->
 		<div>
-			<div class="mb-2 text-sm font-medium text-blue-200">{$_('perfect.plan.path')}</div>
-			<div class="flex gap-2 rounded-lg border border-blue-700 bg-blue-800/50 p-1">
+			<div class="mb-2 text-sm font-medium app-text-muted">{$_('perfect.plan.path')}</div>
+			<div class="flex gap-2 rounded-lg border app-border app-surface-muted p-1">
 				<button
 					type="button"
-					class="flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors {activePath ===
+					class="flex-1 rounded-md border px-4 py-2 text-sm font-medium transition-colors {activePath ===
 					'battles'
-						? 'bg-blue-600 text-white'
-						: 'text-blue-300 hover:bg-blue-700/50'}"
+						? 'app-button-primary'
+						: 'app-button'}"
 					onclick={() => (activePath = 'battles')}
 				>
 					{$_('perfect.plan.battles')}
 				</button>
 				<button
 					type="button"
-					class="flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors {activePath ===
+					class="flex-1 rounded-md border px-4 py-2 text-sm font-medium transition-colors {activePath ===
 					'vitamins'
-						? 'bg-blue-600 text-white'
-						: 'text-blue-300 hover:bg-blue-700/50'}"
+						? 'app-button-primary'
+						: 'app-button'}"
 					onclick={() => (activePath = 'vitamins')}
 				>
 					{$_('perfect.plan.vitamins')}
@@ -171,27 +171,27 @@ import { onMount } from 'svelte';
 
 		<!-- EV Counters for top 3 priorities -->
 		<div class="space-y-4">
-			<div class="text-sm font-medium text-blue-200">{$_('perfect.plan.evProgress')}</div>
-			<div class="rounded-lg border border-blue-700 bg-blue-800/50 p-3">
+			<div class="text-sm font-medium app-text-muted">{$_('perfect.plan.evProgress')}</div>
+			<div class="rounded-lg border app-card-muted p-3">
 				<div class="mb-2 flex items-center justify-between">
-					<span class="text-sm font-medium text-blue-200">
+					<span class="text-sm font-medium app-text-muted">
 						{$_('perfect.plan.totalProgress', {
 							values: { current: plan.totalEv, max: MAX_TOTAL_EV }
 						})}
 					</span>
 					<button
 						type="button"
-						class="text-xs text-blue-400 hover:text-blue-200"
+						class="text-xs app-link"
 						onclick={resetProgress}
 					>
 						{$_('perfect.plan.reset')}
 					</button>
 				</div>
-				<div class="h-2 overflow-hidden rounded-full bg-blue-900">
+				<div class="h-2 overflow-hidden rounded-full bg-[var(--app-surface-strong)]">
 					<div
 						class="h-full transition-all duration-200 {plan.totalEv >= MAX_TOTAL_EV
 							? 'bg-green-500'
-							: 'bg-blue-500'}"
+							: 'bg-[var(--app-accent)]'}"
 						style="width: {(plan.totalEv / MAX_TOTAL_EV) * 100}%"
 					></div>
 				</div>
@@ -221,7 +221,7 @@ import { onMount } from 'svelte';
 		</div>
 
 		<!-- IV Caps Info -->
-		<div class="rounded-lg border border-blue-700 bg-blue-800/50 p-4">
+		<div class="rounded-lg border app-card-muted p-4">
 			<div class="flex items-stretch gap-3">
 				<div class="relative flex items-stretch">
 					<img
@@ -233,7 +233,7 @@ import { onMount } from 'svelte';
 				</div>
 				<div>
 					<div class="font-semibold">{$_('perfect.tooltip.ivTitle')}</div>
-					<div class="text-sm text-blue-300">{$_('perfect.tooltip.ivBody')}</div>
+					<div class="text-sm app-text-subtle">{$_('perfect.tooltip.ivBody')}</div>
 				</div>
 			</div>
 		</div>

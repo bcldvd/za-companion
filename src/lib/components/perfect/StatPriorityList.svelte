@@ -78,9 +78,9 @@
 		{@const isDragging = draggedIndex === index}
 		{@const isDragOver = dragOverIndex === index && draggedIndex !== index}
 		<div
-			class="flex items-center gap-2 rounded-lg border border-blue-700 bg-blue-800/50 px-3 py-2 transition-all
+			class="flex items-center gap-2 rounded-lg border app-border app-surface-muted px-3 py-2 transition-all
 				{isDragging ? 'opacity-50' : ''}
-				{isDragOver ? 'border-blue-400 bg-blue-700/50' : ''}"
+				{isDragOver ? 'border-[var(--app-accent)] bg-[var(--app-surface-strong)]' : ''}"
 			draggable="true"
 			ondragstart={(e) => handleDragStart(e, index)}
 			ondragover={(e) => handleDragOver(e, index)}
@@ -89,14 +89,14 @@
 			ontouchstart={() => handleTouchStart(index)}
 			role="listitem"
 		>
-			<span class="flex h-6 w-6 items-center justify-center rounded-full bg-blue-900 text-xs text-blue-300">
+			<span class="flex h-6 w-6 items-center justify-center rounded-full app-surface-strong text-xs app-text-subtle">
 				{index + 1}
 			</span>
-			<GripVertical class="h-4 w-4 cursor-grab text-blue-500" />
+			<GripVertical class="h-4 w-4 cursor-grab app-text-subtle" />
 			<div class="flex flex-1 items-center gap-2">
 				<span class="text-sm font-medium">{$_(`perfect.stats.${stat}`)}</span>
 				{#if stats?.[stat] !== undefined}
-					<span class="rounded bg-blue-900 px-2 py-0.5 text-xs text-blue-300">
+					<span class="rounded app-surface-strong px-2 py-0.5 text-xs app-text-subtle">
 						{stats[stat]}
 					</span>
 				{/if}
@@ -105,7 +105,7 @@
 			<div class="flex gap-1 sm:hidden">
 				<button
 					type="button"
-					class="rounded p-1 text-blue-400 hover:bg-blue-700 hover:text-white disabled:opacity-30"
+					class="rounded p-1 app-text-subtle hover:bg-[var(--app-surface-strong)] hover:text-[var(--app-text)] disabled:opacity-30"
 					onclick={() => moveUp(index)}
 					disabled={index === 0}
 					aria-label="Move up"
@@ -114,7 +114,7 @@
 				</button>
 				<button
 					type="button"
-					class="rounded p-1 text-blue-400 hover:bg-blue-700 hover:text-white disabled:opacity-30"
+					class="rounded p-1 app-text-subtle hover:bg-[var(--app-surface-strong)] hover:text-[var(--app-text)] disabled:opacity-30"
 					onclick={() => moveDown(index)}
 					disabled={index === priorities.length - 1}
 					aria-label="Move down"

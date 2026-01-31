@@ -244,18 +244,18 @@
 	});
 </script>
 
-<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 text-white p-4 pb-16">
+<div class="min-h-screen app-shell p-4 pb-16">
 	<div class="max-w-2xl mx-auto">
 		{#if searchQuery && searchResults.length === 0 && !showDropdown}
-			<div class="text-center py-8 text-blue-300">
+			<div class="text-center py-8 app-text-subtle">
 				<p>{$_('pokemon.notFound')} "{searchQuery}"</p>
 			</div>
 		{:else if isLoading}
-			<div class="text-center py-12 text-blue-300">
+			<div class="text-center py-12 app-text-subtle">
 				<p class="text-lg mb-2">{$_('pokemon.loading')}</p>
 			</div>
 		{:else}
-			<div class="text-center py-12 text-blue-300">
+			<div class="text-center py-12 app-text-subtle">
 				<p class="text-lg mb-2">{$_('pokemon.searchPrompt')}</p>
 				<p class="text-sm">{$_('pokemon.startPrompt')}</p>
 			</div>
@@ -269,9 +269,7 @@
 	>
 		<div class="mx-auto max-w-2xl px-4">
 			<div class="relative">
-				<div
-					class="flex items-center gap-3 rounded-xl border border-blue-700 bg-blue-900/95 p-3 backdrop-blur-sm"
-				>
+				<div class="flex items-center gap-3 rounded-xl border app-card p-3 backdrop-blur-sm">
 					<ShinyToggle bind:isShiny={isShiny} />
 					<div class="relative flex-1">
 						<input
@@ -280,7 +278,7 @@
 							value={searchQuery}
 							oninput={handleSearchInput}
 							bind:this={searchInput}
-							class="w-full pl-4 pr-14 py-3 rounded-lg bg-blue-800/50 border border-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg min-h-[44px]"
+							class="w-full pl-4 pr-14 py-3 rounded-lg border app-input text-lg min-h-[44px] placeholder:text-[var(--app-text-subtle)] focus:outline-none focus:ring-2 focus:ring-[var(--app-focus)] focus:border-transparent"
 							autocomplete="off"
 						/>
 						{#if searchQuery}
@@ -288,7 +286,7 @@
 								type="button"
 								onpointerdown={handleClearPointerDown}
 								onkeydown={handleClearKeydown}
-								class="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-blue-500 bg-blue-800/80 px-2.5 py-1 text-xs font-semibold text-blue-100 shadow-sm hover:bg-blue-700 hover:text-white active:bg-blue-600"
+								class="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center rounded-full border app-button px-2.5 py-1 text-xs font-semibold shadow-sm"
 								aria-label="Clear search"
 							>
 								✕
@@ -300,14 +298,14 @@
 				<!-- Autocomplete Dropdown -->
 				{#if showDropdown && searchResults.length > 0}
 					<div
-						class="absolute bottom-full z-50 w-full mb-2 bg-blue-800 rounded-lg border border-blue-700 shadow-xl max-h-80 overflow-y-auto"
+						class="absolute bottom-full z-50 w-full mb-2 app-surface rounded-lg border app-border shadow-xl max-h-80 overflow-y-auto"
 					>
 						{#each searchResults as pokemon}
 							{@const spriteUrl =
 								searchResultSpriteUrls.get(pokemon.nationalNumber) || pokemon.imageUrl}
 							<button
 								onclick={() => selectPokemon(pokemon)}
-								class="w-full px-4 py-3 flex items-center gap-3 hover:bg-blue-700 active:bg-blue-600 transition-colors text-left border-b border-blue-700 last:border-b-0 min-h-[60px] touch-manipulation"
+								class="w-full px-4 py-3 flex items-center gap-3 hover:bg-[var(--app-surface-strong)] active:bg-[var(--app-surface-muted)] transition-colors text-left border-b app-border last:border-b-0 min-h-[60px] touch-manipulation"
 							>
 								<img
 									src={spriteUrl}
@@ -315,8 +313,8 @@
 									class="w-12 h-12 object-contain"
 								/>
 								<div class="flex-1">
-									<div class="font-semibold text-white">{getLocalizedPokemonName(pokemon)}</div>
-									<div class="text-sm text-blue-300">
+									<div class="font-semibold">{getLocalizedPokemonName(pokemon)}</div>
+									<div class="text-sm app-text-subtle">
 										{$_('pokemon.regional')}
 										{String(pokemon.regionalNumber).padStart(3, '0')} • {getLocalizedTypes(
 											pokemon.types

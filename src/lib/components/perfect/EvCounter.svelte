@@ -50,7 +50,7 @@
 	}
 </script>
 
-<div class="rounded-lg border border-blue-700 bg-blue-800/50 p-3">
+<div class="rounded-lg border app-card-muted p-3">
 	<div class="flex min-h-[68px] items-stretch gap-3">
 		{#if vitamin}
 			<div class="flex items-center self-stretch">
@@ -66,8 +66,8 @@
 			<div class="flex w-[68px] self-stretch">
 				<button
 					type="button"
-					class="flex h-full w-full items-center justify-center rounded-lg border border-blue-700 bg-blue-900/50 text-blue-300 transition-colors hover:bg-blue-700 hover:text-white {powerItemEnabled
-						? 'border-yellow-300 bg-yellow-500/20 text-yellow-100 shadow-[0_0_0_2px_rgba(250,204,21,0.25)]'
+					class="flex h-full w-full items-center justify-center rounded-lg border app-button app-text-subtle transition-colors hover:text-[var(--app-text)] {powerItemEnabled
+						? 'border-[var(--app-accent)] bg-[var(--app-surface-strong)] app-accent-text app-accent-glow'
 						: ''}"
 					onclick={() => (powerItemEnabled = !powerItemEnabled)}
 					aria-pressed={powerItemEnabled}
@@ -79,17 +79,17 @@
 		{/if}
 		<div class="flex flex-1 flex-col gap-1 leading-tight">
 			<div class="flex items-start justify-between gap-3">
-				<div class="text-sm font-medium text-blue-200">
+				<div class="text-sm font-medium app-text-muted">
 					{$_(`perfect.stats.${stat}`)}
 				</div>
 				<div class="flex items-center gap-2">
-					<span class="text-sm text-blue-300">
+					<span class="text-sm app-text-subtle">
 						{current} / {target}
 					</span>
 					{#if showDetailsToggle}
 						<button
 							type="button"
-							class="flex h-7 w-7 items-center justify-center rounded border border-blue-700 bg-blue-900/50 text-blue-300 transition-colors hover:bg-blue-700 hover:text-white"
+							class="flex h-7 w-7 items-center justify-center rounded border app-button app-text-subtle transition-colors hover:text-[var(--app-text)]"
 							onclick={() => (detailsOpen = !detailsOpen)}
 							aria-expanded={detailsOpen}
 							aria-label="Toggle zones"
@@ -100,20 +100,20 @@
 				</div>
 			</div>
 			{#if vitamin}
-				<div class="text-xs font-medium text-blue-300">
+				<div class="text-xs font-medium app-text-subtle">
 					{$_(`perfect.vitamins.${vitamin.id}`)}
 				</div>
 			{/if}
 			<div class="mt-1 flex items-center gap-3">
 				<div class="flex-1">
-					<div class="h-2 overflow-hidden rounded-full bg-blue-900">
+					<div class="h-2 overflow-hidden rounded-full bg-[var(--app-surface-strong)]">
 						<div
-							class="h-full transition-all duration-200 {isMaxed ? 'bg-green-500' : 'bg-blue-500'}"
+							class="h-full transition-all duration-200 {isMaxed ? 'bg-green-500' : 'bg-[var(--app-accent)]'}"
 							style="width: {progress}%"
 						></div>
 					</div>
 				</div>
-				<div class="text-xs text-blue-400">
+				<div class="text-xs app-text-subtle">
 					{#if isMaxed}
 						{$_('perfect.plan.maxReached')}
 					{:else if mode === 'battles'}
@@ -126,7 +126,7 @@
 					{#if mode === 'vitamins'}
 						<button
 							type="button"
-							class="flex h-8 w-8 items-center justify-center rounded border border-blue-700 bg-blue-900/50 text-sm text-blue-300 transition-colors hover:bg-blue-700 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+							class="flex h-8 w-8 items-center justify-center rounded border app-button app-text-subtle text-sm transition-colors hover:text-[var(--app-text)] disabled:cursor-not-allowed disabled:opacity-50"
 							onclick={() => subtract(10)}
 							disabled={current === 0}
 							aria-label="Remove 1 vitamin"
@@ -135,7 +135,7 @@
 						</button>
 						<button
 							type="button"
-							class="flex h-8 w-8 items-center justify-center rounded border border-blue-700 bg-blue-900/50 text-sm text-blue-300 transition-colors hover:bg-blue-700 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+							class="flex h-8 w-8 items-center justify-center rounded border app-button app-text-subtle text-sm transition-colors hover:text-[var(--app-text)] disabled:cursor-not-allowed disabled:opacity-50"
 							onclick={() => add(10)}
 							disabled={isMaxed}
 							aria-label="Add 1 vitamin"
@@ -145,7 +145,7 @@
 					{:else}
 						<button
 							type="button"
-							class="flex h-8 w-8 items-center justify-center rounded border border-blue-700 bg-blue-900/50 text-blue-300 transition-colors hover:bg-blue-700 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+							class="flex h-8 w-8 items-center justify-center rounded border app-button app-text-subtle transition-colors hover:text-[var(--app-text)] disabled:cursor-not-allowed disabled:opacity-50"
 							onclick={() => subtract(battleStep)}
 							disabled={current === 0}
 							aria-label="Remove EV"
@@ -154,7 +154,7 @@
 						</button>
 						<button
 							type="button"
-							class="flex h-8 w-8 items-center justify-center rounded border border-blue-700 bg-blue-900/50 text-blue-300 transition-colors hover:bg-blue-700 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+							class="flex h-8 w-8 items-center justify-center rounded border app-button app-text-subtle transition-colors hover:text-[var(--app-text)] disabled:cursor-not-allowed disabled:opacity-50"
 							onclick={() => add(battleStep)}
 							disabled={isMaxed}
 							aria-label="Add EV"

@@ -84,13 +84,13 @@
 
 <div class="flex flex-col h-full min-h-0">
 	<!-- Top Controls -->
-	<div class="bg-blue-900/95 backdrop-blur-sm border-b border-blue-700 px-4 py-3 flex items-center justify-between gap-3 sticky top-0 z-10">
+	<div class="app-surface backdrop-blur-sm border-b app-border px-4 py-3 flex items-center justify-between gap-3 sticky top-0 z-10">
 		<div class="flex items-center gap-3">
 			<ShinyToggle bind:isShiny />
 
 			<button
 				onclick={toggleFilters}
-		class="relative flex items-center justify-center gap-2 h-11 px-4 bg-blue-800/50 hover:bg-blue-700 rounded-lg border border-blue-700 text-white transition-colors min-h-[44px] touch-manipulation"
+				class="relative flex items-center justify-center gap-2 h-11 px-4 rounded-lg border app-button transition-colors min-h-[44px] touch-manipulation"
 				aria-label={$_('map.filters.title')}
 			>
 				<Filter class="w-5 h-5" />
@@ -107,8 +107,8 @@
 		</div>
 
 		{#if !isLoading && filterState.pokemonSpawns}
-			<div class="flex items-center gap-2 px-3 py-2 bg-blue-800/50 rounded-lg border border-blue-700">
-				<span class="text-xs text-blue-200">{visibleSpawnCount} {$_('map.spawns')}</span>
+			<div class="flex items-center gap-2 px-3 py-2 rounded-lg border app-card-muted">
+				<span class="text-xs app-text-muted">{visibleSpawnCount} {$_('map.spawns')}</span>
 			</div>
 		{/if}
 	</div>
@@ -116,10 +116,10 @@
 	<!-- Map Container -->
 	<div class="flex-1 min-h-0 relative">
 		{#if isLoading}
-			<div class="absolute inset-0 flex items-center justify-center bg-linear-to-b from-blue-900 to-blue-950">
+			<div class="absolute inset-0 flex items-center justify-center app-shell">
 				<div class="text-center">
-					<div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent mb-4"></div>
-					<p class="text-blue-200">{$_('map.loading')}</p>
+					<div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-[var(--app-accent)] border-t-transparent mb-4"></div>
+					<p class="app-text-muted">{$_('map.loading')}</p>
 				</div>
 			</div>
 		{:else}

@@ -13,7 +13,7 @@
 
 <button
 	type="button"
-	class="flex h-8 w-8 items-center justify-center rounded-full border border-blue-700 bg-blue-800/50 text-blue-300 transition-colors hover:bg-blue-700/50 hover:text-white"
+	class="flex h-8 w-8 items-center justify-center rounded-full border app-button app-text-subtle transition-colors hover:text-[var(--app-text)]"
 	onclick={() => (showModal = true)}
 	aria-label="More information about EVs and IVs"
 >
@@ -22,7 +22,7 @@
 
 {#if showModal}
 	<div
-		class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+		class="fixed inset-0 z-50 flex items-center justify-center app-overlay p-4"
 		onclick={handleBackdropClick}
 		onkeydown={(e) => {
 			if (e.key === 'Escape') showModal = false;
@@ -32,14 +32,14 @@
 		aria-modal="true"
 		aria-labelledby="info-modal-title"
 	>
-		<div class="max-h-[80vh] w-full max-w-md space-y-4 overflow-y-auto rounded-lg border border-blue-700 bg-blue-900 p-6">
+		<div class="max-h-[80vh] w-full max-w-md space-y-4 overflow-y-auto rounded-lg border app-card p-6">
 			<div class="flex items-center justify-between">
-				<h2 id="info-modal-title" class="text-xl font-bold text-white">
+				<h2 id="info-modal-title" class="text-xl font-bold">
 					{$_('perfect.tooltip.evTitle')}
 				</h2>
 				<button
 					type="button"
-					class="text-2xl leading-none text-blue-300 hover:text-white"
+					class="text-2xl leading-none app-text-subtle hover:text-[var(--app-text)]"
 					onclick={() => (showModal = false)}
 					aria-label="Close"
 				>
@@ -47,17 +47,17 @@
 				</button>
 			</div>
 
-			<div class="space-y-4 text-sm text-blue-200">
+			<div class="space-y-4 text-sm app-text-muted">
 				<p>{$_('perfect.tooltip.evBody')}</p>
 
 				<div>
-					<h2 class="mb-1 text-xl font-bold text-white">{$_('perfect.tooltip.evMethodTitle')}</h2>
-					<p class="text-sm text-blue-200">{$_('perfect.tooltip.evMethodBody')}</p>
+					<h2 class="mb-1 text-xl font-bold">{$_('perfect.tooltip.evMethodTitle')}</h2>
+					<p class="text-sm app-text-muted">{$_('perfect.tooltip.evMethodBody')}</p>
 				</div>
 
 				<div>
-					<h2 class="mb-1 text-xl font-bold text-white">{$_('perfect.tooltip.evResetTitle')}</h2>
-					<p class="text-sm text-blue-200">{$_('perfect.tooltip.evResetBody')}</p>
+					<h2 class="mb-1 text-xl font-bold">{$_('perfect.tooltip.evResetTitle')}</h2>
+					<p class="text-sm app-text-muted">{$_('perfect.tooltip.evResetBody')}</p>
 					<img
 						src="/merchants/reset-ev.png"
 						alt=""
@@ -66,7 +66,7 @@
 				</div>
 
 				<div>
-					<h2 class="mb-1 text-xl font-bold text-white">{$_('perfect.tooltip.ivTitle')}</h2>
+					<h2 class="mb-1 text-xl font-bold">{$_('perfect.tooltip.ivTitle')}</h2>
 					<div class="flex items-stretch gap-3">
 						<div class="relative flex items-stretch">
 							<img
@@ -80,7 +80,7 @@
 								class="relative z-0 h-full w-auto object-contain"
 							/>
 						</div>
-						<p class="text-sm text-blue-200">{$_('perfect.tooltip.ivBody')}</p>
+						<p class="text-sm app-text-muted">{$_('perfect.tooltip.ivBody')}</p>
 					</div>
 				</div>
 			</div>

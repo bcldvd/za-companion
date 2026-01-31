@@ -38,7 +38,11 @@
     "shinyDescription": "Estimate shiny odds timing"
   },
   "settings": {
-    "language": "Language"
+    "language": "Language",
+    "theme": "Theme",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark"
   },
   "shiny": {
     "toggle": "Shiny",

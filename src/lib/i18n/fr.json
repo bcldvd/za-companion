@@ -32,13 +32,17 @@
     "perfect": "Pokémon Parfait",
     "shiny": "Extra-dimension",
     "settings": "Paramètres",
-    "boxDescription": "Trouvez vite une place dans les boîtes",
-    "mapDescription": "Explorez les apparitions de Lumiose",
-    "perfectDescription": "Planifiez des EV optimisés",
+    "boxDescription": "Pour savoir dans quelle boite ranger chaque pokémon pour avoir votre living ShinyDex",
+    "mapDescription": "Quels pokémons spawn dans les 50m autour de ...",
+    "perfectDescription": "Natures, EV, IV et zones idéales pour chaque stat",
     "shinyDescription": "Estimez le temps pour un shiny dans l'extra-dimension"
   },
   "settings": {
-    "language": "Langue"
+    "language": "Langue",
+    "theme": "Thème",
+    "themeSystem": "Système",
+    "themeLight": "Clair",
+    "themeDark": "Sombre"
   },
   "shiny": {
     "toggle": "Chromatique",

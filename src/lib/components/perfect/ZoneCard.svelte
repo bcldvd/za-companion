@@ -15,7 +15,7 @@
 
 </script>
 
-<div class="rounded-lg border border-blue-700 bg-blue-800/50 p-4">
+<div class="rounded-lg border app-card-muted p-4">
 	<div class="mb-2 font-semibold">{$_(`perfect.zones.${zone.id}`)}</div>
 
 	{#if zone.hasNotes}
@@ -28,7 +28,7 @@
 		{#each zone.evSources as source}
 			{@const pokemon = getPokemonByNationalNumber(source.nationalNumber, pokedex)}
 			<div class="flex items-center justify-between text-sm">
-				<div class="flex items-center gap-2 text-blue-200">
+				<div class="flex items-center gap-2 app-text-muted">
 					<img
 						src={`/sprites/default/${source.nationalNumber}.png`}
 						alt=""
@@ -37,7 +37,7 @@
 					/>
 					<span>{pokemon ? getLocalizedPokemonName(pokemon) : `#${source.nationalNumber}`}</span>
 				</div>
-				<span class="rounded bg-blue-900 px-2 py-0.5 text-xs text-blue-300">
+				<span class="rounded app-surface-strong px-2 py-0.5 text-xs app-text-subtle">
 					+{source.evYield} {$_(`perfect.stats.${source.stat}`)}
 				</span>
 			</div>

@@ -7,6 +7,7 @@
 	import { _ } from 'svelte-i18n';
 	import { page } from '$app/state';
 	import { iconViewBox, sidebarModules } from '$lib/features/navigation/modules';
+	import { initThemeMode } from '$lib/settings/theme';
 
 	let { children } = $props();
 	let isLocaleReady = $state(false);
@@ -26,38 +27,45 @@
 		sidebarModules.find((module) => isActiveRoute(module.href)) ?? null
 	);
 
-	onMount(async () => {
+	onMount(() => {
+		const cleanupTheme = initThemeMode();
 		// Wait for locale to be loaded before rendering
-		await waitForLocale();
-		isLocaleReady = true;
+		waitForLocale().then(() => {
+			isLocaleReady = true;
+		});
+		return () => {
+			cleanupTheme();
+		};
 	});
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 {#if isLocaleReady}
-	<div class="min-h-screen h-screen bg-gradient-to-b from-blue-900 to-blue-950 text-white flex flex-col">
+	<div class="min-h-screen h-screen app-shell flex flex-col">
 		<!-- Sticky Header -->
 		<header
-			class="safe-area-inset-top sticky top-0 z-50 bg-blue-900/95 backdrop-blur-sm border-b border-blue-700"
+			class="safe-area-inset-top sticky top-0 z-50 backdrop-blur-sm border-b app-border app-surface"
 		>
 			<div class="px-4 py-3 flex items-center justify-between">
 				<div class="flex items-center gap-3">
-					<img
-						src="/icons/icon-192.png"
-						alt={$_('app.companionTitle')}
-						class="w-8 h-8"
-					/>
-					<h1 class="text-xl font-bold">{$_('app.companionTitle')}</h1>
+					<a href="/" class="flex items-center gap-3" aria-label={$_('nav.home')}>
+						<img
+							src="/icons/logo-za.png"
+							alt={$_('app.companionTitle')}
+							class="w-8 h-8"
+						/>
+						<h1 class="text-xl font-bold">{$_('app.companionTitle')}</h1>
+					</a>
 					{#if activeModule}
 						<span
-							class="ml-1 inline-flex items-center rounded-full border border-blue-700 bg-blue-800/60 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-blue-100"
+							class="ml-1 inline-flex items-center rounded-full border app-chip px-2.5 py-1 text-xs font-semibold uppercase tracking-wide"
 						>
 							{$_(activeModule.labelKey)}
 						</span>
 					{/if}
 				</div>
 				<button
-					class="md:hidden flex min-h-[44px] touch-manipulation items-center justify-center rounded-lg border border-blue-700 bg-blue-800/50 px-3 py-2 text-white transition-colors hover:bg-blue-700"
+					class="md:hidden flex min-h-[44px] touch-manipulation items-center justify-center rounded-lg border app-button px-3 py-2 transition-colors"
 					aria-label="Toggle navigation"
 					aria-expanded={isSidebarOpen}
 					onclick={() => (isSidebarOpen = !isSidebarOpen)}
@@ -71,9 +79,7 @@
 
 		<div class="flex-1 min-h-0 flex">
 			<!-- Sidebar (Desktop) -->
-			<aside
-				class="hidden md:flex md:w-64 md:flex-col border-r border-blue-700 bg-blue-900/95 backdrop-blur-sm"
-			>
+			<aside class="hidden md:flex md:w-64 md:flex-col border-r app-border app-surface backdrop-blur-sm">
 				<nav class="flex-1 px-3 py-4 space-y-1">
 					{#each sidebarModules as module}
 						<a
@@ -81,8 +87,8 @@
 							class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors {isActiveRoute(
 								module.href
 							)
-								? 'text-yellow-300 bg-blue-800/50'
-								: 'text-blue-200 hover:text-white hover:bg-blue-800/30'}"
+								? 'app-accent-text bg-[var(--app-surface-strong)]'
+								: 'app-text-muted hover:text-[var(--app-text)] hover:bg-[var(--app-surface-muted)]'}"
 							aria-current={isActiveRoute(module.href) ? 'page' : undefined}
 						>
 							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox={iconViewBox}>
@@ -109,12 +115,12 @@
 		{#if isSidebarOpen}
 			<div class="md:hidden fixed inset-0 z-[2000]">
 				<button
-					class="absolute inset-0 bg-black/50"
+					class="absolute inset-0 app-overlay"
 					aria-label="Close navigation"
 					onclick={() => (isSidebarOpen = false)}
 				></button>
 				<aside
-					class="absolute right-0 top-0 bottom-0 w-64 bg-blue-900/95 border-l border-blue-700 backdrop-blur-sm safe-area-inset-top safe-area-inset-bottom z-[2001]"
+					class="absolute right-0 top-0 bottom-0 w-64 app-surface border-l app-border backdrop-blur-sm safe-area-inset-top safe-area-inset-bottom z-[2001]"
 				>
 					<nav class="flex-1 px-3 py-4 space-y-1">
 						{#each sidebarModules as module}
@@ -123,8 +129,8 @@
 								class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors {isActiveRoute(
 									module.href
 								)
-									? 'text-yellow-300 bg-blue-800/50'
-									: 'text-blue-200 hover:text-white hover:bg-blue-800/30'}"
+									? 'app-accent-text bg-[var(--app-surface-strong)]'
+									: 'app-text-muted hover:text-[var(--app-text)] hover:bg-[var(--app-surface-muted)]'}"
 								aria-current={isActiveRoute(module.href) ? 'page' : undefined}
 								onclick={() => (isSidebarOpen = false)}
 							>
@@ -145,8 +151,8 @@
 		{/if}
 	</div>
 {:else}
-	<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 text-white flex items-center justify-center">
-		<p class="text-blue-200">Loading...</p>
+	<div class="min-h-screen app-shell flex items-center justify-center">
+		<p class="app-text-muted">Loading...</p>
 	</div>
 {/if}
 

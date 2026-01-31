@@ -9,9 +9,9 @@
 </script>
 
 {#if vitamin}
-	<div class="rounded-lg border border-blue-700 bg-blue-800/50 p-4">
+	<div class="rounded-lg border app-card-muted p-4">
 		<div class="mb-1 font-semibold">{$_(`perfect.vitamins.${vitamin.id}`)}</div>
-		<div class="text-sm text-blue-300">
+		<div class="text-sm app-text-subtle">
 			+{vitamin.evPerUse} {$_(`perfect.stats.${stat}`)} per use
 		</div>
 	</div>

@@ -10,11 +10,11 @@
 		{#each launchpadModules as module}
 			<a
 				href={module.href}
-				class="group rounded-xl border border-blue-700 bg-blue-900/60 p-4 transition-colors hover:bg-blue-800/40"
+				class="group rounded-xl border app-card-muted p-4 transition-colors hover:bg-[var(--app-surface-strong)]"
 			>
 				<div class="flex items-center gap-3">
 					<div
-						class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-800/60 text-blue-100 transition-colors group-hover:text-white"
+						class="flex h-10 w-10 items-center justify-center rounded-lg app-surface-strong app-text-muted transition-colors group-hover:text-[var(--app-text)]"
 					>
 						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox={iconViewBox}>
 							<path
@@ -28,7 +28,7 @@
 					<h3 class="text-lg font-semibold">{$_(module.labelKey)}</h3>
 				</div>
 				{#if module.descriptionKey}
-					<p class="mt-2 text-sm text-blue-200">{$_(module.descriptionKey)}</p>
+					<p class="mt-2 text-sm app-text-muted">{$_(module.descriptionKey)}</p>
 				{/if}
 			</a>
 		{/each}

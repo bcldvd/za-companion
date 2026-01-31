@@ -83,7 +83,7 @@
 <div class="relative" bind:this={dropdownRef}>
 	<button
 		onclick={toggleDropdown}
-		class="flex min-h-[44px] touch-manipulation items-center gap-2 rounded-lg border border-blue-700 bg-blue-800/50 px-4 py-2 text-white transition-colors hover:bg-blue-700"
+		class="flex min-h-[44px] touch-manipulation items-center gap-2 rounded-lg border app-button px-4 py-2 transition-colors"
 		aria-label="Change language"
 		aria-expanded={isOpen}
 		aria-haspopup="true"
@@ -102,20 +102,20 @@
 
 	{#if isOpen}
 		<div
-			class="absolute right-0 z-50 mt-2 w-48 overflow-hidden rounded-lg border border-blue-700 bg-blue-800 shadow-xl"
+			class="absolute right-0 z-50 mt-2 w-48 overflow-hidden rounded-lg border app-border app-surface shadow-xl"
 		>
 			{#each languages as language}
 				<button
 					onclick={() => handleLanguageChange(language.code)}
-					class="flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-blue-700 active:bg-blue-600 {currentLang ===
+					class="flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-[var(--app-surface-strong)] active:bg-[var(--app-surface-muted)] {currentLang ===
 					language.code
-						? 'bg-blue-700/50'
+						? 'bg-[var(--app-surface-strong)]'
 						: ''}"
 				>
 					<span class="text-xl">{language.flag}</span>
-					<span class="flex-1 font-medium text-white">{language.name}</span>
+					<span class="flex-1 font-medium">{language.name}</span>
 					{#if currentLang === language.code}
-						<svg class="h-5 w-5 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
+						<svg class="h-5 w-5 app-accent-text" fill="currentColor" viewBox="0 0 20 20">
 							<path
 								fill-rule="evenodd"
 								d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"

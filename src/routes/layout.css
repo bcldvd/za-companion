@@ -1,1 +1,169 @@
 @import 'tailwindcss';
+
+:root {
+	color-scheme: light;
+	--app-bg: #f6f6f4;
+	--app-surface: #ffffff;
+	--app-surface-muted: #f1f2ef;
+	--app-surface-strong: #e7e8e4;
+	--app-border: #e1e2dd;
+	--app-border-strong: #d2d4cc;
+	--app-text: #1b1c19;
+	--app-text-muted: #454845;
+	--app-text-subtle: #6b6f6a;
+	--app-accent: #b7791f;
+	--app-accent-strong: #8a5c14;
+	--app-accent-contrast: #fff8e6;
+	--app-accent-rgb: 183, 121, 31;
+	--app-focus: #d97706;
+	--app-overlay: rgba(20, 20, 20, 0.45);
+	--app-shadow: 0 12px 30px rgba(16, 24, 40, 0.12);
+}
+
+.theme-light {
+	color-scheme: light;
+}
+
+.theme-dark {
+	color-scheme: dark;
+	--app-bg: #0f1110;
+	--app-surface: #151716;
+	--app-surface-muted: #1d1f1d;
+	--app-surface-strong: #242626;
+	--app-border: #2d2f2e;
+	--app-border-strong: #3a3d3b;
+	--app-text: #f5f5f4;
+	--app-text-muted: #c9cbc5;
+	--app-text-subtle: #a3a69f;
+	--app-accent: #61bf85;
+	--app-accent-strong: #4faa70;
+	--app-accent-contrast: #0f2016;
+	--app-accent-rgb: 97, 191, 133;
+	--app-focus: #61bf85;
+	--app-overlay: rgba(10, 10, 10, 0.6);
+	--app-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.app-shell {
+	background-color: var(--app-bg);
+	color: var(--app-text);
+}
+
+.app-surface {
+	background-color: var(--app-surface);
+}
+
+.app-surface-muted {
+	background-color: var(--app-surface-muted);
+}
+
+.app-surface-strong {
+	background-color: var(--app-surface-strong);
+}
+
+.app-border {
+	border-color: var(--app-border);
+}
+
+.app-border-strong {
+	border-color: var(--app-border-strong);
+}
+
+.app-text-muted {
+	color: var(--app-text-muted);
+}
+
+.app-text-subtle {
+	color: var(--app-text-subtle);
+}
+
+.app-accent-text {
+	color: var(--app-accent);
+}
+
+.app-accent-bg {
+	background-color: var(--app-accent);
+	color: var(--app-accent-contrast);
+}
+
+.app-accent-outline {
+	border-color: var(--app-accent);
+	color: var(--app-accent);
+}
+
+.app-accent-glow {
+	box-shadow: 0 0 0 2px rgba(var(--app-accent-rgb), 0.25);
+}
+
+.app-card {
+	background-color: var(--app-surface);
+	border-color: var(--app-border);
+	box-shadow: var(--app-shadow);
+}
+
+.app-card-muted {
+	background-color: var(--app-surface-muted);
+	border-color: var(--app-border);
+}
+
+.app-chip {
+	background-color: var(--app-surface-strong);
+	border-color: var(--app-border);
+	color: var(--app-text-muted);
+}
+
+.app-input {
+	background-color: var(--app-surface);
+	border-color: var(--app-border-strong);
+	color: var(--app-text);
+}
+
+.app-input::placeholder {
+	color: var(--app-text-subtle);
+}
+
+.app-button {
+	background-color: var(--app-surface-strong);
+	border-color: var(--app-border-strong);
+	color: var(--app-text);
+}
+
+.app-button:hover {
+	background-color: var(--app-surface);
+}
+
+.app-button-ghost {
+	background-color: transparent;
+	border-color: var(--app-border-strong);
+	color: var(--app-text);
+}
+
+.app-button-ghost:hover {
+	background-color: var(--app-surface-muted);
+}
+
+.app-button-primary {
+	background-color: var(--app-accent);
+	border-color: var(--app-accent);
+	color: var(--app-accent-contrast);
+}
+
+.app-button-primary:hover {
+	background-color: var(--app-accent-strong);
+}
+
+.app-link {
+	color: var(--app-accent);
+}
+
+.app-link:hover {
+	color: var(--app-accent-strong);
+}
+
+.app-divider {
+	border-color: var(--app-border);
+}
+
+.app-overlay {
+	background-color: var(--app-overlay);
+}

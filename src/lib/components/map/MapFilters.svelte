@@ -94,14 +94,14 @@
 	onclick={handleBackdropClick}
 	onkeydown={handleBackdropKeydown}
 >
-	<div class="bg-linear-to-br from-blue-900 to-blue-800 rounded-xl border-2 border-blue-600 shadow-2xl w-full max-w-md p-6">
+	<div class="rounded-xl border app-card shadow-2xl w-full max-w-md p-6">
 		<div class="flex items-center justify-between mb-6">
-			<h2 id="filter-modal-title" class="text-2xl font-bold text-white">
+			<h2 id="filter-modal-title" class="text-2xl font-bold">
 				{$_('map.filters.title')}
 			</h2>
 			<button
 				onclick={onClose}
-				class="flex items-center justify-center w-10 h-10 bg-blue-800/50 hover:bg-blue-700 rounded-lg border border-blue-700 text-white transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
+				class="flex items-center justify-center w-10 h-10 rounded-lg border app-button transition-colors min-h-[44px] min-w-[44px] touch-manipulation"
 				aria-label={$_('map.filters.close')}
 			>
 				<X class="w-6 h-6" />
@@ -110,18 +110,18 @@
 
 		<div class="space-y-4">
 			<!-- Pokemon Spawns -->
-			<div class="space-y-3 p-3 bg-blue-800/30 rounded-lg border border-blue-700/50">
+			<div class="space-y-3 p-3 rounded-lg border app-card-muted">
 				<label class="flex items-center gap-3 cursor-pointer">
 					<input
 						type="checkbox"
 						bind:checked={filterState.pokemonSpawns}
 						onchange={handleFilterChange}
-						class="w-5 h-5 rounded border-blue-600 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-900"
+						class="w-5 h-5 rounded border-[var(--app-border-strong)] text-[var(--app-accent)] focus:ring-2 focus:ring-[var(--app-focus)] focus:ring-offset-2 focus:ring-offset-[var(--app-surface)]"
 					/>
-					<span class="text-white font-medium flex-1">{$_('map.filters.pokemonSpawns')}</span>
+					<span class="font-medium flex-1">{$_('map.filters.pokemonSpawns')}</span>
 				</label>
 
-				<div class="flex items-center justify-between text-xs text-blue-200">
+				<div class="flex items-center justify-between text-xs app-text-muted">
 					<span>
 						{filterState.selectedPokemon.length > 0
 							? `${filterState.selectedPokemon.length} selected`
@@ -131,7 +131,7 @@
 						type="button"
 						onclick={clearPokemonSelection}
 						disabled={filterState.selectedPokemon.length === 0}
-						class="text-blue-100 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+						class="app-text-muted hover:text-[var(--app-text)] disabled:opacity-50 disabled:cursor-not-allowed"
 					>
 						All
 					</button>
@@ -142,27 +142,27 @@
 						type="search"
 						placeholder="Search Pokemon"
 						bind:value={pokemonSearch}
-						class="w-full rounded-lg border border-blue-700 bg-blue-900/50 px-3 py-2 text-sm text-white placeholder:text-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+						class="w-full rounded-lg border app-input px-3 py-2 text-sm placeholder:text-[var(--app-text-subtle)] focus:outline-none focus:ring-2 focus:ring-[var(--app-focus)]"
 					/>
 
 					<div class="mt-3 max-h-48 overflow-y-auto pr-1 space-y-1">
 						{#if pokemonOptionsLoading}
-							<p class="text-xs text-blue-200">Loading Pokemon...</p>
+							<p class="text-xs app-text-muted">Loading Pokemon...</p>
 						{:else if filteredPokemonList.length === 0}
-							<p class="text-xs text-blue-200">No matches.</p>
+							<p class="text-xs app-text-muted">No matches.</p>
 						{:else}
 							{#each filteredPokemonList as pokemon}
-								<label class="flex items-center gap-2 rounded-md px-2 py-1 hover:bg-blue-800/40 cursor-pointer">
+								<label class="flex items-center gap-2 rounded-md px-2 py-1 hover:bg-[var(--app-surface-strong)] cursor-pointer">
 									<input
 										type="checkbox"
 										checked={selectedPokemonSet.has(pokemon.nationalNumber)}
 										onchange={() => togglePokemonSelection(pokemon.nationalNumber)}
-										class="w-4 h-4 rounded border-blue-600 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-900"
+										class="w-4 h-4 rounded border-[var(--app-border-strong)] text-[var(--app-accent)] focus:ring-2 focus:ring-[var(--app-focus)] focus:ring-offset-2 focus:ring-offset-[var(--app-surface)]"
 									/>
-									<span class="text-sm text-white flex-1">
+									<span class="text-sm flex-1">
 										{getLocalizedPokemonName(pokemon)}
 									</span>
-									<span class="text-xs text-blue-200">#{pokemon.nationalNumber}</span>
+									<span class="text-xs app-text-muted">#{pokemon.nationalNumber}</span>
 								</label>
 							{/each}
 						{/if}
@@ -171,12 +171,12 @@
 			</div>
 
 			<!-- Benches -->
-			<label class="flex items-center gap-3 p-3 bg-blue-800/30 rounded-lg hover:bg-blue-800/50 transition-colors cursor-pointer">
+			<label class="flex items-center gap-3 p-3 app-card-muted rounded-lg hover:bg-[var(--app-surface-strong)] transition-colors cursor-pointer">
 				<input
 					type="checkbox"
 					bind:checked={filterState.benches}
 					onchange={handleFilterChange}
-					class="w-5 h-5 rounded border-blue-600 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-900"
+					class="w-5 h-5 rounded border-[var(--app-border-strong)] text-[var(--app-accent)] focus:ring-2 focus:ring-[var(--app-focus)] focus:ring-offset-2 focus:ring-offset-[var(--app-surface)]"
 				/>
 				<div class="flex items-center gap-2 flex-1">
 					<img
@@ -185,17 +185,17 @@
 						class="h-4 w-4 object-contain"
 						aria-hidden="true"
 					/>
-					<span class="text-white font-medium">{$_('map.filters.benches')}</span>
+					<span class="font-medium">{$_('map.filters.benches')}</span>
 				</div>
 			</label>
 
 			<!-- Guaranteed Alphas -->
-			<label class="flex items-center gap-3 p-3 bg-blue-800/30 rounded-lg hover:bg-blue-800/50 transition-colors cursor-pointer">
+			<label class="flex items-center gap-3 p-3 app-card-muted rounded-lg hover:bg-[var(--app-surface-strong)] transition-colors cursor-pointer">
 				<input
 					type="checkbox"
 					bind:checked={filterState.alphas}
 					onchange={handleFilterChange}
-					class="w-5 h-5 rounded border-blue-600 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-900"
+					class="w-5 h-5 rounded border-[var(--app-border-strong)] text-[var(--app-accent)] focus:ring-2 focus:ring-[var(--app-focus)] focus:ring-offset-2 focus:ring-offset-[var(--app-surface)]"
 				/>
 				<div class="flex items-center gap-2 flex-1">
 					<img
@@ -204,17 +204,17 @@
 						class="h-4 w-4 object-contain"
 						aria-hidden="true"
 					/>
-					<span class="text-white font-medium">{$_('map.filters.alphas')}</span>
+					<span class="font-medium">{$_('map.filters.alphas')}</span>
 				</div>
 			</label>
 
 			<!-- Ladders -->
-			<label class="flex items-center gap-3 p-3 bg-blue-800/30 rounded-lg hover:bg-blue-800/50 transition-colors cursor-pointer">
+			<label class="flex items-center gap-3 p-3 app-card-muted rounded-lg hover:bg-[var(--app-surface-strong)] transition-colors cursor-pointer">
 				<input
 					type="checkbox"
 					bind:checked={filterState.ladders}
 					onchange={handleFilterChange}
-					class="w-5 h-5 rounded border-blue-600 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-900"
+					class="w-5 h-5 rounded border-[var(--app-border-strong)] text-[var(--app-accent)] focus:ring-2 focus:ring-[var(--app-focus)] focus:ring-offset-2 focus:ring-offset-[var(--app-surface)]"
 				/>
 				<div class="flex items-center gap-2 flex-1">
 					<img
@@ -223,7 +223,7 @@
 						class="h-4 w-4 object-contain"
 						aria-hidden="true"
 					/>
-					<span class="text-white font-medium">{$_('map.filters.ladders')}</span>
+					<span class="font-medium">{$_('map.filters.ladders')}</span>
 				</div>
 			</label>
 		</div>

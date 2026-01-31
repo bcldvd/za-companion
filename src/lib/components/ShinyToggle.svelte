@@ -16,15 +16,15 @@
 
 <button
 	onclick={toggleShiny}
-	class="flex items-center justify-center w-11 h-11 bg-blue-800/50 hover:bg-blue-700 rounded-lg border border-blue-700 text-white transition-colors min-h-[44px] min-w-[44px] touch-manipulation {isShiny
-		? 'bg-yellow-600/50 border-yellow-500 hover:bg-yellow-600'
-		: ''}"
+	class="flex items-center justify-center w-11 h-11 rounded-lg border transition-colors min-h-[44px] min-w-[44px] touch-manipulation {isShiny
+		? 'app-button-primary'
+		: 'app-button'}"
 	aria-label={isShiny ? $_('shiny.enabled') : $_('shiny.disabled')}
 	aria-pressed={isShiny}
 	title={$_('shiny.toggle')}
 >
 	<svg
-		class="w-9 h-9 {isShiny ? 'text-yellow-300' : 'text-blue-300'}"
+		class="w-9 h-9 {isShiny ? 'app-accent-text' : 'app-text-subtle'}"
 		fill="currentColor"
 		viewBox="0 0 24 24"
 		xmlns="http://www.w3.org/2000/svg"

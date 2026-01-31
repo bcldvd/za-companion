@@ -325,22 +325,22 @@
 	});
 </script>
 
-<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 p-4 pb-16 text-white">
+<div class="min-h-screen app-shell p-4 pb-16">
 	<div class="mx-auto max-w-2xl">
 		{#if isLoading}
-			<div class="py-12 text-center text-blue-300">
+			<div class="py-12 text-center app-text-subtle">
 				<p class="mb-2 text-lg">{$_('pokemon.loading')}</p>
 			</div>
 		{:else if notFound}
-			<div class="py-12 text-center text-blue-300">
+			<div class="py-12 text-center app-text-subtle">
 				<p class="mb-2 text-lg">{$_('pokemon.notFound')} (ID: {pokemonId})</p>
-				<button onclick={goHome} class="mt-4 rounded-lg bg-blue-700 px-4 py-2 hover:bg-blue-600">
+				<button onclick={goHome} class="mt-4 rounded-lg border app-button-primary px-4 py-2">
 					{$_('pokemon.backToSearch')}
 				</button>
 			</div>
 		{:else if selectedPokemon && boxPosition}
 			<!-- Selected Pokemon Info -->
-			<div class="mb-6 rounded-lg border border-blue-700 bg-blue-800/50 p-4">
+			<div class="mb-6 rounded-lg border app-card-muted p-4">
 				<div class="mb-4 flex items-center gap-4">
 					<img
 						src={selectedPokemonSpriteUrl || selectedPokemon.imageUrl}
@@ -349,7 +349,7 @@
 					/>
 					<div class="flex-1">
 						<h3 class="text-2xl font-bold">{getLocalizedPokemonName(selectedPokemon)}</h3>
-						<p class="text-blue-200">
+						<p class="app-text-muted">
 							{$_('pokemon.regional')}
 							{selectedPokemon.regionalNumber} • {getLocalizedTypes(selectedPokemon.types).join(
 								', '
@@ -359,18 +359,18 @@
 				</div>
 
 				<!-- Text Placement Info -->
-				<div class="rounded-lg bg-blue-900/50 py-3 text-center">
+				<div class="rounded-lg app-surface-strong py-3 text-center">
 					<p class="text-lg font-semibold">
 						{$_('pokemon.placeIn')}
-						<span class="text-yellow-300">{$_('pokemon.box')} {boxPosition.box}</span>,{' '}
-						<span class="text-yellow-300">{$_('pokemon.row')} {boxPosition.row}</span>,{' '}
-						<span class="text-yellow-300">{$_('pokemon.column')} {boxPosition.column}</span>
+						<span class="app-accent-text">{$_('pokemon.box')} {boxPosition.box}</span>,{' '}
+						<span class="app-accent-text">{$_('pokemon.row')} {boxPosition.row}</span>,{' '}
+						<span class="app-accent-text">{$_('pokemon.column')} {boxPosition.column}</span>
 					</p>
 				</div>
 			</div>
 
 			<!-- Visual Box Representation -->
-			<div class="rounded-lg border border-blue-700 bg-blue-800/50 p-4">
+			<div class="rounded-lg border app-card-muted p-4">
 				<div class="mb-4 text-center">
 					<h3 class="text-xl font-bold">{$_('pokemon.box')} {boxPosition.box}</h3>
 				</div>
@@ -384,7 +384,7 @@
 						<!-- Column labels aligned with grid -->
 						<div class="grid grid-cols-6 gap-2">
 							{#each Array(6) as _, colIndex}
-								<div class="text-center text-xs font-semibold text-blue-300">
+								<div class="text-center text-xs font-semibold app-text-subtle">
 									{colLabel}
 									{colIndex + 1}
 								</div>
@@ -398,7 +398,7 @@
 						<div class="flex w-12 flex-col justify-center gap-2">
 							{#each Array(5) as _, rowIndex}
 								<div
-									class="flex h-full min-h-[calc((100%-2rem)/5)] items-center text-xs font-semibold text-blue-300"
+									class="flex h-full min-h-[calc((100%-2rem)/5)] items-center text-xs font-semibold app-text-subtle"
 								>
 									{rowLabel}
 									{rowIndex + 1}
@@ -412,8 +412,8 @@
 								{@const isTargetSlot = index === boxPosition.slotIndex}
 								<div
 									class="aspect-square rounded-lg border-2 transition-all {isTargetSlot
-										? 'z-10 scale-110 border-yellow-300 bg-yellow-400 shadow-lg shadow-yellow-500/50'
-										: 'border-blue-600 bg-blue-700/30'}"
+										? 'z-10 scale-110 border-[var(--app-accent)] bg-[var(--app-accent)] shadow-lg shadow-[rgba(var(--app-accent-rgb),0.45)]'
+										: 'border-[var(--app-border-strong)] bg-[var(--app-surface-strong)]'}"
 								>
 									{#if isTargetSlot}
 										<div class="flex h-full w-full flex-col items-center justify-center p-1">
@@ -440,9 +440,7 @@
 	>
 		<div class="mx-auto max-w-2xl px-4">
 			<div class="relative">
-				<div
-					class="flex items-center gap-3 rounded-xl border border-blue-700 bg-blue-900/95 p-3 backdrop-blur-sm"
-				>
+				<div class="flex items-center gap-3 rounded-xl border app-card p-3 backdrop-blur-sm">
 					<ShinyToggle bind:isShiny />
 					<div class="relative flex-1">
 						<input
@@ -451,7 +449,7 @@
 							value={searchQuery}
 							oninput={handleSearchInput}
 							bind:this={searchInput}
-							class="min-h-[44px] w-full rounded-lg border border-blue-700 bg-blue-800/50 pl-4 pr-14 py-3 text-lg text-white placeholder-blue-300 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none"
+							class="min-h-[44px] w-full rounded-lg border app-input pl-4 pr-14 py-3 text-lg placeholder:text-[var(--app-text-subtle)] focus:border-transparent focus:ring-2 focus:ring-[var(--app-focus)] focus:outline-none"
 							autocomplete="off"
 						/>
 						{#if searchQuery}
@@ -459,7 +457,7 @@
 								type="button"
 								onpointerdown={handleClearPointerDown}
 								onkeydown={handleClearKeydown}
-								class="absolute top-1/2 right-2 -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-blue-500 bg-blue-800/80 px-2.5 py-1 text-xs font-semibold text-blue-100 shadow-sm hover:bg-blue-700 hover:text-white active:bg-blue-600"
+								class="absolute top-1/2 right-2 -translate-y-1/2 inline-flex items-center justify-center rounded-full border app-button px-2.5 py-1 text-xs font-semibold shadow-sm"
 								aria-label="Clear search"
 							>
 								✕
@@ -471,14 +469,14 @@
 				<!-- Autocomplete Dropdown -->
 				{#if showDropdown && searchResults.length > 0}
 					<div
-						class="absolute bottom-full z-50 mb-2 max-h-80 w-full overflow-y-auto rounded-lg border border-blue-700 bg-blue-800 shadow-xl"
+						class="absolute bottom-full z-50 mb-2 max-h-80 w-full overflow-y-auto rounded-lg border app-border app-surface shadow-xl"
 					>
 						{#each searchResults as pokemon}
 							{@const spriteUrl =
 								searchResultSpriteUrls.get(pokemon.nationalNumber) || pokemon.imageUrl}
 							<button
 								onclick={() => selectPokemon(pokemon)}
-								class="flex min-h-[60px] w-full touch-manipulation items-center gap-3 border-b border-blue-700 px-4 py-3 text-left transition-colors last:border-b-0 hover:bg-blue-700 active:bg-blue-600"
+								class="flex min-h-[60px] w-full touch-manipulation items-center gap-3 border-b app-border px-4 py-3 text-left transition-colors last:border-b-0 hover:bg-[var(--app-surface-strong)] active:bg-[var(--app-surface-muted)]"
 							>
 								<img
 									src={spriteUrl}
@@ -486,8 +484,8 @@
 									class="h-12 w-12 object-contain"
 								/>
 								<div class="flex-1">
-									<div class="font-semibold text-white">{getLocalizedPokemonName(pokemon)}</div>
-									<div class="text-sm text-blue-300">
+									<div class="font-semibold">{getLocalizedPokemonName(pokemon)}</div>
+									<div class="text-sm app-text-subtle">
 										{$_('pokemon.regional')}
 										{String(pokemon.regionalNumber).padStart(3, '0')} • {getLocalizedTypes(
 											pokemon.types

@@ -13,7 +13,7 @@
 
 <button
 	type="button"
-	class="flex h-8 w-8 items-center justify-center rounded-full border border-blue-700 bg-blue-800/50 text-blue-300 transition-colors hover:bg-blue-700/50 hover:text-white"
+	class="flex h-8 w-8 items-center justify-center rounded-full border app-button app-text-subtle transition-colors hover:text-[var(--app-text)]"
 	onclick={() => (showModal = true)}
 	aria-label="More information about attack styles"
 >
@@ -22,7 +22,7 @@
 
 {#if showModal}
 	<div
-		class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+		class="fixed inset-0 z-50 flex items-center justify-center app-overlay p-4"
 		onclick={handleBackdropClick}
 		onkeydown={(e) => {
 			if (e.key === 'Escape') showModal = false;
@@ -32,14 +32,14 @@
 		aria-modal="true"
 		aria-labelledby="attack-style-modal-title"
 	>
-		<div class="w-full max-w-md space-y-4 rounded-lg border border-blue-700 bg-blue-900 p-6">
+		<div class="w-full max-w-md space-y-4 rounded-lg border app-card p-6">
 			<div class="flex items-center justify-between">
 				<h2 id="attack-style-modal-title" class="text-xl font-bold">
 					{$_('perfect.tooltip.attackStyleTitle')}
 				</h2>
 				<button
 					type="button"
-					class="text-2xl leading-none text-blue-300 hover:text-white"
+					class="text-2xl leading-none app-text-subtle hover:text-[var(--app-text)]"
 					onclick={() => (showModal = false)}
 					aria-label="Close"
 				>
@@ -47,7 +47,7 @@
 				</button>
 			</div>
 
-			<div class="text-sm text-blue-200">
+			<div class="text-sm app-text-muted">
 				<p>{$_('perfect.tooltip.attackStyleBody')}</p>
 			</div>
 		</div>

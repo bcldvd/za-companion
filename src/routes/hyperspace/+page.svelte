@@ -68,17 +68,17 @@
 	});
 </script>
 
-<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 p-4 text-white">
+<div class="min-h-screen app-shell p-4">
 	<div class="mx-auto max-w-6xl">
 		<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 			<!-- Results Section -->
 			<div class="order-1 h-fit lg:sticky lg:top-4 lg:order-2">
-				<div class="space-y-4 rounded-lg border border-blue-700 bg-blue-800/50 p-6">
+				<div class="space-y-4 rounded-lg border app-card-muted p-6">
 					<div class="mb-4 flex items-center justify-between">
 						<h2 class="text-xl font-bold">{$_('hyperspace.results.title')}</h2>
 						<button
 							type="button"
-							class="text-sm text-blue-300 underline hover:text-white"
+							class="text-sm app-link underline"
 							onclick={() => (showHowItWorks = true)}
 						>
 							{$_('hyperspace.results.howItWorks')}
@@ -104,21 +104,21 @@
 							? results.encountersAvgShalphaFormatted
 							: results.encountersAvgFormatted}
 						{@const footnote = $_('hyperspace.results.footnote')}
-						<div class="mb-3 text-xs text-blue-300">
+						<div class="mb-3 text-xs app-text-subtle">
 							{$_('hyperspace.results.encountersRequired', {
 								values: { count: results.encountersAvgFormatted }
 							})}
 						</div>
 						{#if shalphaAvailable}
-							<div class="mb-3 flex items-center justify-between rounded-lg border border-blue-600 bg-blue-900/50 px-3 py-2">
-								<span class="text-sm font-semibold text-blue-200">
+							<div class="mb-3 flex items-center justify-between rounded-lg border app-card-muted px-3 py-2">
+								<span class="text-sm font-semibold app-text-muted">
 									{$_('hyperspace.results.shalphaTitle')}
 								</span>
 								<button
 									type="button"
-									class="rounded-full px-3 py-1 text-xs font-semibold transition-colors {showShalphaResults
-										? 'bg-yellow-500/20 text-yellow-200'
-										: 'bg-blue-800/60 text-blue-300 hover:text-white'}"
+									class="rounded-full border px-3 py-1 text-xs font-semibold transition-colors {showShalphaResults
+										? 'app-accent-bg'
+										: 'app-button'}"
 									aria-pressed={showShalphaResults}
 									onclick={() => (showShalphaResults = !showShalphaResults)}
 								>
@@ -127,66 +127,66 @@
 							</div>
 						{/if}
 						<!-- Primary Result: 99% chance -->
-						<div class="rounded-lg border border-blue-600 bg-blue-900/50 p-4">
-							<div class="mb-1 text-sm text-blue-300">{$_('hyperspace.results.primaryLabel')}</div>
+						<div class="rounded-lg border app-card p-4">
+							<div class="mb-1 text-sm app-text-subtle">{$_('hyperspace.results.primaryLabel')}</div>
 							<div class="text-3xl font-bold">
 								{isShalpha ? results.t99ShalphaFormatted : results.t99Formatted}
 							</div>
-							<div class="mt-1 text-xs text-blue-300">
+							<div class="mt-1 text-xs app-text-subtle">
 								{$_('hyperspace.results.encountersSince', { values: { count: encounter99 } })}
 							</div>
 						</div>
 
 						<!-- Secondary Results: 50%, 90%, 95% -->
 						<div class="flex flex-wrap gap-2">
-							<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
-								<div class="text-xs text-blue-300">50%</div>
+							<div class="rounded border app-card-muted px-3 py-2">
+								<div class="text-xs app-text-subtle">50%</div>
 								<div class="text-sm font-semibold">
 									{isShalpha ? results.t50ShalphaFormatted : results.t50Formatted}
 								</div>
-								<div class="text-[10px] text-blue-400">
+								<div class="text-[10px] app-text-subtle">
 									{$_('hyperspace.results.encountersSince', { values: { count: encounter50 } })}
 								</div>
 							</div>
-							<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
-								<div class="text-xs text-blue-300">90%</div>
+							<div class="rounded border app-card-muted px-3 py-2">
+								<div class="text-xs app-text-subtle">90%</div>
 								<div class="text-sm font-semibold">
 									{isShalpha ? results.t90ShalphaFormatted : results.t90Formatted}
 								</div>
-								<div class="text-[10px] text-blue-400">
+								<div class="text-[10px] app-text-subtle">
 									{$_('hyperspace.results.encountersSince', { values: { count: encounter90 } })}
 								</div>
 							</div>
-							<div class="rounded border border-blue-700 bg-blue-900/50 px-3 py-2">
-								<div class="text-xs text-blue-300">95%</div>
+							<div class="rounded border app-card-muted px-3 py-2">
+								<div class="text-xs app-text-subtle">95%</div>
 								<div class="text-sm font-semibold">
 									{isShalpha ? results.t95ShalphaFormatted : results.t95Formatted}
 								</div>
-								<div class="text-[10px] text-blue-400">
+								<div class="text-[10px] app-text-subtle">
 									{$_('hyperspace.results.encountersSince', { values: { count: encounter95 } })}
 								</div>
 							</div>
 						</div>
 
 						<!-- Average Time -->
-						<div class="text-sm text-blue-300">
+						<div class="text-sm app-text-subtle">
 							{$_('hyperspace.results.average')}:
-							<span class="font-semibold text-white">
+							<span class="font-semibold">
 								{isShalpha ? results.tAvgShalphaFormatted : results.tAvgFormatted}
 							</span>
 						</div>
-						<div class="text-[10px] text-blue-400">
+						<div class="text-[10px] app-text-subtle">
 							{$_('hyperspace.results.encountersSince', { values: { count: encounterAvg } })}
 						</div>
 
 						<!-- Footnote -->
 						{#if footnote}
-							<div class="border-t border-blue-700 pt-2 text-xs text-blue-400">
+							<div class="border-t app-border pt-2 text-xs app-text-subtle">
 								{footnote}
 							</div>
 						{/if}
 					{:else}
-						<div class="text-sm text-blue-300">{$_('hyperspace.results.enterValid')}</div>
+						<div class="text-sm app-text-subtle">{$_('hyperspace.results.enterValid')}</div>
 					{/if}
 				</div>
 			</div>
@@ -195,26 +195,26 @@
 			<div class="order-2 space-y-6 pb-10 lg:order-1">
 				<!-- Method Selection -->
 				<div>
-					<div class="mb-2 block text-sm font-medium text-blue-200">
+					<div class="mb-2 block text-sm font-medium app-text-muted">
 						{$_('hyperspace.method.label')}
 					</div>
-					<div class="flex gap-2 rounded-lg border border-blue-700 bg-blue-800/50 p-1">
+					<div class="flex gap-2 rounded-lg border app-border app-surface-muted p-1">
 						<button
 							type="button"
-							class="flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors {method ===
+							class="flex-1 rounded-md border px-4 py-2 text-sm font-medium transition-colors {method ===
 							'auto'
-								? 'bg-blue-600 text-white'
-								: 'text-blue-300 hover:bg-blue-700/50'}"
+								? 'app-button-primary'
+								: 'app-button'}"
 							onclick={() => (method = 'auto')}
 						>
 							{$_('hyperspace.method.auto')}
 						</button>
 						<button
 							type="button"
-							class="flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors {method ===
+							class="flex-1 rounded-md border px-4 py-2 text-sm font-medium transition-colors {method ===
 							'manual'
-								? 'bg-blue-600 text-white'
-								: 'text-blue-300 hover:bg-blue-700/50'}"
+								? 'app-button-primary'
+								: 'app-button'}"
 							onclick={() => (method = 'manual')}
 						>
 							{$_('hyperspace.method.manual')}
@@ -224,7 +224,7 @@
 
 				<!-- Shiny Donut Level -->
 				<div>
-					<div class="mb-2 text-sm font-medium text-blue-200">
+					<div class="mb-2 text-sm font-medium app-text-muted">
 						{$_('hyperspace.shinyDonut.label')}
 					</div>
 					<div class="flex flex-wrap items-center gap-2">
@@ -263,9 +263,9 @@
 							{@const isSelected = shinyDonutLevel === level}
 							<button
 								type="button"
-								class="rounded-full px-4 py-2 text-sm font-medium transition-colors {isSelected
-									? 'bg-blue-600 text-white'
-									: 'border border-blue-700 bg-blue-800/50 text-blue-300 hover:bg-blue-700/50'}"
+								class="rounded-full border px-4 py-2 text-sm font-medium transition-colors {isSelected
+									? 'app-button-primary'
+									: 'app-button'}"
 								onclick={() => (shinyDonutLevel = level as DonutLevel)}
 							>
 								{#if level === 0}
@@ -281,7 +281,7 @@
 
 				<!-- Alpha Donut Level -->
 				<div>
-					<div class="mb-2 text-sm font-medium text-blue-200">
+					<div class="mb-2 text-sm font-medium app-text-muted">
 						{$_('hyperspace.alphaDonut.label')}
 					</div>
 					<div class="flex flex-wrap items-center gap-2">
@@ -297,9 +297,9 @@
 							{@const isSelected = alphaDonutLevel === level}
 							<button
 								type="button"
-								class="rounded-full px-4 py-2 text-sm font-medium transition-colors {isSelected
-									? 'bg-blue-600 text-white'
-									: 'border border-blue-700 bg-blue-800/50 text-blue-300 hover:bg-blue-700/50'}"
+								class="rounded-full border px-4 py-2 text-sm font-medium transition-colors {isSelected
+									? 'app-button-primary'
+									: 'app-button'}"
 								onclick={() => (alphaDonutLevel = level as DonutLevel)}
 							>
 								{#if level === 0}
@@ -315,7 +315,7 @@
 
 				<!-- Pokémon per Reset -->
 				<div>
-					<label for="pokemon-per-reset" class="mb-2 block text-sm font-medium text-blue-200">
+					<label for="pokemon-per-reset" class="mb-2 block text-sm font-medium app-text-muted">
 						{$_('hyperspace.pokemonPerReset.label')}
 					</label>
 					<div class="flex items-center gap-2">
@@ -326,7 +326,7 @@
 							max="50"
 							value={pokemonPerResetInput}
 							oninput={(e) => updatePokemonPerReset(e.currentTarget.value)}
-							class="w-20 rounded-lg border border-blue-700 bg-blue-800/50 px-3 py-2 text-white focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none {!isPokemonPerResetValid
+							class="w-20 rounded-lg border app-input px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-[var(--app-focus)] focus:outline-none {!isPokemonPerResetValid
 								? 'border-red-500'
 								: ''}"
 						/>
@@ -334,7 +334,7 @@
 							{#each [5, 10, 15, 20] as preset (preset)}
 								<button
 									type="button"
-									class="rounded border border-blue-700 bg-blue-800/50 px-3 py-1 text-xs text-blue-300 transition-colors hover:bg-blue-700/50"
+									class="rounded border app-button px-3 py-1 text-xs transition-colors"
 									onclick={() => setPreset(preset)}
 								>
 									{preset}
@@ -349,8 +349,8 @@
 
 				<!-- Shiny Charm -->
 				<div>
-					<div class="flex items-center justify-between rounded-lg border border-blue-700 bg-blue-800/50 px-3 py-2">
-						<div class="flex items-center gap-2 text-sm font-medium text-blue-200">
+					<div class="flex items-center justify-between rounded-lg border app-card-muted px-3 py-2">
+						<div class="flex items-center gap-2 text-sm font-medium app-text-muted">
 							<img
 								src="/icons/chrome-charm.png"
 								alt=""
@@ -361,9 +361,9 @@
 						</div>
 						<button
 							type="button"
-							class="rounded-full px-3 py-1 text-xs font-semibold transition-colors {shinyCharm
-								? 'bg-yellow-500/20 text-yellow-200'
-								: 'bg-blue-800/60 text-blue-300 hover:text-white'}"
+							class="rounded-full border px-3 py-1 text-xs font-semibold transition-colors {shinyCharm
+								? 'app-accent-bg'
+								: 'app-button'}"
 							aria-pressed={shinyCharm}
 							onclick={() => (shinyCharm = !shinyCharm)}
 						>
@@ -379,7 +379,7 @@
 <!-- How it works Modal -->
 {#if showHowItWorks}
 	<div
-		class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+		class="fixed inset-0 z-50 flex items-center justify-center app-overlay p-4"
 		onclick={handleModalBackdropClick}
 		onkeydown={(e) => {
 			if (e.key === 'Escape') showHowItWorks = false;
@@ -389,12 +389,12 @@
 		aria-modal="true"
 		aria-labelledby="modal-title"
 	>
-		<div class="w-full max-w-lg space-y-4 rounded-lg border border-blue-700 bg-blue-900 p-6">
+		<div class="w-full max-w-lg space-y-4 rounded-lg border app-card p-6">
 			<div class="flex items-center justify-between">
 				<h2 id="modal-title" class="text-xl font-bold">{$_('hyperspace.modal.title')}</h2>
 				<button
 					type="button"
-					class="text-2xl leading-none text-blue-300 hover:text-white"
+					class="text-2xl leading-none app-text-subtle hover:text-[var(--app-text)]"
 					onclick={() => (showHowItWorks = false)}
 					aria-label="Close"
 				>
@@ -402,15 +402,15 @@
 				</button>
 			</div>
 
-			<div class="space-y-3 text-sm text-blue-200">
+			<div class="space-y-3 text-sm app-text-muted">
 				<p>{$_('hyperspace.modal.intro')}</p>
 
 				<div>
-					<h3 class="mb-1 font-semibold text-white">{$_('hyperspace.modal.encounterRateTitle')}</h3>
+					<h3 class="mb-1 font-semibold">{$_('hyperspace.modal.encounterRateTitle')}</h3>
 					<p>
 						{$_('hyperspace.modal.encounterRateFormula')}
 						<br />
-						<span class="text-blue-300">
+						<span class="app-text-subtle">
 							{$_('hyperspace.modal.currentRate', {
 								values: { rate: results ? results.encountersPerMinute.toFixed(1) : '—' }
 							})}
@@ -419,18 +419,20 @@
 				</div>
 
 				<div>
-					<h3 class="mb-1 font-semibold text-white">{$_('hyperspace.modal.probabilityTitle')}</h3>
+					<h3 class="mb-1 font-semibold">{$_('hyperspace.modal.probabilityTitle')}</h3>
 					<p>
 						{$_('hyperspace.modal.probabilityBody')}
 						<br />
-						<code class="rounded bg-blue-950 px-2 py-1 text-blue-100">P(≥1) = 1 − (1 − p)^N</code>
+						<code class="rounded bg-[var(--app-surface-strong)] px-2 py-1 text-[var(--app-text)]">
+							P(≥1) = 1 − (1 − p)^N
+						</code>
 						<br />
 						{$_('hyperspace.modal.probabilityExplain')}
 					</p>
 				</div>
 
 				<div>
-					<h3 class="mb-1 font-semibold text-white">{$_('hyperspace.modal.timeTitle')}</h3>
+					<h3 class="mb-1 font-semibold">{$_('hyperspace.modal.timeTitle')}</h3>
 					<p>
 						{$_('hyperspace.modal.timeBody')}
 					</p>
@@ -438,11 +440,11 @@
 
 				{#if alphaDonutLevel > 0}
 					<div>
-						<h3 class="mb-1 font-semibold text-white">{$_('hyperspace.modal.shalphaTitle')}</h3>
+						<h3 class="mb-1 font-semibold">{$_('hyperspace.modal.shalphaTitle')}</h3>
 						<p>
 							{$_('hyperspace.modal.shalphaBody')}
 							<br />
-							<code class="rounded bg-blue-950 px-2 py-1 text-blue-100">
+							<code class="rounded bg-[var(--app-surface-strong)] px-2 py-1 text-[var(--app-text)]">
 								p_shalpha = p_shiny × p_alpha
 							</code>
 						</p>
