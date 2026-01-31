@@ -10,6 +10,7 @@ const spriteCache = new Map<string, string>();
 
 // Cache for full Pokémon data to avoid repeated fetches
 const pokemonDataCache = new Map<number, any>();
+const baseStatsCache = new Map<number, Record<string, number>>();
 
 /**
  * Fetches Pokémon data from PokéAPI v2
@@ -104,10 +105,47 @@ export async function getPokemonSprite(
 }
 
 /**
+ * Gets base stats for a Pokemon from PokéAPI v2
+ */
+export async function getPokemonBaseStats(
+	nationalNumber: number
+): Promise<{ hp: number; atk: number; def: number; spa: number; spd: number; spe: number }> {
+	if (baseStatsCache.has(nationalNumber)) {
+		return baseStatsCache.get(nationalNumber)! as {
+			hp: number;
+			atk: number;
+			def: number;
+			spa: number;
+			spd: number;
+			spe: number;
+		};
+	}
+
+	const pokemonData = await fetchPokemonData(nationalNumber);
+	const stats = pokemonData.stats as Array<{ base_stat: number; stat: { name: string } }>;
+	const map = new Map<string, number>(
+		stats.map((entry) => [entry.stat.name, entry.base_stat])
+	);
+
+	const baseStats = {
+		hp: map.get('hp') ?? 0,
+		atk: map.get('attack') ?? 0,
+		def: map.get('defense') ?? 0,
+		spa: map.get('special-attack') ?? 0,
+		spd: map.get('special-defense') ?? 0,
+		spe: map.get('speed') ?? 0
+	};
+
+	baseStatsCache.set(nationalNumber, baseStats);
+	return baseStats;
+}
+
+/**
  * Clears the sprite cache (useful for testing or memory management)
  */
 export function clearSpriteCache(): void {
 	spriteCache.clear();
 	pokemonDataCache.clear();
+	baseStatsCache.clear();
 }
 

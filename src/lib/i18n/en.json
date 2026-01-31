@@ -24,6 +24,12 @@
   "button": {
     "clear": "Clear"
   },
+  "nav": {
+    "box": "Box",
+    "map": "Map",
+    "perfect": "Perfect",
+    "shiny": "Shiny"
+  },
   "shiny": {
     "toggle": "Shiny",
     "enabled": "Shiny mode enabled",
@@ -96,6 +102,105 @@
       "close": "Close"
     }
   },
+  "perfect": {
+    "title": "Perfect Pokemon",
+    "subtitle": "Build your optimized EV spread",
+    "setup": {
+      "selectPokemon": "Select Pokemon",
+      "attackStyle": "Attack Style",
+      "physical": "Physical",
+      "special": "Special",
+      "mixed": "Mixed",
+      "priorities": "Stat Priorities",
+      "prioritiesHint": "Drag to reorder",
+      "continue": "Continue"
+    },
+    "plan": {
+      "topPriorities": "Priorities",
+      "aromate": "Recommended Nature",
+      "aromateTip": "Where to buy?",
+      "path": "Training Method",
+      "battles": "Battles",
+      "vitamins": "Vitamins",
+      "evProgress": "EV Progress",
+      "killsRemaining": "{count} KOs left",
+      "vitaminsRemaining": "{count} vitamins left",
+      "totalProgress": "Total: {current} / {max}",
+      "maxReached": "Max reached!",
+      "reset": "Reset Progress"
+    },
+    "merchants": {
+      "title": "Mint Merchants",
+      "vendorF": "Flower Vendor",
+      "vendorM": "Flower Vendor",
+      "maurouge": "Maurouge District",
+      "beau-vert": "Beau-Vert 6th",
+      "place-jaune": "Place Jaune",
+      "rosavilliers": "Rosavilliers 6th"
+    },
+    "stats": {
+      "hp": "HP",
+      "atk": "Attack",
+      "def": "Defense",
+      "spa": "Sp. Atk",
+      "spd": "Sp. Def",
+      "spe": "Speed"
+    },
+    "zones": {
+      "zone-1": "Zone 1",
+      "zone-2": "Zone 2",
+      "zone-3": "Zone 3",
+      "zone-4": "Zone 4",
+      "zone-7": "Zone 7",
+      "zone-8": "Zone 8",
+      "zone-12": "Zone 12",
+      "zone-13": "Zone 13",
+      "zone-14": "Zone 14",
+      "zone-17": "Zone 17",
+      "zone-18": "Zone 18",
+      "zone-19": "Zone 19",
+      "zone-20": "Zone 20",
+      "zone-sewers": "Lumiose Sewers"
+    },
+    "zoneNotes": {
+      "zone-3": "Best for Speed (+2 per KO)",
+      "zone-19": "Best for HP (+2 per KO)",
+      "zone-13": "Best for Attack (+2 per KO)",
+      "zone-14": "Best for Defense (+2 per KO)",
+      "zone-17": "Best for Sp. Atk (+2 per KO)",
+      "zone-18": "Best for Sp. Def (+2 per KO)",
+      "zone-20": "Best for Sp. Def (+2 per KO)"
+    },
+    "powerItems": {
+      "power-weight": "Power Weight",
+      "power-bracer": "Power Bracer",
+      "power-belt": "Power Belt",
+      "power-lens": "Power Lens",
+      "power-band": "Power Band",
+      "power-anklet": "Power Anklet",
+      "location": "Battle Maison (16 BP)"
+    },
+    "vitamins": {
+      "hp-up": "HP Up",
+      "protein": "Protein",
+      "iron": "Iron",
+      "calcium": "Calcium",
+      "zinc": "Zinc",
+      "carbos": "Carbos"
+    },
+    "tooltip": {
+      "attackStyleTitle": "Choosing Attack Style",
+      "attackStyleBody": "Pick Physical if most of the Pokemon's strongest moves are physical, Special if they are special, or Mixed if both matter. When unsure, favor the higher Attack or Sp. Atk stat.",
+      "evTitle": "What are EVs?",
+      "evBody": "Effort Values (EVs) boost your Pokemon's stats. Each stat can have up to 252 EVs, with a total limit of 510 across all stats. Every 4 EVs = +1 stat point at level 100.",
+      "evMethodTitle": "Battles vs Vitamins",
+      "evMethodBody": "You can raise EVs by fighting Pokémon (free, but slower) or by using vitamins (fast). For a full build, 26 + 26 + 1 vitamins cost about ₽265,000 total.",
+      "evResetTitle": "Resetting EVs",
+      "evResetBody": "Go to the Rust Syndicate Headquarters and talk to the NPC at the counter to reset EVs for 5 Mega Fragments.",
+      "ivTitle": "What about IVs?",
+      "ivBody": "Head to the Justice Dojo and complete Ultimate Training to maximize your Individual Values (IV)."
+    }
+  },
   "berries": {
     "cheri": "Cheri Berry",
     "chesto": "Chesto Berry",
@@ -163,5 +268,28 @@
     "hyper-babiri": "Hyper Babiri Berry",
     "hyper-chilan": "Hyper Chilan Berry",
     "hyper-roseli": "Hyper Roseli Berry"
+  },
+  "mints": {
+    "adamant-mint": "Adamant Mint",
+    "bold-mint": "Bold Mint",
+    "brave-mint": "Brave Mint",
+    "calm-mint": "Calm Mint",
+    "careful-mint": "Careful Mint",
+    "gentle-mint": "Gentle Mint",
+    "hasty-mint": "Hasty Mint",
+    "impish-mint": "Impish Mint",
+    "jolly-mint": "Jolly Mint",
+    "lax-mint": "Lax Mint",
+    "lonely-mint": "Lonely Mint",
+    "mild-mint": "Mild Mint",
+    "modest-mint": "Modest Mint",
+    "naive-mint": "Naive Mint",
+    "naughty-mint": "Naughty Mint",
+    "quiet-mint": "Quiet Mint",
+    "rash-mint": "Rash Mint",
+    "relaxed-mint": "Relaxed Mint",
+    "sassy-mint": "Sassy Mint",
+    "serious-mint": "Serious Mint",
+    "timid-mint": "Timid Mint"
   }
 }

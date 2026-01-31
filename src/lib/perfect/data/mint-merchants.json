@@ -1,0 +1,145 @@
+[
+  {
+    "id": "maurouge-1",
+    "district": "maurouge",
+    "gender": "female",
+    "mints": [
+      "lonely",
+      "adamant",
+      "naughty",
+      "brave",
+      "serious"
+    ],
+    "mapImage": "/merchants/maurouge-1.jpg"
+  },
+  {
+    "id": "maurouge-2",
+    "district": "maurouge",
+    "gender": "male",
+    "mints": [
+      "calm",
+      "gentle",
+      "careful",
+      "sassy",
+      "serious"
+    ],
+    "mapImage": "/merchants/maurouge-2.jpg"
+  },
+  {
+    "id": "maurouge-3",
+    "district": "maurouge",
+    "gender": "female",
+    "mints": [
+      "modest",
+      "mild",
+      "rash",
+      "quiet",
+      "serious"
+    ],
+    "mapImage": "/merchants/maurouge-3.jpg"
+  },
+  {
+    "id": "maurouge-4",
+    "district": "maurouge",
+    "gender": "female",
+    "mints": [
+      "bold",
+      "impish",
+      "lax",
+      "relaxed",
+      "serious"
+    ],
+    "mapImage": "/merchants/maurouge-4.jpg"
+  },
+  {
+    "id": "beau-vert-1",
+    "district": "beau-vert",
+    "gender": "female",
+    "mints": [
+      "timid",
+      "hasty",
+      "jolly",
+      "naive",
+      "serious"
+    ],
+    "mapImage": "/merchants/beau-vert-1.jpg"
+  },
+  {
+    "id": "place-jaune-1",
+    "district": "place-jaune",
+    "gender": "male",
+    "mints": [
+      "modest",
+      "mild",
+      "rash",
+      "quiet",
+      "serious"
+    ],
+    "mapImage": "/merchants/place-jaune-1.jpg"
+  },
+  {
+    "id": "place-jaune-2",
+    "district": "place-jaune",
+    "gender": "female",
+    "mints": [
+      "lonely",
+      "adamant",
+      "naughty",
+      "brave",
+      "serious"
+    ],
+    "mapImage": "/merchants/place-jaune-2.jpg"
+  },
+  {
+    "id": "maurouge-5",
+    "district": "maurouge",
+    "gender": "male",
+    "mints": [
+      "modest",
+      "mild",
+      "rash",
+      "quiet",
+      "serious"
+    ],
+    "mapImage": "/merchants/maurouge-5.jpg"
+  },
+  {
+    "id": "maurouge-6",
+    "district": "maurouge",
+    "gender": "female",
+    "mints": [
+      "lonely",
+      "adamant",
+      "naughty",
+      "brave",
+      "serious"
+    ],
+    "mapImage": "/merchants/maurouge-6.jpg"
+  },
+  {
+    "id": "rosavilliers-1",
+    "district": "rosavilliers",
+    "gender": "female",
+    "mints": [
+      "bold",
+      "impish",
+      "lax",
+      "relaxed",
+      "serious"
+    ],
+    "mapImage": "/merchants/rosavilliers-1.jpg"
+  },
+  {
+    "id": "rosavilliers-2",
+    "district": "rosavilliers",
+    "gender": "male",
+    "mints": [
+      "calm",
+      "gentle",
+      "careful",
+      "sassy",
+      "serious"
+    ],
+    "mapImage": "/merchants/rosavilliers-2.jpg"
+  }
+]

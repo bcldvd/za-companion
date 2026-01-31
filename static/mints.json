@@ -1,0 +1,149 @@
+[
+  {
+    "id": "adamant-mint",
+    "nameKey": "mints.adamant-mint",
+    "effect": "When a Pok�mon smells this mint, its Attack will grow more easily, but its Sp. Atk will grow more slowly.",
+    "spritePath": "/mints/adamant-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "bold-mint",
+    "nameKey": "mints.bold-mint",
+    "effect": "When a Pok�mon smells this mint, its Defense will grow more easily, but its Attack will grow more slowly.",
+    "spritePath": "/mints/bold-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "brave-mint",
+    "nameKey": "mints.brave-mint",
+    "effect": "When a Pok�mon smells this mint, its Attack will grow more easily, but its Speed will grow more slowly.",
+    "spritePath": "/mints/brave-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "calm-mint",
+    "nameKey": "mints.calm-mint",
+    "effect": "When a Pok�mon smells this mint, its Sp. Def will grow more easily, but its Attack will grow more slowly.",
+    "spritePath": "/mints/calm-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "careful-mint",
+    "nameKey": "mints.careful-mint",
+    "effect": "When a Pok�mon smells this mint, its Sp. Def will grow more easily, but its Sp. Atk will grow more slowly.",
+    "spritePath": "/mints/careful-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "gentle-mint",
+    "nameKey": "mints.gentle-mint",
+    "effect": "When a Pok�mon smells this mint, its Sp. Def will grow more easily, but its Defense will grow more slowly.",
+    "spritePath": "/mints/gentle-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "hasty-mint",
+    "nameKey": "mints.hasty-mint",
+    "effect": "When a Pok�mon smells this mint, its Speed will grow more easily, but its Defense will grow more slowly.",
+    "spritePath": "/mints/hasty-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "impish-mint",
+    "nameKey": "mints.impish-mint",
+    "effect": "When a Pok�mon smells this mint, its Defense will grow more easily, but its Sp. Atk will grow more slowly.",
+    "spritePath": "/mints/impish-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "jolly-mint",
+    "nameKey": "mints.jolly-mint",
+    "effect": "When a Pok�mon smells this mint, its Speed will grow more easily, but its Sp. Atk will grow more slowly.",
+    "spritePath": "/mints/jolly-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "lax-mint",
+    "nameKey": "mints.lax-mint",
+    "effect": "When a Pok�mon smells this mint, its Defense will grow more easily, but its Sp. Def will grow more slowly.",
+    "spritePath": "/mints/lax-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "lonely-mint",
+    "nameKey": "mints.lonely-mint",
+    "effect": "When a Pok�mon smells this mint, its Attack will grow more easily, but its Defense will grow more slowly.",
+    "spritePath": "/mints/lonely-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "mild-mint",
+    "nameKey": "mints.mild-mint",
+    "effect": "When a Pok�mon smells this mint, its Sp. Atk will grow more easily, but its Defense will grow more slowly.",
+    "spritePath": "/mints/mild-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "modest-mint",
+    "nameKey": "mints.modest-mint",
+    "effect": "When a Pok�mon smells this mint, its Sp. Atk will grow more easily, but its Attack will grow more slowly.",
+    "spritePath": "/mints/modest-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "naive-mint",
+    "nameKey": "mints.naive-mint",
+    "effect": "When a Pok�mon smells this mint, its Speed will grow more easily, but its Sp. Def will grow more slowly.",
+    "spritePath": "/mints/naive-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "naughty-mint",
+    "nameKey": "mints.naughty-mint",
+    "effect": "When a Pok�mon smells this mint, its Attack will grow more easily, but its Sp. Def will grow more slowly.",
+    "spritePath": "/mints/naughty-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "quiet-mint",
+    "nameKey": "mints.quiet-mint",
+    "effect": "When a Pok�mon smells this mint, its Sp. Atk will grow more easily, but its Speed will grow more slowly.",
+    "spritePath": "/mints/quiet-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "rash-mint",
+    "nameKey": "mints.rash-mint",
+    "effect": "When a Pok�mon smells this mint, its Sp. Atk will grow more easily, but its Sp. Def will grow more slowly.",
+    "spritePath": "/mints/rash-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "relaxed-mint",
+    "nameKey": "mints.relaxed-mint",
+    "effect": "When a Pok�mon smells this mint, its Defense will grow more easily, but its Speed will grow more slowly.",
+    "spritePath": "/mints/relaxed-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "sassy-mint",
+    "nameKey": "mints.sassy-mint",
+    "effect": "When a Pok�mon smells this mint, its Sp. Def will grow more easily, but its Speed will grow more slowly.",
+    "spritePath": "/mints/sassy-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "serious-mint",
+    "nameKey": "mints.serious-mint",
+    "effect": "When a Pok�mon smells this mint, all of its stats will grow at an equal rate.",
+    "spritePath": "/mints/serious-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  },
+  {
+    "id": "timid-mint",
+    "nameKey": "mints.timid-mint",
+    "effect": "When a Pok�mon smells this mint, its Speed will grow more easily, but its Attack will grow more slowly.",
+    "spritePath": "/mints/timid-mint.png",
+    "sourceUrl": "https://www.serebii.net/swordshield/naturechanging.shtml"
+  }
+]

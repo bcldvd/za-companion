@@ -24,6 +24,12 @@
   "button": {
     "clear": "Effacer"
   },
+  "nav": {
+    "box": "Boîtes",
+    "map": "Carte",
+    "perfect": "Parfait",
+    "shiny": "Chromatique"
+  },
   "shiny": {
     "toggle": "Chromatique",
     "enabled": "Mode chromatique activé",
@@ -96,6 +102,105 @@
       "close": "Fermer"
     }
   },
+  "perfect": {
+    "title": "Pokémon Parfait",
+    "subtitle": "Construisez votre répartition d'EV optimale",
+    "setup": {
+      "selectPokemon": "Sélectionner un Pokémon",
+      "attackStyle": "Style d'attaque",
+      "physical": "Physique",
+      "special": "Spécial",
+      "mixed": "Mixte",
+      "priorities": "Priorités de stats",
+      "prioritiesHint": "Glissez pour réorganiser",
+      "continue": "Continuer"
+    },
+    "plan": {
+      "topPriorities": "Priorités",
+      "aromate": "Nature recommandée",
+      "aromateTip": "Où acheter ?",
+      "path": "Méthode d'entraînement",
+      "battles": "Combats",
+      "vitamins": "Vitamines",
+      "evProgress": "Progression EV",
+      "killsRemaining": "{count} KO restants",
+      "vitaminsRemaining": "{count} vitamines restantes",
+      "totalProgress": "Total : {current} / {max}",
+      "maxReached": "Maximum atteint !",
+      "reset": "Réinitialiser"
+    },
+    "merchants": {
+      "title": "Marchands d'Aromates",
+      "vendorF": "Fleuriste",
+      "vendorM": "Fleuriste",
+      "maurouge": "Maurouge",
+      "beau-vert": "Beau-Vert 6e",
+      "place-jaune": "Place Jaune",
+      "rosavilliers": "Rosavilliers 6e"
+    },
+    "stats": {
+      "hp": "PV",
+      "atk": "Attaque",
+      "def": "Défense",
+      "spa": "Att. Spé.",
+      "spd": "Déf. Spé.",
+      "spe": "Vitesse"
+    },
+    "zones": {
+      "zone-1": "Zone 1",
+      "zone-2": "Zone 2",
+      "zone-3": "Zone 3",
+      "zone-4": "Zone 4",
+      "zone-7": "Zone 7",
+      "zone-8": "Zone 8",
+      "zone-12": "Zone 12",
+      "zone-13": "Zone 13",
+      "zone-14": "Zone 14",
+      "zone-17": "Zone 17",
+      "zone-18": "Zone 18",
+      "zone-19": "Zone 19",
+      "zone-20": "Zone 20",
+      "zone-sewers": "Égouts de Lumiose"
+    },
+    "zoneNotes": {
+      "zone-3": "Idéal pour la Vitesse (+2 par KO)",
+      "zone-19": "Idéal pour les PV (+2 par KO)",
+      "zone-13": "Idéal pour l'Attaque (+2 par KO)",
+      "zone-14": "Idéal pour la Défense (+2 par KO)",
+      "zone-17": "Idéal pour l'Att. Spé. (+2 par KO)",
+      "zone-18": "Idéal pour la Déf. Spé. (+2 par KO)",
+      "zone-20": "Idéal pour la Déf. Spé. (+2 par KO)"
+    },
+    "powerItems": {
+      "power-weight": "Poids Pouvoir",
+      "power-bracer": "Poignet Pouvoir",
+      "power-belt": "Ceinture Pouvoir",
+      "power-lens": "Lentille Pouvoir",
+      "power-band": "Bandeau Pouvoir",
+      "power-anklet": "Chaîne Pouvoir",
+      "location": "Maison de Combat (16 PC)"
+    },
+    "vitamins": {
+      "hp-up": "PV Plus",
+      "protein": "Protéine",
+      "iron": "Fer",
+      "calcium": "Calcium",
+      "zinc": "Zinc",
+      "carbos": "Carbone"
+    },
+    "tooltip": {
+      "attackStyleTitle": "Choisir le style d'attaque",
+      "attackStyleBody": "Physique si la plupart des attaques les plus fortes sont physiques, Spécial si elles sont spéciales, ou Mixte si les deux comptent. En cas de doute, privilégiez la stat Attaque ou Att. Spé. la plus élevée.",
+      "evTitle": "Que sont les EV ?",
+      "evBody": "Les Effort Values (EV) augmentent les stats de votre Pokémon. Chaque stat peut avoir jusqu'à 252 EV, avec une limite totale de 510. Tous les 4 EV = +1 point de stat au niveau 100.",
+      "evMethodTitle": "Combats vs Vitamines",
+      "evMethodBody": "Vous pouvez monter les EV en combattant des Pokémon (gratuit, mais plus lent) ou en utilisant des vitamines (rapide). Pour un build complet, 26 + 26 + 1 vitamines coûtent environ 265 000 ₽.",
+      "evResetTitle": "Réinitialiser les EV",
+      "evResetBody": "Rendez-vous à l'Agence Dérouillard et parlez au PNJ au comptoir pour réinitialiser les EV contre 5 Mega-fragments.",
+      "ivTitle": "Et les IV ?",
+      "ivBody": "Rendez vous au Dojo de la Justice et faites l'Entraînement Ultime pour maximiser vos Individual Values (IV)."
+    }
+  },
   "berries": {
     "cheri": "Baie Ceriz",
     "chesto": "Baie Maron",
@@ -163,5 +268,28 @@
     "hyper-babiri": "Hyper Baie Babiri",
     "hyper-chilan": "Hyper Baie Zalis",
     "hyper-roseli": "Hyper Baie Selro"
+  },
+  "mints": {
+    "adamant-mint": "Aromate Rigide",
+    "bold-mint": "Aromate Assuré",
+    "brave-mint": "Aromate Brave",
+    "calm-mint": "Aromate Calme",
+    "careful-mint": "Aromate Prudent",
+    "gentle-mint": "Aromate Gentil",
+    "hasty-mint": "Aromate Pressé",
+    "impish-mint": "Aromate Malin",
+    "jolly-mint": "Aromate Jovial",
+    "lax-mint": "Aromate Lâche",
+    "lonely-mint": "Aromate Solo",
+    "mild-mint": "Aromate Doux",
+    "modest-mint": "Aromate Modeste",
+    "naive-mint": "Aromate Naïf",
+    "naughty-mint": "Aromate Mauvais",
+    "quiet-mint": "Aromate Discret",
+    "rash-mint": "Aromate Foufou",
+    "relaxed-mint": "Aromate Relax",
+    "sassy-mint": "Aromate Malpoli",
+    "serious-mint": "Aromate Sérieux",
+    "timid-mint": "Aromate Timide"
   }
 }

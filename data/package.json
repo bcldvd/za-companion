@@ -6,6 +6,7 @@
 	"scripts": {
 		"scrape": "tsx scripts/scrape.ts",
 		"scrape-berries": "tsx scripts/scrape-berries.ts",
+		"scrape-mints": "tsx scripts/scrape-mints.ts",
 		"translate": "tsx scripts/translate-pokemon.ts",
 		"build": "npm run scrape",
 		"download-sprites": "tsx scripts/download-sprites.ts",
