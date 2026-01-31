@@ -8,7 +8,7 @@ export const mapConfig: MapConfig = {
 	minZoom: 0,
 	initialZoom: 2, // Start at zoom 2 for better view
 	initialCenter: [256, 256], // Center of 512x512 map
-	radiusInGameUnits: 50
+	radiusInGameUnits: 25
 };
 
 // Coordinate conversion functions
