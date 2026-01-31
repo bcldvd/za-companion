@@ -25,10 +25,19 @@
     "clear": "Clear"
   },
   "nav": {
+    "home": "Home",
     "box": "Box",
     "map": "Map",
     "perfect": "Perfect",
-    "shiny": "Shiny"
+    "shiny": "Shiny",
+    "settings": "Settings",
+    "boxDescription": "Find box placements fast",
+    "mapDescription": "Explore Lumiose City spawns",
+    "perfectDescription": "Plan optimized EV spreads",
+    "shinyDescription": "Estimate shiny odds timing"
+  },
+  "settings": {
+    "language": "Language"
   },
   "shiny": {
     "toggle": "Shiny",

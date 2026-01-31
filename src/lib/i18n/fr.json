@@ -25,10 +25,19 @@
     "clear": "Effacer"
   },
   "nav": {
+    "home": "Accueil",
     "box": "Boîtes",
     "map": "Carte",
     "perfect": "Parfait",
-    "shiny": "Chromatique"
+    "shiny": "Chromatique",
+    "settings": "Paramètres",
+    "boxDescription": "Trouvez vite une place dans les boîtes",
+    "mapDescription": "Explorez les apparitions de Lumiose",
+    "perfectDescription": "Planifiez des EV optimisés",
+    "shinyDescription": "Estimez le temps pour un shiny"
+  },
+  "settings": {
+    "language": "Langue"
   },
   "shiny": {
     "toggle": "Chromatique",
