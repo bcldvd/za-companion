@@ -13,6 +13,7 @@
 	// Determine active tab based on current route
 	let isBoxActive = $derived(page.url.pathname.startsWith('/box'));
 	let isHyperspaceActive = $derived(page.url.pathname.startsWith('/hyperspace'));
+	let isMapActive = $derived(page.url.pathname.startsWith('/map'));
 
 	onMount(async () => {
 		// Wait for locale to be loaded before rendering
@@ -23,7 +24,7 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 {#if isLocaleReady}
-	<div class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-950 text-white flex flex-col">
+	<div class="min-h-screen h-screen bg-gradient-to-b from-blue-900 to-blue-950 text-white flex flex-col">
 		<!-- Sticky Header -->
 		<header
 			class="safe-area-inset-top sticky top-0 z-50 bg-blue-900/95 backdrop-blur-sm border-b border-blue-700"
@@ -40,13 +41,13 @@
 		</header>
 
 		<!-- Main Content Area (Scrollable) -->
-		<main class="flex-1 overflow-y-auto pb-20">
+		<main class="flex-1 min-h-0 overflow-y-auto pb-20">
 			{@render children()}
 		</main>
 
 		<!-- Bottom Navigation -->
 		<nav class="fixed bottom-0 left-0 right-0 z-50 bg-blue-900/95 backdrop-blur-sm border-t border-blue-700 safe-area-inset-bottom">
-			<div class="max-w-2xl mx-auto grid grid-cols-2">
+			<div class="max-w-2xl mx-auto grid grid-cols-3">
 				<a
 					href="/box"
 					class="flex flex-col items-center justify-center py-3 px-4 transition-colors {isBoxActive
@@ -69,6 +70,29 @@
 						/>
 					</svg>
 					<span class="text-xs font-medium">Box</span>
+				</a>
+				<a
+					href="/map"
+					class="flex flex-col items-center justify-center py-3 px-4 transition-colors {isMapActive
+						? 'text-yellow-300 bg-blue-800/50'
+						: 'text-blue-300 hover:text-white hover:bg-blue-800/30'}"
+					aria-current={isMapActive ? 'page' : undefined}
+				>
+					<svg
+						class="w-6 h-6 mb-1"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+						/>
+					</svg>
+					<span class="text-xs font-medium">Map</span>
 				</a>
 				<a
 					href="/hyperspace"

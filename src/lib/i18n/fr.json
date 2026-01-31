@@ -81,6 +81,20 @@
 			"shalphaTitle": "Probabilité Shalpha",
 			"shalphaBody": "La probabilité Shalpha (chroma + alpha) est calculée comme suit :"
 		}
+	},
+	"map": {
+		"title": "Carte d'Illumis",
+		"loading": "Chargement de la carte...",
+		"spawns": "apparitions",
+		"radius": "50m",
+		"filters": {
+			"title": "Filtres de Carte",
+			"pokemonSpawns": "Apparitions Pokémon",
+			"benches": "Bancs",
+			"alphas": "Barons Garantis",
+			"ladders": "Échelles",
+			"close": "Fermer"
+		}
 	}
 }
 

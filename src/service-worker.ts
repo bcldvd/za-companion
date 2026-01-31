@@ -36,6 +36,12 @@ self.addEventListener('fetch', (event: FetchEvent) => {
 
 	async function respond() {
 		const url = new URL(event.request.url);
+		if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+			return fetch(event.request);
+		}
+		if (url.hostname === 'localhost' && (url.pathname.startsWith('/@fs/') || url.pathname.startsWith('/src/') || url.pathname.startsWith('/node_modules/') || url.pathname.startsWith('/@vite/') || url.pathname.startsWith('/.svelte-kit/') || url.pathname.endsWith('.json'))) {
+			return fetch(event.request);
+		}
 		const cache = await caches.open(CACHE_NAME);
 
 		// For API requests, try network first, then cache

@@ -81,6 +81,20 @@
 			"shalphaTitle": "Shalpha Probability",
 			"shalphaBody": "Shalpha (shiny + alpha) probability is calculated as:"
 		}
+	},
+	"map": {
+		"title": "Lumiose City Map",
+		"loading": "Loading map data...",
+		"spawns": "spawns",
+		"radius": "50m",
+		"filters": {
+			"title": "Map Filters",
+			"pokemonSpawns": "Pokemon Spawns",
+			"benches": "Benches",
+			"alphas": "Guaranteed Alphas",
+			"ladders": "Ladders",
+			"close": "Close"
+		}
 	}
 }
 

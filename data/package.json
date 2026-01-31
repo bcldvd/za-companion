@@ -6,7 +6,13 @@
 	"scripts": {
 		"scrape": "tsx scripts/scrape.ts",
 		"translate": "tsx scripts/translate-pokemon.ts",
-		"build": "npm run scrape"
+		"build": "npm run scrape",
+		"download-sprites": "tsx scripts/download-sprites.ts",
+		"download-tiles": "tsx scripts/scrape-map-tiles.ts",
+		"scrape-spawns": "tsx scripts/scrape-spawns.ts",
+		"scrape-pois": "tsx scripts/scrape-pois.ts",
+		"prepare-map": "npm run scrape-spawns && npm run scrape-pois",
+		"prepare-map-full": "npm run download-tiles && npm run download-sprites"
 	},
 	"dependencies": {
 		"cheerio": "^1.0.0"
