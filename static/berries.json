@@ -1,0 +1,1124 @@
+[
+  {
+    "id": "cheri",
+    "nameKey": "berries.cheri",
+    "stats": {
+      "sweet": 0,
+      "spicy": 10,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 1,
+    "calories": 60,
+    "isExtra": false,
+    "spritePath": "/berries/cheri.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/cheriberry.shtml"
+  },
+  {
+    "id": "chesto",
+    "nameKey": "berries.chesto",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 10
+    },
+    "level": 1,
+    "calories": 60,
+    "isExtra": false,
+    "spritePath": "/berries/chesto.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/chestoberry.shtml"
+  },
+  {
+    "id": "pecha",
+    "nameKey": "berries.pecha",
+    "stats": {
+      "sweet": 10,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 1,
+    "calories": 60,
+    "isExtra": false,
+    "spritePath": "/berries/pecha.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/pechaberry.shtml"
+  },
+  {
+    "id": "rawst",
+    "nameKey": "berries.rawst",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 10,
+      "fresh": 0
+    },
+    "level": 1,
+    "calories": 60,
+    "isExtra": false,
+    "spritePath": "/berries/rawst.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/rawstberry.shtml"
+  },
+  {
+    "id": "aspear",
+    "nameKey": "berries.aspear",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 10,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 1,
+    "calories": 60,
+    "isExtra": false,
+    "spritePath": "/berries/aspear.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/aspearberry.shtml"
+  },
+  {
+    "id": "oran",
+    "nameKey": "berries.oran",
+    "stats": {
+      "sweet": 0,
+      "spicy": 5,
+      "sour": 5,
+      "bitter": 5,
+      "fresh": 5
+    },
+    "level": 1,
+    "calories": 60,
+    "isExtra": false,
+    "spritePath": "/berries/oran.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/oranberry.shtml"
+  },
+  {
+    "id": "persim",
+    "nameKey": "berries.persim",
+    "stats": {
+      "sweet": 5,
+      "spicy": 5,
+      "sour": 5,
+      "bitter": 0,
+      "fresh": 5
+    },
+    "level": 1,
+    "calories": 60,
+    "isExtra": false,
+    "spritePath": "/berries/persim.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/persimberry.shtml"
+  },
+  {
+    "id": "lum",
+    "nameKey": "berries.lum",
+    "stats": {
+      "sweet": 5,
+      "spicy": 5,
+      "sour": 0,
+      "bitter": 5,
+      "fresh": 5
+    },
+    "level": 2,
+    "calories": 65,
+    "isExtra": false,
+    "spritePath": "/berries/lum.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/lumberry.shtml"
+  },
+  {
+    "id": "sitrus",
+    "nameKey": "berries.sitrus",
+    "stats": {
+      "sweet": 5,
+      "spicy": 0,
+      "sour": 5,
+      "bitter": 5,
+      "fresh": 5
+    },
+    "level": 2,
+    "calories": 65,
+    "isExtra": false,
+    "spritePath": "/berries/sitrus.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/sitrusberry.shtml"
+  },
+  {
+    "id": "pomeg",
+    "nameKey": "berries.pomeg",
+    "stats": {
+      "sweet": 10,
+      "spicy": 10,
+      "sour": 0,
+      "bitter": 10,
+      "fresh": 0
+    },
+    "level": 2,
+    "calories": 65,
+    "isExtra": false,
+    "spritePath": "/berries/pomeg.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/pomegberry.shtml"
+  },
+  {
+    "id": "kelpsy",
+    "nameKey": "berries.kelpsy",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 10,
+      "bitter": 10,
+      "fresh": 10
+    },
+    "level": 2,
+    "calories": 65,
+    "isExtra": false,
+    "spritePath": "/berries/kelpsy.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/kelpsyberry.shtml"
+  },
+  {
+    "id": "qualot",
+    "nameKey": "berries.qualot",
+    "stats": {
+      "sweet": 10,
+      "spicy": 10,
+      "sour": 10,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 2,
+    "calories": 65,
+    "isExtra": false,
+    "spritePath": "/berries/qualot.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/qualotberry.shtml"
+  },
+  {
+    "id": "hondew",
+    "nameKey": "berries.hondew",
+    "stats": {
+      "sweet": 0,
+      "spicy": 10,
+      "sour": 0,
+      "bitter": 10,
+      "fresh": 10
+    },
+    "level": 2,
+    "calories": 65,
+    "isExtra": false,
+    "spritePath": "/berries/hondew.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hondewberry.shtml"
+  },
+  {
+    "id": "grepa",
+    "nameKey": "berries.grepa",
+    "stats": {
+      "sweet": 10,
+      "spicy": 0,
+      "sour": 10,
+      "bitter": 0,
+      "fresh": 10
+    },
+    "level": 2,
+    "calories": 65,
+    "isExtra": false,
+    "spritePath": "/berries/grepa.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/grepaberry.shtml"
+  },
+  {
+    "id": "tamato",
+    "nameKey": "berries.tamato",
+    "stats": {
+      "sweet": 0,
+      "spicy": 15,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 10
+    },
+    "level": 2,
+    "calories": 65,
+    "isExtra": false,
+    "spritePath": "/berries/tamato.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/tamatoberry.shtml"
+  },
+  {
+    "id": "occa",
+    "nameKey": "berries.occa",
+    "stats": {
+      "sweet": 10,
+      "spicy": 15,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/occa.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/occaberry.shtml"
+  },
+  {
+    "id": "passho",
+    "nameKey": "berries.passho",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 10,
+      "fresh": 15
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/passho.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/passhoberry.shtml"
+  },
+  {
+    "id": "wacan",
+    "nameKey": "berries.wacan",
+    "stats": {
+      "sweet": 15,
+      "spicy": 0,
+      "sour": 10,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/wacan.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/wacanberry.shtml"
+  },
+  {
+    "id": "rindo",
+    "nameKey": "berries.rindo",
+    "stats": {
+      "sweet": 0,
+      "spicy": 10,
+      "sour": 0,
+      "bitter": 15,
+      "fresh": 0
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/rindo.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/rindoberry.shtml"
+  },
+  {
+    "id": "yache",
+    "nameKey": "berries.yache",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 15,
+      "bitter": 0,
+      "fresh": 10
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/yache.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/yacheberry.shtml"
+  },
+  {
+    "id": "chople",
+    "nameKey": "berries.chople",
+    "stats": {
+      "sweet": 0,
+      "spicy": 15,
+      "sour": 0,
+      "bitter": 10,
+      "fresh": 0
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/chople.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/chopleberry.shtml"
+  },
+  {
+    "id": "kebia",
+    "nameKey": "berries.kebia",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 10,
+      "bitter": 0,
+      "fresh": 15
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/kebia.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/kebiaberry.shtml"
+  },
+  {
+    "id": "shuca",
+    "nameKey": "berries.shuca",
+    "stats": {
+      "sweet": 15,
+      "spicy": 10,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/shuca.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/shucaberry.shtml"
+  },
+  {
+    "id": "coba",
+    "nameKey": "berries.coba",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 15,
+      "fresh": 10
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/coba.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/cobaberry.shtml"
+  },
+  {
+    "id": "payapa",
+    "nameKey": "berries.payapa",
+    "stats": {
+      "sweet": 10,
+      "spicy": 0,
+      "sour": 15,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/payapa.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/payapaberry.shtml"
+  },
+  {
+    "id": "tanga",
+    "nameKey": "berries.tanga",
+    "stats": {
+      "sweet": 0,
+      "spicy": 20,
+      "sour": 10,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/tanga.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/tangaberry.shtml"
+  },
+  {
+    "id": "charti",
+    "nameKey": "berries.charti",
+    "stats": {
+      "sweet": 0,
+      "spicy": 10,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 20
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/charti.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/chartiberry.shtml"
+  },
+  {
+    "id": "kasib",
+    "nameKey": "berries.kasib",
+    "stats": {
+      "sweet": 20,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 10
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/kasib.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/kasibberry.shtml"
+  },
+  {
+    "id": "haban",
+    "nameKey": "berries.haban",
+    "stats": {
+      "sweet": 10,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 20,
+      "fresh": 0
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/haban.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/habanberry.shtml"
+  },
+  {
+    "id": "colbur",
+    "nameKey": "berries.colbur",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 20,
+      "bitter": 10,
+      "fresh": 0
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/colbur.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/colburberry.shtml"
+  },
+  {
+    "id": "babiri",
+    "nameKey": "berries.babiri",
+    "stats": {
+      "sweet": 0,
+      "spicy": 25,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 10
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/babiri.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/babiriberry.shtml"
+  },
+  {
+    "id": "chilan",
+    "nameKey": "berries.chilan",
+    "stats": {
+      "sweet": 10,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 25
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/chilan.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/chilanberry.shtml"
+  },
+  {
+    "id": "roseli",
+    "nameKey": "berries.roseli",
+    "stats": {
+      "sweet": 25,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 10,
+      "fresh": 0
+    },
+    "level": 3,
+    "calories": 70,
+    "isExtra": false,
+    "spritePath": "/berries/roseli.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/roseliberry.shtml"
+  },
+  {
+    "id": "hyper-cheri",
+    "nameKey": "berries.hyper-cheri",
+    "stats": {
+      "sweet": 0,
+      "spicy": 40,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 5,
+    "calories": 80,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-cheri.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hypercheriberry.shtml"
+  },
+  {
+    "id": "hyper-chesto",
+    "nameKey": "berries.hyper-chesto",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 40
+    },
+    "level": 3,
+    "calories": 100,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-chesto.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperchestoberry.shtml"
+  },
+  {
+    "id": "hyper-pecha",
+    "nameKey": "berries.hyper-pecha",
+    "stats": {
+      "sweet": 40,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 2,
+    "calories": 100,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-pecha.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperpechaberry.shtml"
+  },
+  {
+    "id": "hyper-rawst",
+    "nameKey": "berries.hyper-rawst",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 40,
+      "fresh": 0
+    },
+    "level": 3,
+    "calories": 110,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-rawst.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperrawstberry.shtml"
+  },
+  {
+    "id": "hyper-aspear",
+    "nameKey": "berries.hyper-aspear",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 40,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 4,
+    "calories": 90,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-aspear.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperaspearberry.shtml"
+  },
+  {
+    "id": "hyper-oran",
+    "nameKey": "berries.hyper-oran",
+    "stats": {
+      "sweet": 10,
+      "spicy": 20,
+      "sour": 15,
+      "bitter": 15,
+      "fresh": 0
+    },
+    "level": 6,
+    "calories": 90,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-oran.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperoranberry.shtml"
+  },
+  {
+    "id": "hyper-persim",
+    "nameKey": "berries.hyper-persim",
+    "stats": {
+      "sweet": 0,
+      "spicy": 15,
+      "sour": 15,
+      "bitter": 10,
+      "fresh": 20
+    },
+    "level": 4,
+    "calories": 110,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-persim.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperpersimberry.shtml"
+  },
+  {
+    "id": "hyper-lum",
+    "nameKey": "berries.hyper-lum",
+    "stats": {
+      "sweet": 20,
+      "spicy": 15,
+      "sour": 10,
+      "bitter": 0,
+      "fresh": 15
+    },
+    "level": 3,
+    "calories": 110,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-lum.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperlumberry.shtml"
+  },
+  {
+    "id": "hyper-sitrus",
+    "nameKey": "berries.hyper-sitrus",
+    "stats": {
+      "sweet": 15,
+      "spicy": 10,
+      "sour": 0,
+      "bitter": 20,
+      "fresh": 15
+    },
+    "level": 4,
+    "calories": 120,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-sitrus.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hypersitrusberry.shtml"
+  },
+  {
+    "id": "hyper-pomeg",
+    "nameKey": "berries.hyper-pomeg",
+    "stats": {
+      "sweet": 30,
+      "spicy": 35,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 5
+    },
+    "level": 7,
+    "calories": 140,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-pomeg.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperpomegberry.shtml"
+  },
+  {
+    "id": "hyper-kelpsy",
+    "nameKey": "berries.hyper-kelpsy",
+    "stats": {
+      "sweet": 5,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 30,
+      "fresh": 35
+    },
+    "level": 5,
+    "calories": 160,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-kelpsy.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperkelpsyberry.shtml"
+  },
+  {
+    "id": "hyper-qualot",
+    "nameKey": "berries.hyper-qualot",
+    "stats": {
+      "sweet": 35,
+      "spicy": 0,
+      "sour": 30,
+      "bitter": 5,
+      "fresh": 0
+    },
+    "level": 4,
+    "calories": 160,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-qualot.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperqualotberry.shtml"
+  },
+  {
+    "id": "hyper-hondew",
+    "nameKey": "berries.hyper-hondew",
+    "stats": {
+      "sweet": 0,
+      "spicy": 5,
+      "sour": 35,
+      "bitter": 0,
+      "fresh": 30
+    },
+    "level": 6,
+    "calories": 150,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-hondew.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperhondewberry.shtml"
+  },
+  {
+    "id": "hyper-grepa",
+    "nameKey": "berries.hyper-grepa",
+    "stats": {
+      "sweet": 0,
+      "spicy": 60,
+      "sour": 25,
+      "bitter": 0,
+      "fresh": 5
+    },
+    "level": 8,
+    "calories": 140,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-grepa.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hypergrepaberry.shtml"
+  },
+  {
+    "id": "hyper-tamato",
+    "nameKey": "berries.hyper-tamato",
+    "stats": {
+      "sweet": 5,
+      "spicy": 25,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 60
+    },
+    "level": 6,
+    "calories": 180,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-tamato.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hypertamatoberry.shtml"
+  },
+  {
+    "id": "hyper-occa",
+    "nameKey": "berries.hyper-occa",
+    "stats": {
+      "sweet": 60,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 5,
+      "fresh": 25
+    },
+    "level": 5,
+    "calories": 180,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-occa.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperoccaberry.shtml"
+  },
+  {
+    "id": "hyper-passho",
+    "nameKey": "berries.hyper-passho",
+    "stats": {
+      "sweet": 25,
+      "spicy": 0,
+      "sour": 5,
+      "bitter": 60,
+      "fresh": 0
+    },
+    "level": 6,
+    "calories": 200,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-passho.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperpasshoberry.shtml"
+  },
+  {
+    "id": "hyper-wacan",
+    "nameKey": "berries.hyper-wacan",
+    "stats": {
+      "sweet": 0,
+      "spicy": 5,
+      "sour": 60,
+      "bitter": 25,
+      "fresh": 0
+    },
+    "level": 7,
+    "calories": 160,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-wacan.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperwacanberry.shtml"
+  },
+  {
+    "id": "hyper-rindo",
+    "nameKey": "berries.hyper-rindo",
+    "stats": {
+      "sweet": 15,
+      "spicy": 55,
+      "sour": 0,
+      "bitter": 5,
+      "fresh": 25
+    },
+    "level": 9,
+    "calories": 210,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-rindo.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperrindoberry.shtml"
+  },
+  {
+    "id": "hyper-yache",
+    "nameKey": "berries.hyper-yache",
+    "stats": {
+      "sweet": 25,
+      "spicy": 0,
+      "sour": 5,
+      "bitter": 15,
+      "fresh": 55
+    },
+    "level": 7,
+    "calories": 250,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-yache.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperyacheberry.shtml"
+  },
+  {
+    "id": "hyper-chople",
+    "nameKey": "berries.hyper-chople",
+    "stats": {
+      "sweet": 55,
+      "spicy": 5,
+      "sour": 15,
+      "bitter": 25,
+      "fresh": 0
+    },
+    "level": 6,
+    "calories": 250,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-chople.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperchopleberry.shtml"
+  },
+  {
+    "id": "hyper-kebia",
+    "nameKey": "berries.hyper-kebia",
+    "stats": {
+      "sweet": 0,
+      "spicy": 15,
+      "sour": 25,
+      "bitter": 55,
+      "fresh": 5
+    },
+    "level": 7,
+    "calories": 270,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-kebia.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperkebiaberry.shtml"
+  },
+  {
+    "id": "hyper-shuca",
+    "nameKey": "berries.hyper-shuca",
+    "stats": {
+      "sweet": 5,
+      "spicy": 25,
+      "sour": 55,
+      "bitter": 0,
+      "fresh": 15
+    },
+    "level": 8,
+    "calories": 230,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-shuca.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hypershucaberry.shtml"
+  },
+  {
+    "id": "hyper-coba",
+    "nameKey": "berries.hyper-coba",
+    "stats": {
+      "sweet": 10,
+      "spicy": 95,
+      "sour": 0,
+      "bitter": 10,
+      "fresh": 5
+    },
+    "level": 10,
+    "calories": 240,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-coba.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hypercobaberry.shtml"
+  },
+  {
+    "id": "hyper-payapa",
+    "nameKey": "berries.hyper-payapa",
+    "stats": {
+      "sweet": 5,
+      "spicy": 0,
+      "sour": 10,
+      "bitter": 10,
+      "fresh": 95
+    },
+    "level": 8,
+    "calories": 300,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-payapa.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperpayapaberry.shtml"
+  },
+  {
+    "id": "hyper-tanga",
+    "nameKey": "berries.hyper-tanga",
+    "stats": {
+      "sweet": 95,
+      "spicy": 10,
+      "sour": 10,
+      "bitter": 5,
+      "fresh": 0
+    },
+    "level": 7,
+    "calories": 300,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-tanga.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hypertangaberry.shtml"
+  },
+  {
+    "id": "hyper-charti",
+    "nameKey": "berries.hyper-charti",
+    "stats": {
+      "sweet": 0,
+      "spicy": 10,
+      "sour": 5,
+      "bitter": 95,
+      "fresh": 10
+    },
+    "level": 8,
+    "calories": 330,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-charti.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperchartiberry.shtml"
+  },
+  {
+    "id": "hyper-kasib",
+    "nameKey": "berries.hyper-kasib",
+    "stats": {
+      "sweet": 10,
+      "spicy": 5,
+      "sour": 95,
+      "bitter": 0,
+      "fresh": 10
+    },
+    "level": 9,
+    "calories": 270,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-kasib.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperkasibberry.shtml"
+  },
+  {
+    "id": "hyper-haban",
+    "nameKey": "berries.hyper-haban",
+    "stats": {
+      "sweet": 85,
+      "spicy": 0,
+      "sour": 0,
+      "bitter": 0,
+      "fresh": 65
+    },
+    "level": 8,
+    "calories": 370,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-haban.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperhabanberry.shtml"
+  },
+  {
+    "id": "hyper-colbur",
+    "nameKey": "berries.hyper-colbur",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 65,
+      "bitter": 0,
+      "fresh": 85
+    },
+    "level": 9,
+    "calories": 370,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-colbur.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hypercolburberry.shtml"
+  },
+  {
+    "id": "hyper-babiri",
+    "nameKey": "berries.hyper-babiri",
+    "stats": {
+      "sweet": 0,
+      "spicy": 0,
+      "sour": 65,
+      "bitter": 85,
+      "fresh": 0
+    },
+    "level": 9,
+    "calories": 400,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-babiri.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperbabiriberry.shtml"
+  },
+  {
+    "id": "hyper-chilan",
+    "nameKey": "berries.hyper-chilan",
+    "stats": {
+      "sweet": 0,
+      "spicy": 85,
+      "sour": 0,
+      "bitter": 65,
+      "fresh": 0
+    },
+    "level": 9,
+    "calories": 370,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-chilan.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperchilanberry.shtml"
+  },
+  {
+    "id": "hyper-roseli",
+    "nameKey": "berries.hyper-roseli",
+    "stats": {
+      "sweet": 0,
+      "spicy": 65,
+      "sour": 85,
+      "bitter": 0,
+      "fresh": 0
+    },
+    "level": 10,
+    "calories": 340,
+    "isExtra": true,
+    "spritePath": "/berries/hyper-roseli.png",
+    "sourceUrl": "https://www.serebii.net/legendsz-a/anshasdonuts.shtml",
+    "itemUrl": "https://www.serebii.net/itemdex/hyperroseliberry.shtml"
+  }
+]

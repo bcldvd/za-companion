@@ -1,100 +1,167 @@
 {
-	"app": {
-		"title": "Pokemon Legends ZA",
-		"subtitle": "Tri de Boîtes"
-	},
-	"search": {
-		"placeholder": "Rechercher un Pokémon par nom..."
-	},
-	"pokemon": {
-		"regional": "Régional #",
-		"placeIn": "Placer dans",
-		"box": "Boîte",
-		"row": "Ligne",
-		"column": "Colonne",
-		"gridSize": "6 colonnes × 5 lignes",
-		"colLabel": "Col",
-		"rowLabel": "Ligne",
-		"notFound": "Aucun Pokémon trouvé correspondant à",
-		"loading": "Chargement des données Pokémon...",
-		"searchPrompt": "Recherchez un Pokémon pour trouver son emplacement dans la boîte",
-		"startPrompt": "Tapez un nom de Pokémon pour commencer",
-		"backToSearch": "Retour à la recherche"
-	},
-	"button": {
-		"clear": "Effacer"
-	},
-	"shiny": {
-		"toggle": "Chromatique",
-		"enabled": "Mode chromatique activé",
-		"disabled": "Mode chromatique désactivé"
-	},
-	"hyperspace": {
-		"title": "Minuteur Chromatique Hyperspace",
-		"subtitle": "Calculez le temps pour atteindre vos objectifs de probabilité chromatique",
-		"method": {
-			"label": "Méthode",
-			"auto": "Téléporteurs",
-			"manual": "TP Carte"
-		},
-		"shinyDonut": {
-			"label": "Niveau d'Aura Chromatique"
-		},
-		"alphaDonut": {
-			"label": "Niveau d'Aura Baron"
-		},
-		"level": {
-			"off": "Désactivé",
-			"lv": "Niv{level}"
-		},
-		"charm": {
-			"label": "Charme Chroma",
-			"on": "Activé",
-			"off": "Désactivé"
-		},
-		"pokemonPerReset": {
-			"label": "Pokémon par reset (dans ~50m)",
-			"hint": "Entrez un nombre entre 1 et 50"
-		},
-		"results": {
-			"title": "Résultats",
-			"howItWorks": "Comment ça marche",
-			"primaryLabel": "99% de chance en",
-			"encountersRequired": "Rencontres nécessaires : {count}",
-			"encountersSince": "≈ {count} rencontres",
-			"average": "Moyenne",
-			"shalphaTitle": "Shiny Baron",
-			"footnote": "",
-			"enterValid": "Entrez des valeurs valides pour voir les résultats"
-		},
-		"modal": {
-			"title": "Comment ça marche",
-			"intro": "Le calculateur estime le temps nécessaire pour atteindre une probabilité donnée de rencontrer au moins un Pokémon chromatique via la méthode téléportation-reset.",
-			"encounterRateTitle": "Taux de rencontres",
-			"encounterRateFormula": "Taux de rencontres = resets/min × Pokémon/reset",
-			"currentRate": "Actuellement : {rate} rencontres/min",
-			"probabilityTitle": "Modèle de probabilité",
-			"probabilityBody": "La probabilité de rencontrer au moins un chromatique après N rencontres est :",
-			"probabilityExplain": "où p est la probabilité chromatique par rencontre.",
-			"timeTitle": "Calcul du temps",
-			"timeBody": "Les temps affichés correspondent au temps nécessaire pour atteindre 50%, 90%, 95% ou 99% de chance de rencontrer au moins un chromatique. Ce sont des probabilités, pas des garanties.",
-			"shalphaTitle": "Probabilité Shalpha",
-			"shalphaBody": "La probabilité Shalpha (chroma + alpha) est calculée comme suit :"
-		}
-	},
-	"map": {
-		"title": "Carte d'Illumis",
-		"loading": "Chargement de la carte...",
-		"spawns": "apparitions",
-		"radius": "50m",
-		"filters": {
-			"title": "Filtres de Carte",
-			"pokemonSpawns": "Apparitions Pokémon",
-			"benches": "Bancs",
-			"alphas": "Barons Garantis",
-			"ladders": "Échelles",
-			"close": "Fermer"
-		}
-	}
+  "app": {
+    "title": "Pokemon Legends ZA",
+    "subtitle": "Tri de Boîtes"
+  },
+  "search": {
+    "placeholder": "Rechercher un Pokémon par nom..."
+  },
+  "pokemon": {
+    "regional": "Régional #",
+    "placeIn": "Placer dans",
+    "box": "Boîte",
+    "row": "Ligne",
+    "column": "Colonne",
+    "gridSize": "6 colonnes × 5 lignes",
+    "colLabel": "Col",
+    "rowLabel": "Ligne",
+    "notFound": "Aucun Pokémon trouvé correspondant à",
+    "loading": "Chargement des données Pokémon...",
+    "searchPrompt": "Recherchez un Pokémon pour trouver son emplacement dans la boîte",
+    "startPrompt": "Tapez un nom de Pokémon pour commencer",
+    "backToSearch": "Retour à la recherche"
+  },
+  "button": {
+    "clear": "Effacer"
+  },
+  "shiny": {
+    "toggle": "Chromatique",
+    "enabled": "Mode chromatique activé",
+    "disabled": "Mode chromatique désactivé"
+  },
+  "hyperspace": {
+    "title": "Minuteur Chromatique Hyperspace",
+    "subtitle": "Calculez le temps pour atteindre vos objectifs de probabilité chromatique",
+    "method": {
+      "label": "Méthode",
+      "auto": "Téléporteurs",
+      "manual": "TP Carte"
+    },
+    "shinyDonut": {
+      "label": "Niveau d'Aura Chromatique"
+    },
+    "alphaDonut": {
+      "label": "Niveau d'Aura Baron"
+    },
+    "level": {
+      "off": "Désactivé",
+      "lv": "Niv{level}"
+    },
+    "charm": {
+      "label": "Charme Chroma",
+      "on": "Activé",
+      "off": "Désactivé"
+    },
+    "pokemonPerReset": {
+      "label": "Pokémon par reset (dans ~50m)",
+      "hint": "Entrez un nombre entre 1 et 50"
+    },
+    "results": {
+      "title": "Résultats",
+      "howItWorks": "Comment ça marche",
+      "primaryLabel": "99% de chance en",
+      "encountersRequired": "Rencontres nécessaires : {count}",
+      "encountersSince": "≈ {count} rencontres",
+      "average": "Moyenne",
+      "shalphaTitle": "Shiny Baron",
+      "footnote": "",
+      "enterValid": "Entrez des valeurs valides pour voir les résultats"
+    },
+    "modal": {
+      "title": "Comment ça marche",
+      "intro": "Le calculateur estime le temps nécessaire pour atteindre une probabilité donnée de rencontrer au moins un Pokémon chromatique via la méthode téléportation-reset.",
+      "encounterRateTitle": "Taux de rencontres",
+      "encounterRateFormula": "Taux de rencontres = resets/min × Pokémon/reset",
+      "currentRate": "Actuellement : {rate} rencontres/min",
+      "probabilityTitle": "Modèle de probabilité",
+      "probabilityBody": "La probabilité de rencontrer au moins un chromatique après N rencontres est :",
+      "probabilityExplain": "où p est la probabilité chromatique par rencontre.",
+      "timeTitle": "Calcul du temps",
+      "timeBody": "Les temps affichés correspondent au temps nécessaire pour atteindre 50%, 90%, 95% ou 99% de chance de rencontrer au moins un chromatique. Ce sont des probabilités, pas des garanties.",
+      "shalphaTitle": "Probabilité Shalpha",
+      "shalphaBody": "La probabilité Shalpha (chroma + alpha) est calculée comme suit :"
+    }
+  },
+  "map": {
+    "title": "Carte d'Illumis",
+    "loading": "Chargement de la carte...",
+    "spawns": "apparitions",
+    "radius": "50m",
+    "filters": {
+      "title": "Filtres de Carte",
+      "pokemonSpawns": "Apparitions Pokémon",
+      "benches": "Bancs",
+      "alphas": "Barons Garantis",
+      "ladders": "Échelles",
+      "close": "Fermer"
+    }
+  },
+  "berries": {
+    "cheri": "Baie Ceriz",
+    "chesto": "Baie Maron",
+    "pecha": "Baie Pêcha",
+    "rawst": "Baie Fraive",
+    "aspear": "Baie Willia",
+    "oran": "Baie Oran",
+    "persim": "Baie Kika",
+    "lum": "Baie Prine",
+    "sitrus": "Baie Sitrus",
+    "pomeg": "Baie Grena",
+    "kelpsy": "Baie Alga",
+    "qualot": "Baie Qualot",
+    "hondew": "Baie Lonme",
+    "grepa": "Baie Résin",
+    "tamato": "Baie Tamato",
+    "occa": "Baie Chocco",
+    "passho": "Baie Pocpoc",
+    "wacan": "Baie Parma",
+    "rindo": "Baie Ratam",
+    "yache": "Baie Nanone",
+    "chople": "Baie Pomroz",
+    "kebia": "Baie Kébia",
+    "shuca": "Baie Jouca",
+    "coba": "Baie Cobaba",
+    "payapa": "Baie Yapap",
+    "tanga": "Baie Panga",
+    "charti": "Baie Charti",
+    "kasib": "Baie Sédra",
+    "haban": "Baie Fraigo",
+    "colbur": "Baie Lampou",
+    "babiri": "Baie Babiri",
+    "chilan": "Baie Zalis",
+    "roseli": "Baie Selro",
+    "hyper-cheri": "Hyper Baie Ceriz",
+    "hyper-chesto": "Hyper Baie Maron",
+    "hyper-pecha": "Hyper Baie Pêcha",
+    "hyper-rawst": "Hyper Baie Fraive",
+    "hyper-aspear": "Hyper Baie Willia",
+    "hyper-oran": "Hyper Baie Oran",
+    "hyper-persim": "Hyper Baie Kika",
+    "hyper-lum": "Hyper Baie Prine",
+    "hyper-sitrus": "Hyper Baie Sitrus",
+    "hyper-pomeg": "Hyper Baie Grena",
+    "hyper-kelpsy": "Hyper Baie Alga",
+    "hyper-qualot": "Hyper Baie Qualot",
+    "hyper-hondew": "Hyper Baie Lonme",
+    "hyper-grepa": "Hyper Baie Résin",
+    "hyper-tamato": "Hyper Baie Tamato",
+    "hyper-occa": "Hyper Baie Chocco",
+    "hyper-passho": "Hyper Baie Pocpoc",
+    "hyper-wacan": "Hyper Baie Parma",
+    "hyper-rindo": "Hyper Baie Ratam",
+    "hyper-yache": "Hyper Baie Nanone",
+    "hyper-chople": "Hyper Baie Pomroz",
+    "hyper-kebia": "Hyper Baie Kébia",
+    "hyper-shuca": "Hyper Baie Jouca",
+    "hyper-coba": "Hyper Baie Cobaba",
+    "hyper-payapa": "Hyper Baie Yapap",
+    "hyper-tanga": "Hyper Baie Panga",
+    "hyper-charti": "Hyper Baie Charti",
+    "hyper-kasib": "Hyper Baie Sédra",
+    "hyper-haban": "Hyper Baie Fraigo",
+    "hyper-colbur": "Hyper Baie Lampou",
+    "hyper-babiri": "Hyper Baie Babiri",
+    "hyper-chilan": "Hyper Baie Zalis",
+    "hyper-roseli": "Hyper Baie Selro"
+  }
 }
-
