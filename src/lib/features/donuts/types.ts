@@ -31,6 +31,7 @@ export type OwnedDonut = {
 	id: string;
 	label: string;
 	labelKey?: string;
+	imagePath: string;
 	sparklingLevel: 0 | 1 | 2 | 3;
 	typeId?: string;
 	quantity: number;

@@ -48,6 +48,7 @@ export function createOwnedDonutFromRecipe(
 		id: generateId(),
 		label: recipe.name,
 		labelKey: recipe.nameKey,
+		imagePath: recipe.imagePath,
 		sparklingLevel,
 		typeId,
 		quantity: 1,

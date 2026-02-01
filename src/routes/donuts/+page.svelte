@@ -3,6 +3,7 @@
 	import { _, locale } from 'svelte-i18n';
 	import type { Pokemon } from '$lib/types/pokemon.js';
 	import { loadPokedex, getLocalizedPokemonName } from '$lib/utils/pokedex.js';
+	import { getPokemonSprite } from '$lib/utils/pokeapi.js';
 	import { loadBerries, getBerryMap, computeFlavorTotals, type Berry } from '$lib/features/donuts/berries';
 	import PokemonSearch from '$lib/components/PokemonSearch.svelte';
 	import type { DonutRecipe, OwnedDonut } from '$lib/features/donuts/types';
@@ -45,6 +46,7 @@
 	let showReservationModal = $state(false);
 	let craftedLegendaryIds = $state<Set<string>>(new Set());
 	let expandedLegendaryIds = $state<Set<string>>(new Set());
+	let pokemonSprites = $state<Map<string, string>>(new Map());
 	const sparklingLevels: Array<1 | 2 | 3> = [1, 2, 3];
 	const buttonBase =
 		'min-h-[44px] rounded-md border px-4 py-2 text-sm font-semibold transition-colors';
@@ -92,6 +94,22 @@
 	$effect(() => {
 		if (!$locale) return;
 		refreshTypeOptions();
+	});
+
+	$effect(() => {
+		const pokemonIds = new Set<string>();
+		for (const donut of ownedDonuts) {
+			if (donut.reservedForPokemonId) {
+				pokemonIds.add(donut.reservedForPokemonId);
+			}
+		}
+		for (const pokemonId of pokemonIds) {
+			if (!pokemonSprites.has(pokemonId)) {
+				getPokemonSprite(Number(pokemonId), false).then((url) => {
+					pokemonSprites = new Map(pokemonSprites).set(pokemonId, url);
+				}).catch(() => {});
+			}
+		}
 	});
 
 	function setOwnedDonuts(next: OwnedDonut[]): void {
@@ -496,49 +514,84 @@
 				{:else}
 					<div class="space-y-3">
 						{#each reservedDonuts as donut (donut.id)}
-							<article class="rounded-lg border app-card p-4 space-y-3">
-								<div class="flex flex-wrap items-start justify-between gap-2">
-									<div>
-										<h4 class="text-lg font-semibold">{getDonutLabel(donut)}</h4>
-										<div class="flex flex-wrap gap-2 text-sm app-text-muted">
-											<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5">
-												{$_('donuts.inventory.sparkling', { values: { level: donut.sparklingLevel } })}
-											</span>
-											<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5">
-												{$_('donuts.inventory.typeChip', { values: { type: getTypeLabelById(donut.typeId) } })}
-											</span>
-											<span>{$_('donuts.inventory.quantity', { values: { count: donut.quantity } })}</span>
+							{@const pokemonSprite = donut.reservedForPokemonId ? pokemonSprites.get(donut.reservedForPokemonId) : undefined}
+							<article class="rounded-lg border app-card p-3 md:p-4">
+								<div class="flex gap-3 items-center">
+									<img
+										src={donut.imagePath}
+										alt={getDonutLabel(donut)}
+										class="h-14 w-14 rounded-md border app-border object-cover shrink-0"
+										loading="lazy"
+									/>
+									<div class="flex-1 min-w-0">
+										<div class="flex items-start justify-between gap-2">
+											<div class="min-w-0">
+												<h4 class="font-semibold truncate">{getDonutLabel(donut)}</h4>
+												<div class="flex flex-wrap items-center gap-1.5 mt-1">
+													<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5 text-xs">
+														{$_('donuts.inventory.sparkling', { values: { level: donut.sparklingLevel } })}
+													</span>
+													<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5 text-xs">
+														{getTypeLabelById(donut.typeId)}
+													</span>
+													{#if donut.quantity > 1}
+														<span class="text-xs app-text-muted">×{donut.quantity}</span>
+													{/if}
+												</div>
+											</div>
+											{#if donut.reservedForPokemonId}
+												<div class="flex items-center gap-1.5 shrink-0">
+													{#if pokemonSprite}
+														<img
+															src={pokemonSprite}
+															alt={getReservationLabel(donut) ?? ''}
+															class="h-10 w-10 object-contain"
+															loading="lazy"
+														/>
+													{/if}
+													<span class="text-xs font-medium app-text-muted hidden sm:block">
+														{getReservationLabel(donut)}
+													</span>
+												</div>
+											{/if}
+										</div>
+										<div class="flex flex-wrap gap-1.5 mt-2">
+											<button
+												type="button"
+												class="rounded-md border app-button px-2.5 py-1.5 text-xs font-medium"
+												onclick={() => openReservationModal(donut)}
+											>
+												↔
+												<span class="ml-1 text-[10px] leading-none">{$_('donuts.actions.changeReservation')}</span>
+											</button>
+											<button
+												type="button"
+												class="rounded-md border app-button px-2.5 py-1.5 text-xs font-medium"
+												onclick={() => applyUnreserve(donut)}
+											>
+												🔓
+												<span class="ml-1 text-[10px] leading-none">{$_('donuts.actions.unreserve')}</span>
+											</button>
+											<button
+												type="button"
+												class="rounded-md border app-button-destructive px-2.5 py-1.5 text-xs font-medium"
+												onclick={() => applyConsume(donut)}
+											>
+												✓
+												<span class="ml-1 text-[10px] leading-none">{$_('donuts.actions.consumed')}</span>
+											</button>
+											{#if !donut.isSpecialLegendary}
+												<button
+													type="button"
+													class="rounded-md border app-button px-2.5 py-1.5 text-xs font-medium"
+													onclick={() => applyDuplicate(donut)}
+												>
+													⧉
+													<span class="ml-1 text-[10px] leading-none">{$_('donuts.actions.duplicate')}</span>
+												</button>
+											{/if}
 										</div>
 									</div>
-									{#if donut.reservedForPokemonId}
-										<span class="text-sm font-medium app-text-muted">
-											🔒 {$_('donuts.inventory.reservedFor', { values: { pokemon: getReservationLabel(donut) } })}
-										</span>
-									{/if}
-								</div>
-								<div class="flex flex-wrap gap-2">
-									<button
-										type="button"
-										class="{buttonBase} app-button"
-										onclick={() => openReservationModal(donut)}
-									>
-										<span class="mr-1.5">↔</span>{$_('donuts.actions.changeReservation')}
-									</button>
-									<button type="button" class="{buttonBase} app-button" onclick={() => applyUnreserve(donut)}>
-										<span class="mr-1.5">🔓</span>{$_('donuts.actions.unreserve')}
-									</button>
-									<button type="button" class="{buttonBase} app-button-destructive" onclick={() => applyConsume(donut)}>
-										<span class="mr-1.5">✓</span>{$_('donuts.actions.consumed')}
-									</button>
-									<button
-										type="button"
-										class="{buttonBase} app-button"
-										disabled={donut.isSpecialLegendary}
-										aria-disabled={donut.isSpecialLegendary}
-										onclick={() => applyDuplicate(donut)}
-									>
-										<span class="mr-1.5">⧉</span>{$_('donuts.actions.duplicate')}
-									</button>
 								</div>
 							</article>
 						{/each}
@@ -553,41 +606,55 @@
 				{:else}
 					<div class="space-y-3">
 						{#each availableDonuts as donut (donut.id)}
-							<article class="rounded-lg border app-card p-4 space-y-3">
-								<div class="flex flex-wrap items-start justify-between gap-2">
-									<div>
-										<h4 class="text-lg font-semibold">{getDonutLabel(donut)}</h4>
-										<div class="flex flex-wrap gap-2 text-sm app-text-muted">
-											<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5">
-												{$_('donuts.inventory.sparkling', { values: { level: donut.sparklingLevel } })}
-											</span>
-											<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5">
-												{$_('donuts.inventory.typeChip', { values: { type: getTypeLabelById(donut.typeId) } })}
-											</span>
-											<span>{$_('donuts.inventory.quantity', { values: { count: donut.quantity } })}</span>
+							<article class="rounded-lg border app-card p-3 md:p-4">
+								<div class="flex gap-3 items-center">
+									<img
+										src={donut.imagePath}
+										alt={getDonutLabel(donut)}
+										class="h-14 w-14 rounded-md border app-border object-cover shrink-0"
+										loading="lazy"
+									/>
+									<div class="flex-1 min-w-0">
+										<div class="min-w-0">
+											<h4 class="font-semibold truncate">{getDonutLabel(donut)}</h4>
+											<div class="flex flex-wrap items-center gap-1.5 mt-1">
+												<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5 text-xs">
+													{$_('donuts.inventory.sparkling', { values: { level: donut.sparklingLevel } })}
+												</span>
+												<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5 text-xs">
+													{getTypeLabelById(donut.typeId)}
+												</span>
+												{#if donut.quantity > 1}
+													<span class="text-xs app-text-muted">×{donut.quantity}</span>
+												{/if}
+											</div>
+										</div>
+										<div class="flex flex-wrap gap-1.5 mt-2">
+											<button
+												type="button"
+												class="rounded-md border app-button px-2.5 py-1.5 text-xs font-medium"
+												onclick={() => openReservationModal(donut)}
+											>
+												📌
+											</button>
+											<button
+												type="button"
+												class="rounded-md border app-button-destructive px-2.5 py-1.5 text-xs font-medium"
+												onclick={() => applyConsume(donut)}
+											>
+												✓
+											</button>
+											{#if !donut.isSpecialLegendary}
+												<button
+													type="button"
+													class="rounded-md border app-button px-2.5 py-1.5 text-xs font-medium"
+													onclick={() => applyDuplicate(donut)}
+												>
+													⧉
+												</button>
+											{/if}
 										</div>
 									</div>
-								</div>
-								<div class="flex flex-wrap gap-2">
-									<button
-										type="button"
-										class="{buttonBase} app-button"
-										onclick={() => openReservationModal(donut)}
-									>
-										<span class="mr-1.5">📌</span>{$_('donuts.actions.reserve')}
-									</button>
-									<button type="button" class="{buttonBase} app-button-destructive" onclick={() => applyConsume(donut)}>
-										<span class="mr-1.5">✓</span>{$_('donuts.actions.consumed')}
-									</button>
-									<button
-										type="button"
-										class="{buttonBase} app-button"
-										disabled={donut.isSpecialLegendary}
-										aria-disabled={donut.isSpecialLegendary}
-										onclick={() => applyDuplicate(donut)}
-									>
-										<span class="mr-1.5">⧉</span>{$_('donuts.actions.duplicate')}
-									</button>
 								</div>
 							</article>
 						{/each}
