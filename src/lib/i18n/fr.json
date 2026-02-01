@@ -44,7 +44,15 @@
     "theme": "Thème",
     "themeSystem": "Système",
     "themeLight": "Clair",
-    "themeDark": "Sombre"
+    "themeDark": "Sombre",
+    "about": "À propos",
+    "lastUpdated": "Dernière mise à jour",
+    "buildId": "Version",
+    "checkForUpdates": "Rechercher des mises à jour",
+    "checking": "Recherche de mises à jour...",
+    "upToDate": "À jour",
+    "updateAvailable": "Mise à jour disponible",
+    "updateNow": "Mettre à jour"
   },
   "shiny": {
     "toggle": "Chromatique",

@@ -8,6 +8,7 @@
 	import { page } from '$app/state';
 	import { iconViewBox, sidebarModules } from '$lib/features/navigation/modules';
 	import { initThemeMode } from '$lib/settings/theme';
+	import { initPWA } from '$lib/settings/pwa';
 
 	let { children } = $props();
 	let isLocaleReady = $state(false);
@@ -29,12 +30,14 @@
 
 	onMount(() => {
 		const cleanupTheme = initThemeMode();
+		const cleanupPWA = initPWA();
 		// Wait for locale to be loaded before rendering
 		waitForLocale().then(() => {
 			isLocaleReady = true;
 		});
 		return () => {
 			cleanupTheme();
+			cleanupPWA();
 		};
 	});
 </script>

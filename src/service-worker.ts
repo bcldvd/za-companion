@@ -81,3 +81,9 @@ self.addEventListener('fetch', (event: FetchEvent) => {
 	event.respondWith(respond());
 });
 
+self.addEventListener('message', (event: MessageEvent) => {
+	if (event.data?.type === 'SKIP_WAITING') {
+		(self as unknown as ServiceWorkerGlobalScope).skipWaiting();
+	}
+});
+

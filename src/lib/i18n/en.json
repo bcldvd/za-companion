@@ -44,7 +44,15 @@
     "theme": "Theme",
     "themeSystem": "System",
     "themeLight": "Light",
-    "themeDark": "Dark"
+    "themeDark": "Dark",
+    "about": "About",
+    "lastUpdated": "Last updated",
+    "buildId": "Build",
+    "checkForUpdates": "Check for updates",
+    "checking": "Checking for updates...",
+    "upToDate": "Up to date",
+    "updateAvailable": "Update available",
+    "updateNow": "Update now"
   },
   "shiny": {
     "toggle": "Shiny",
