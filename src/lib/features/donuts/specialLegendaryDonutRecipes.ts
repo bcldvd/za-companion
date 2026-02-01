@@ -14,40 +14,7 @@ export const specialLegendaryDonutRecipes: DonutRecipe[] = [
 			{ itemId: 'hyper-coba', quantity: 1 },
 			{ itemId: 'hyper-yache', quantity: 1 }
 		],
-		flavorRequirements: {
-			sweet: 310,
-			spicy: 100,
-			sour: 310,
-			bitter: 40,
-			fresh: 40
-		},
 		specialLegendaryPokemonId: '491',
-		isSpecialLegendary: true
-	},
-	{
-		id: 'delta-old-fashioned',
-		name: 'Delta Old Fashioned Donut',
-		nameKey: 'donuts.recipes.deltaOldFashioned.name',
-		category: 'specialLegendary',
-		tags: ['specialLegendary'],
-		imagePath: '/donuts/donut-rayquaza.png',
-		ingredients: [
-			{ itemId: 'hyper-oran', quantity: 1 },
-			{ itemId: 'hyper-yache', quantity: 1 },
-			{ itemId: 'hyper-payapa', quantity: 1 },
-			{ itemId: 'hyper-kasib', quantity: 1 },
-			{ itemId: 'hyper-haban', quantity: 1 },
-			{ itemId: 'hyper-colbur', quantity: 2 },
-			{ itemId: 'hyper-roseli', quantity: 1 }
-		],
-		flavorRequirements: {
-			sweet: 120,
-			spicy: 40,
-			sour: 340,
-			bitter: 40,
-			fresh: 390
-		},
-		specialLegendaryPokemonId: '384',
 		isSpecialLegendary: true
 	},
 	{
@@ -65,13 +32,6 @@ export const specialLegendaryDonutRecipes: DonutRecipe[] = [
 			{ itemId: 'hyper-chilan', quantity: 1 },
 			{ itemId: 'hyper-roseli', quantity: 1 }
 		],
-		flavorRequirements: {
-			sweet: 260,
-			spicy: 160,
-			sour: 160,
-			bitter: 20,
-			fresh: 260
-		},
 		specialLegendaryPokemonId: '383',
 		isSpecialLegendary: true
 	},
@@ -91,14 +51,26 @@ export const specialLegendaryDonutRecipes: DonutRecipe[] = [
 			{ itemId: 'hyper-colbur', quantity: 1 },
 			{ itemId: 'hyper-chilan', quantity: 1 }
 		],
-		flavorRequirements: {
-			sweet: 50,
-			spicy: 50,
-			sour: 210,
-			bitter: 180,
-			fresh: 370
-		},
 		specialLegendaryPokemonId: '382',
+		isSpecialLegendary: true
+	},
+	{
+		id: 'delta-old-fashioned',
+		name: 'Delta Old Fashioned Donut',
+		nameKey: 'donuts.recipes.deltaOldFashioned.name',
+		category: 'specialLegendary',
+		tags: ['specialLegendary'],
+		imagePath: '/donuts/donut-rayquaza.png',
+		ingredients: [
+			{ itemId: 'hyper-oran', quantity: 1 },
+			{ itemId: 'hyper-yache', quantity: 1 },
+			{ itemId: 'hyper-payapa', quantity: 1 },
+			{ itemId: 'hyper-kasib', quantity: 1 },
+			{ itemId: 'hyper-haban', quantity: 1 },
+			{ itemId: 'hyper-colbur', quantity: 2 },
+			{ itemId: 'hyper-roseli', quantity: 1 }
+		],
+		specialLegendaryPokemonId: '384',
 		isSpecialLegendary: true
 	},
 	{
@@ -114,13 +86,6 @@ export const specialLegendaryDonutRecipes: DonutRecipe[] = [
 			{ itemId: 'hyper-kasib', quantity: 4 },
 			{ itemId: 'hyper-chilan', quantity: 2 }
 		],
-		flavorRequirements: {
-			sweet: 40,
-			spicy: 200,
-			sour: 400,
-			bitter: 280,
-			fresh: 40
-		},
 		specialLegendaryPokemonId: '807',
 		isSpecialLegendary: true
 	}

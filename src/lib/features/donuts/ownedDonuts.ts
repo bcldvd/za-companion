@@ -1,6 +1,7 @@
 import type { DonutRecipe, OwnedDonut } from './types';
 
 const STORAGE_KEY = 'pokemon-legends-za-owned-donuts';
+const CRAFTED_LEGENDARY_KEY = 'pokemon-legends-za-crafted-legendary-donuts';
 
 function generateId(): string {
 	if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
@@ -99,4 +100,41 @@ export function duplicateOwnedDonut(donuts: OwnedDonut[], donutId: string): Owne
 		createdAt: new Date().toISOString()
 	};
 	return [duplicated, ...donuts];
+}
+
+export function loadCraftedLegendaryIds(): Set<string> {
+	if (typeof globalThis.window === 'undefined') return new Set();
+	try {
+		const stored = localStorage.getItem(CRAFTED_LEGENDARY_KEY);
+		if (stored) {
+			const parsed = JSON.parse(stored) as string[];
+			if (Array.isArray(parsed)) {
+				return new Set(parsed);
+			}
+		}
+	} catch (error) {
+		console.error('Failed to load crafted legendary donuts:', error);
+	}
+	return new Set();
+}
+
+export function saveCraftedLegendaryIds(ids: Set<string>): void {
+	if (typeof globalThis.window === 'undefined') return;
+	try {
+		localStorage.setItem(CRAFTED_LEGENDARY_KEY, JSON.stringify([...ids]));
+	} catch (error) {
+		console.error('Failed to save crafted legendary donuts:', error);
+	}
+}
+
+export function markLegendaryCrafted(ids: Set<string>, recipeId: string): Set<string> {
+	const next = new Set(ids);
+	next.add(recipeId);
+	return next;
+}
+
+export function unmarkLegendaryCrafted(ids: Set<string>, recipeId: string): Set<string> {
+	const next = new Set(ids);
+	next.delete(recipeId);
+	return next;
 }

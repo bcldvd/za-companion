@@ -151,7 +151,9 @@
       "duplicate": "Dupliquer",
       "cancel": "Annuler",
       "confirm": "Confirmer",
-      "close": "Fermer"
+      "close": "Fermer",
+      "collapse": "Réduire",
+      "unmark": "Démarquer"
     },
     "inventory": {
       "title": "Mes Donuts",
@@ -237,20 +239,48 @@
           "hyperspaceStretch": "Même principe Arc-en-ciel, mais inclut une baie classique pour économiser une extra-baie."
         }
       },
+      "mainFarmingTool": {
+        "name": "L'Outil de Farm Principal (Acide Pur)",
+        "bullets": {
+          "itemPower": "Favorise fortement Aura Objet : Baies et Abondance Niveau 3.",
+          "berryYield": "Peut rapporter 80+ Hyper Baies Panga/Fraigo en une seule distorsion."
+        }
+      },
+      "fiveStarRainbow": {
+        "name": "Le Rainbow Farmer 5 Étoiles",
+        "bullets": {
+          "longerDuration": "Dure plus longtemps que la version 4 étoiles pour des sessions de farm prolongées.",
+          "largeDistortions": "Parfait pour vider les grandes distorsions et maximiser Abondance Niveau 3."
+        }
+      },
+      "strongestNoTanga": {
+        "name": "Le Meilleur Arc-en-ciel Sans Panga",
+        "bullets": {
+          "longerSparkling": "Offre une durée d'Aura Brillance plus longue et des effets plus forts.",
+          "zeroTanga": "Zéro baie Panga requise tout en maintenant une haute efficacité."
+        }
+      },
+      "reliableMidTier": {
+        "name": "Le « Fiable » Milieu de Gamme",
+        "bullets": {
+          "easyBerries": "Utilise des Hyper Baies Pomroz, plus faciles à trouver en zones sauvages 3 étoiles.",
+          "sustainable": "Recette très durable pour une chasse au chromatique régulière."
+        }
+      },
       "badDreams": {
-        "name": "Cruller Mauvais Rêve"
+        "name": "Beignet Cauchemar"
       },
       "deltaOldFashioned": {
-        "name": "Donut Classique Delta"
+        "name": "Delta à l'Ancienne"
       },
       "omegaOldFashioned": {
-        "name": "Donut Classique Oméga"
+        "name": "Omega à l'Ancienne"
       },
       "alphaOldFashioned": {
-        "name": "Donut Classique Alpha"
+        "name": "Alpha à l'Ancienne"
       },
       "plasmaGlazed": {
-        "name": "Donut Glacé Plasma"
+        "name": "Plasma Beigne"
       }
     }
   },

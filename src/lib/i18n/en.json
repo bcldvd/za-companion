@@ -151,7 +151,9 @@
       "duplicate": "Duplicate",
       "cancel": "Cancel",
       "confirm": "Confirm",
-      "close": "Close"
+      "close": "Close",
+      "collapse": "Collapse",
+      "unmark": "Unmark"
     },
     "inventory": {
       "title": "My Donuts",
@@ -221,7 +223,7 @@
         "name": "Six Habanero / Two Tanga (High power, better efficiency)",
         "bullets": {
           "highTier": "High-tier flavor score while saving Tanga.",
-          "lessExpensive": "Practical “less expensive than 8× Tanga” option when farming attempts."
+          "lessExpensive": "Practical 'less expensive than 8x Tanga' option when farming attempts."
         }
       },
       "tangaLessRainbow": {
@@ -232,9 +234,37 @@
         }
       },
       "inventoryBooster": {
-        "name": "Regular Berry “Inventory Booster” Rainbow",
+        "name": "Regular Berry 'Inventory Booster' Rainbow",
         "bullets": {
           "hyperspaceStretch": "Same Rainbow idea, but includes one non-hyperspace berry to stretch hyperspace inventory."
+        }
+      },
+      "mainFarmingTool": {
+        "name": "The Main Farming Tool (Pure Sour)",
+        "bullets": {
+          "itemPower": "Heavily favors Item Power: Berries and Big Haul Level 3.",
+          "berryYield": "Can yield 80+ Hyper Tanga/Haban berries in one large distortion run."
+        }
+      },
+      "fiveStarRainbow": {
+        "name": "The 5-Star Rainbow Farmer",
+        "bullets": {
+          "longerDuration": "Lasts longer than the 4-star version for extended farming sessions.",
+          "largeDistortions": "Perfect for clearing large distortions to maximize Big Haul Level 3."
+        }
+      },
+      "strongestNoTanga": {
+        "name": "The Strongest No-Tanga Rainbow",
+        "bullets": {
+          "longerSparkling": "Provides longer Sparkling Power time and stronger effects.",
+          "zeroTanga": "Zero Tanga berries required while maintaining high efficiency."
+        }
+      },
+      "reliableMidTier": {
+        "name": "The 'Reliable' Mid-Tier",
+        "bullets": {
+          "easyBerries": "Uses Hyper Chople berries, easier to find in 3-star wild zones.",
+          "sustainable": "Very sustainable recipe for consistent shiny hunting."
         }
       },
       "badDreams": {

@@ -3,7 +3,7 @@
 	import { _, locale } from 'svelte-i18n';
 	import type { Pokemon } from '$lib/types/pokemon.js';
 	import { loadPokedex, getLocalizedPokemonName } from '$lib/utils/pokedex.js';
-	import { loadBerries, getBerryMap, type Berry } from '$lib/features/donuts/berries';
+	import { loadBerries, getBerryMap, computeFlavorTotals, type Berry } from '$lib/features/donuts/berries';
 	import PokemonSearch from '$lib/components/PokemonSearch.svelte';
 	import type { DonutRecipe, OwnedDonut } from '$lib/features/donuts/types';
 	import { recommendedDonutRecipes } from '$lib/features/donuts/recommendedDonutRecipes';
@@ -17,7 +17,11 @@
 		reserveOwnedDonut,
 		unreserveOwnedDonut,
 		consumeOwnedDonut,
-		duplicateOwnedDonut
+		duplicateOwnedDonut,
+		loadCraftedLegendaryIds,
+		saveCraftedLegendaryIds,
+		markLegendaryCrafted,
+		unmarkLegendaryCrafted
 	} from '$lib/features/donuts/ownedDonuts';
 
 	type TabKey = 'recipes' | 'inventory';
@@ -39,6 +43,8 @@
 
 	let reservationTarget = $state<OwnedDonut | null>(null);
 	let showReservationModal = $state(false);
+	let craftedLegendaryIds = $state<Set<string>>(new Set());
+	let expandedLegendaryIds = $state<Set<string>>(new Set());
 	const sparklingLevels: Array<1 | 2 | 3> = [1, 2, 3];
 	const buttonBase =
 		'min-h-[44px] rounded-md border px-4 py-2 text-sm font-semibold transition-colors';
@@ -68,6 +74,7 @@
 		}
 
 		ownedDonuts = loadOwnedDonuts();
+		craftedLegendaryIds = loadCraftedLegendaryIds();
 
 		try {
 			pokedex = await loadPokedex();
@@ -109,6 +116,26 @@
 		setOwnedDonuts(addOwnedDonut(ownedDonuts, newDonut));
 		showSparklingModal = false;
 		craftingRecipe = null;
+	}
+
+	function toggleLegendaryExpanded(recipeId: string) {
+		const next = new Set(expandedLegendaryIds);
+		if (next.has(recipeId)) {
+			next.delete(recipeId);
+		} else {
+			next.add(recipeId);
+		}
+		expandedLegendaryIds = next;
+	}
+
+	function unmarkLegendary(recipeId: string) {
+		craftedLegendaryIds = unmarkLegendaryCrafted(craftedLegendaryIds, recipeId);
+		saveCraftedLegendaryIds(craftedLegendaryIds);
+	}
+
+	function markLegendaryAsCrafted(recipe: DonutRecipe) {
+		craftedLegendaryIds = markLegendaryCrafted(craftedLegendaryIds, recipe.id);
+		saveCraftedLegendaryIds(craftedLegendaryIds);
 	}
 
 	function openReservationModal(donut: OwnedDonut) {
@@ -199,17 +226,18 @@
 
 			<div class="grid gap-4">
 				{#each recipesRecommended as recipe (recipe.id)}
+					{@const flavors = computeFlavorTotals(recipe.ingredients, berryMap)}
 					<article class="rounded-lg border app-card p-4 space-y-4">
-						<div class="flex flex-col gap-4 md:flex-row md:items-start">
+						<div class="flex gap-3 items-start">
 							<img
 								src={recipe.imagePath}
 								alt={getRecipeTitle(recipe)}
-								class="h-28 w-28 rounded-md border app-border object-cover"
+								class="h-16 w-16 md:h-28 md:w-28 rounded-md border app-border object-cover shrink-0"
 								loading="lazy"
 							/>
-							<div class="flex-1 space-y-2">
-								<div class="flex flex-wrap items-center gap-2">
-									<h3 class="text-lg font-semibold">{getRecipeTitle(recipe)}</h3>
+							<div class="flex-1 min-w-0 space-y-2">
+								<div class="flex flex-wrap items-center gap-1.5 md:gap-2">
+									<h3 class="text-base md:text-lg font-semibold">{getRecipeTitle(recipe)}</h3>
 									{#each recipe.tags as tag}
 										<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5 text-xs font-semibold">
 											{$_(`donuts.tags.${tag}`)}
@@ -227,40 +255,40 @@
 							</div>
 						</div>
 
-						{#if recipe.flavorRequirements}
+						{#if flavors}
 						<div class="space-y-2">
 							<h4 class="text-sm font-semibold uppercase tracking-wide app-text-muted">
 								{$_('donuts.flavorValues')}
 							</h4>
 							<div class="flex flex-wrap gap-2 text-sm">
-								{#if recipe.flavorRequirements.sweet}
+								{#if flavors.sweet}
 								<div class="rounded-md border app-card-muted px-3 py-2">
 									<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.sweet')}</div>
-									<div class="font-semibold">{recipe.flavorRequirements.sweet}</div>
+									<div class="font-semibold">{flavors.sweet}</div>
 								</div>
 								{/if}
-								{#if recipe.flavorRequirements.spicy}
+								{#if flavors.spicy}
 								<div class="rounded-md border app-card-muted px-3 py-2">
 									<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.spicy')}</div>
-									<div class="font-semibold">{recipe.flavorRequirements.spicy}</div>
+									<div class="font-semibold">{flavors.spicy}</div>
 								</div>
 								{/if}
-								{#if recipe.flavorRequirements.sour}
+								{#if flavors.sour}
 								<div class="rounded-md border app-card-muted px-3 py-2">
 									<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.sour')}</div>
-									<div class="font-semibold">{recipe.flavorRequirements.sour}</div>
+									<div class="font-semibold">{flavors.sour}</div>
 								</div>
 								{/if}
-								{#if recipe.flavorRequirements.bitter}
+								{#if flavors.bitter}
 								<div class="rounded-md border app-card-muted px-3 py-2">
 									<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.bitter')}</div>
-									<div class="font-semibold">{recipe.flavorRequirements.bitter}</div>
+									<div class="font-semibold">{flavors.bitter}</div>
 								</div>
 								{/if}
-								{#if recipe.flavorRequirements.fresh}
+								{#if flavors.fresh}
 								<div class="rounded-md border app-card-muted px-3 py-2">
 									<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.fresh')}</div>
-									<div class="font-semibold">{recipe.flavorRequirements.fresh}</div>
+									<div class="font-semibold">{flavors.fresh}</div>
 								</div>
 								{/if}
 							</div>
@@ -307,90 +335,150 @@
 
 			<div class="grid gap-4">
 				{#each recipesSpecial as recipe (recipe.id)}
-					<article class="rounded-lg border app-card p-4 space-y-4">
-						<div class="flex flex-col gap-4 md:flex-row md:items-start">
-							<img
-								src={recipe.imagePath}
-								alt={getRecipeTitle(recipe)}
-								class="h-28 w-28 rounded-md border app-border object-cover"
-								loading="lazy"
-							/>
-							<div class="flex-1 space-y-2">
-								<div class="flex flex-wrap items-center gap-2">
-									<h3 class="text-lg font-semibold">{getRecipeTitle(recipe)}</h3>
-									{#each recipe.tags as tag}
-										<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5 text-xs font-semibold">
-											{$_(`donuts.tags.${tag}`)}
-										</span>
-									{/each}
-								</div>
-								<p class="text-sm app-text-muted">
-									{$_('donuts.special.forPokemon', {
-										values: {
-											pokemon:
-												getPokemonNameById(recipe.specialLegendaryPokemonId) ??
-												$_('donuts.special.unknownPokemon')
-										}
-									})}
-								</p>
-							</div>
-						</div>
-
-						<div class="space-y-2">
-							<h4 class="text-sm font-semibold uppercase tracking-wide app-text-muted">
-								{$_('donuts.flavorRequirements')}
-							</h4>
-							<div class="grid grid-cols-2 gap-2 text-sm sm:grid-cols-3 md:grid-cols-5">
-								<div class="rounded-md border app-card-muted px-3 py-2">
-									<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.sweet')}</div>
-									<div class="font-semibold">{recipe.flavorRequirements?.sweet}</div>
-								</div>
-								<div class="rounded-md border app-card-muted px-3 py-2">
-									<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.spicy')}</div>
-									<div class="font-semibold">{recipe.flavorRequirements?.spicy}</div>
-								</div>
-								<div class="rounded-md border app-card-muted px-3 py-2">
-									<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.sour')}</div>
-									<div class="font-semibold">{recipe.flavorRequirements?.sour}</div>
-								</div>
-								<div class="rounded-md border app-card-muted px-3 py-2">
-									<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.bitter')}</div>
-									<div class="font-semibold">{recipe.flavorRequirements?.bitter}</div>
-								</div>
-								<div class="rounded-md border app-card-muted px-3 py-2">
-									<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.fresh')}</div>
-									<div class="font-semibold">{recipe.flavorRequirements?.fresh}</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="space-y-2">
-							<h4 class="text-sm font-semibold uppercase tracking-wide app-text-muted">
-								{$_('donuts.ingredients')}
-							</h4>
-							<div class="flex flex-wrap gap-3">
-								{#each recipe.ingredients as ingredient}
-									{@const berry = berryMap.get(ingredient.itemId)}
-									<div class="flex items-center gap-2 rounded-md border app-card-muted px-3 py-2 text-sm">
-										{#if berry}
-											<img src={berry.spritePath} alt="" class="h-6 w-6" loading="lazy" />
-										{/if}
-										<span class="font-semibold">×{ingredient.quantity}</span>
-										<span>{berry ? $_(berry.nameKey) : ingredient.itemId}</span>
-									</div>
-								{/each}
-							</div>
-						</div>
-
-						<div class="flex justify-end">
+					{@const isCrafted = craftedLegendaryIds.has(recipe.id)}
+					{@const isExpanded = expandedLegendaryIds.has(recipe.id)}
+					{@const flavors = computeFlavorTotals(recipe.ingredients, berryMap)}
+					<article class="rounded-lg border app-card p-4 {isCrafted ? 'opacity-75' : ''}">
+						{#if isCrafted && !isExpanded}
+							<!-- Collapsed view for crafted legendary -->
 							<button
 								type="button"
-								class="{buttonBase} app-button-primary"
-								onclick={() => openCraftModal(recipe)}
+								class="w-full flex items-center gap-4 text-left"
+								onclick={() => toggleLegendaryExpanded(recipe.id)}
 							>
-								{$_('donuts.actions.crafted')}
+								<img
+									src={recipe.imagePath}
+									alt={getRecipeTitle(recipe)}
+									class="h-16 w-16 rounded-md border app-border object-cover"
+									loading="lazy"
+								/>
+								<div class="flex-1 min-w-0">
+									<div class="flex items-center gap-2">
+										<span class="text-green-600 dark:text-green-400 text-lg">✓</span>
+										<h3 class="text-lg font-semibold truncate">{getRecipeTitle(recipe)}</h3>
+									</div>
+									<p class="text-sm app-text-muted truncate">
+										{$_('donuts.special.forPokemon', {
+											values: {
+												pokemon:
+													getPokemonNameById(recipe.specialLegendaryPokemonId) ??
+													$_('donuts.special.unknownPokemon')
+											}
+										})}
+									</p>
+								</div>
+								<span class="text-xl app-text-muted">▼</span>
 							</button>
-						</div>
+						{:else}
+							<!-- Full view -->
+							<div class="space-y-4">
+								<div class="flex gap-3 items-start">
+									<img
+										src={recipe.imagePath}
+										alt={getRecipeTitle(recipe)}
+										class="h-16 w-16 md:h-28 md:w-28 rounded-md border app-border object-cover shrink-0"
+										loading="lazy"
+									/>
+									<div class="flex-1 min-w-0 space-y-2">
+										<div class="flex flex-wrap items-center gap-1.5 md:gap-2">
+											{#if isCrafted}
+												<span class="text-green-600 dark:text-green-400 text-lg">✓</span>
+											{/if}
+											<h3 class="text-base md:text-lg font-semibold">{getRecipeTitle(recipe)}</h3>
+											{#each recipe.tags as tag}
+												<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5 text-xs font-semibold">
+													{$_(`donuts.tags.${tag}`)}
+												</span>
+											{/each}
+										</div>
+										<p class="text-sm app-text-muted">
+											{$_('donuts.special.forPokemon', {
+												values: {
+													pokemon:
+														getPokemonNameById(recipe.specialLegendaryPokemonId) ??
+														$_('donuts.special.unknownPokemon')
+												}
+											})}
+										</p>
+									</div>
+								</div>
+
+								{#if flavors}
+								<div class="space-y-2">
+									<h4 class="text-sm font-semibold uppercase tracking-wide app-text-muted">
+										{$_('donuts.flavorRequirements')}
+									</h4>
+									<div class="grid grid-cols-2 gap-2 text-sm sm:grid-cols-3 md:grid-cols-5">
+										<div class="rounded-md border app-card-muted px-3 py-2">
+											<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.sweet')}</div>
+											<div class="font-semibold">{flavors.sweet}</div>
+										</div>
+										<div class="rounded-md border app-card-muted px-3 py-2">
+											<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.spicy')}</div>
+											<div class="font-semibold">{flavors.spicy}</div>
+										</div>
+										<div class="rounded-md border app-card-muted px-3 py-2">
+											<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.sour')}</div>
+											<div class="font-semibold">{flavors.sour}</div>
+										</div>
+										<div class="rounded-md border app-card-muted px-3 py-2">
+											<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.bitter')}</div>
+											<div class="font-semibold">{flavors.bitter}</div>
+										</div>
+										<div class="rounded-md border app-card-muted px-3 py-2">
+											<div class="text-xs uppercase app-text-muted">{$_('donuts.flavors.fresh')}</div>
+											<div class="font-semibold">{flavors.fresh}</div>
+										</div>
+									</div>
+								</div>
+								{/if}
+
+								<div class="space-y-2">
+									<h4 class="text-sm font-semibold uppercase tracking-wide app-text-muted">
+										{$_('donuts.ingredients')}
+									</h4>
+									<div class="flex flex-wrap gap-3">
+										{#each recipe.ingredients as ingredient}
+											{@const berry = berryMap.get(ingredient.itemId)}
+											<div class="flex items-center gap-2 rounded-md border app-card-muted px-3 py-2 text-sm">
+												{#if berry}
+													<img src={berry.spritePath} alt="" class="h-6 w-6" loading="lazy" />
+												{/if}
+												<span class="font-semibold">×{ingredient.quantity}</span>
+												<span>{berry ? $_(berry.nameKey) : ingredient.itemId}</span>
+											</div>
+										{/each}
+									</div>
+								</div>
+
+								<div class="flex justify-end gap-2">
+									{#if isCrafted}
+										<button
+											type="button"
+											class="{buttonBase} app-button"
+											onclick={() => toggleLegendaryExpanded(recipe.id)}
+										>
+											<span class="mr-1.5">▲</span>{$_('donuts.actions.collapse')}
+										</button>
+										<button
+											type="button"
+											class="{buttonBase} app-button"
+											onclick={() => unmarkLegendary(recipe.id)}
+										>
+											<span class="mr-1.5">↩</span>{$_('donuts.actions.unmark')}
+										</button>
+									{:else}
+										<button
+											type="button"
+											class="{buttonBase} app-button-primary"
+											onclick={() => markLegendaryAsCrafted(recipe)}
+										>
+											<span class="mr-1.5">✓</span>{$_('donuts.actions.crafted')}
+										</button>
+									{/if}
+								</div>
+							</div>
+						{/if}
 					</article>
 				{/each}
 			</div>

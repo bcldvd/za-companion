@@ -9,12 +9,6 @@ export const recommendedDonutRecipes: DonutRecipe[] = [
 		tags: ['shiny', 'alpha', 'highCost', 'maxRoll'],
 		imagePath: '/donuts/donut_sweet05_big.png',
 		ingredients: [{ itemId: 'hyper-tanga', quantity: 8 }],
-		flavorRequirements: {
-			sweet: 760,
-			spicy: 80,
-			sour: 80,
-			bitter: 40
-		},
 		explanationBullets: [
 			'donuts.recipes.eightTanga.bullets.breakpoint',
 			'donuts.recipes.eightTanga.bullets.strongestOdds'
@@ -31,13 +25,6 @@ export const recommendedDonutRecipes: DonutRecipe[] = [
 			{ itemId: 'hyper-haban', quantity: 6 },
 			{ itemId: 'hyper-tanga', quantity: 2 }
 		],
-		flavorRequirements: {
-			sweet: 700,
-			spicy: 20,
-			sour: 20,
-			bitter: 10,
-			fresh: 390
-		},
 		explanationBullets: [
 			'donuts.recipes.sixHaban.bullets.highTier',
 			'donuts.recipes.sixHaban.bullets.lessExpensive'
@@ -57,13 +44,6 @@ export const recommendedDonutRecipes: DonutRecipe[] = [
 			{ itemId: 'hyper-chople', quantity: 1 },
 			{ itemId: 'hyper-wacan', quantity: 1 }
 		],
-		flavorRequirements: {
-			sweet: 310,
-			spicy: 140,
-			sour: 310,
-			bitter: 135,
-			fresh: 195
-		},
 		explanationBullets: [
 			'donuts.recipes.tangaLessRainbow.bullets.rainbowBudget',
 			'donuts.recipes.tangaLessRainbow.bullets.zeroTanga'
@@ -83,15 +63,78 @@ export const recommendedDonutRecipes: DonutRecipe[] = [
 			{ itemId: 'hyper-qualot', quantity: 1 },
 			{ itemId: 'payapa', quantity: 1 }
 		],
-		flavorRequirements: {
-			sweet: 310,
-			spicy: 135,
-			sour: 310,
-			bitter: 5,
-			fresh: 205
-		},
 		explanationBullets: [
 			'donuts.recipes.inventoryBooster.bullets.hyperspaceStretch'
+		]
+	},
+	{
+		id: 'main-farming-tool',
+		name: 'The Main Farming Tool (Pure Sour)',
+		nameKey: 'donuts.recipes.mainFarmingTool.name',
+		category: 'recommended',
+		tags: ['berries', 'efficient'],
+		imagePath: '/donuts/donut_sour05_big.png',
+		ingredients: [
+			{ itemId: 'hyper-kasib', quantity: 5 },
+			{ itemId: 'hyper-roseli', quantity: 3 }
+		],
+		explanationBullets: [
+			'donuts.recipes.mainFarmingTool.bullets.itemPower',
+			'donuts.recipes.mainFarmingTool.bullets.berryYield'
+		]
+	},
+	{
+		id: 'five-star-rainbow-farmer',
+		name: 'The 5-Star Rainbow Farmer',
+		nameKey: 'donuts.recipes.fiveStarRainbow.name',
+		category: 'recommended',
+		tags: ['rainbow', 'berries', 'efficient'],
+		imagePath: '/donuts/donut_mix05_big.png',
+		ingredients: [
+			{ itemId: 'hyper-roseli', quantity: 2 },
+			{ itemId: 'hyper-babiri', quantity: 4 },
+			{ itemId: 'hyper-charti', quantity: 1 },
+			{ itemId: 'hyper-payapa', quantity: 1 }
+		],
+		explanationBullets: [
+			'donuts.recipes.fiveStarRainbow.bullets.longerDuration',
+			'donuts.recipes.fiveStarRainbow.bullets.largeDistortions'
+		]
+	},
+	{
+		id: 'strongest-no-tanga-rainbow',
+		name: 'The Strongest No-Tanga Rainbow',
+		nameKey: 'donuts.recipes.strongestNoTanga.name',
+		category: 'recommended',
+		tags: ['rainbow', 'shiny', 'efficient'],
+		imagePath: '/donuts/donut_mix05_big.png',
+		ingredients: [
+			{ itemId: 'hyper-roseli', quantity: 1 },
+			{ itemId: 'hyper-haban', quantity: 5 },
+			{ itemId: 'hyper-charti', quantity: 1 },
+			{ itemId: 'hyper-payapa', quantity: 1 }
+		],
+		explanationBullets: [
+			'donuts.recipes.strongestNoTanga.bullets.longerSparkling',
+			'donuts.recipes.strongestNoTanga.bullets.zeroTanga'
+		]
+	},
+	{
+		id: 'reliable-mid-tier',
+		name: 'The "Reliable" Mid-Tier',
+		nameKey: 'donuts.recipes.reliableMidTier.name',
+		category: 'recommended',
+		tags: ['shiny', 'efficient'],
+		imagePath: '/donuts/donut_sweet04_big.png',
+		ingredients: [
+			{ itemId: 'hyper-haban', quantity: 3 },
+			{ itemId: 'hyper-kasib', quantity: 1 },
+			{ itemId: 'hyper-payapa', quantity: 1 },
+			{ itemId: 'hyper-chople', quantity: 3 }
+		],
+		explanationBullets: [
+			'donuts.recipes.reliableMidTier.bullets.easyBerries',
+			'donuts.recipes.reliableMidTier.bullets.sustainable'
 		]
 	}
 ];
