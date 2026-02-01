@@ -296,9 +296,18 @@
 						{/if}
 
 						<div class="space-y-2">
-							<h4 class="text-sm font-semibold uppercase tracking-wide app-text-muted">
-								{$_('donuts.ingredients')}
-							</h4>
+							<div class="flex items-center justify-between gap-2">
+								<h4 class="text-sm font-semibold uppercase tracking-wide app-text-muted">
+									{$_('donuts.ingredients')}
+								</h4>
+								<button
+									type="button"
+									class="{buttonBase} app-button-primary"
+									onclick={() => openCraftModal(recipe)}
+								>
+									{$_('donuts.actions.crafted')}
+								</button>
+							</div>
 							<div class="flex flex-wrap gap-3">
 								{#each recipe.ingredients as ingredient}
 									{@const berry = berryMap.get(ingredient.itemId)}
@@ -311,16 +320,6 @@
 									</div>
 								{/each}
 							</div>
-						</div>
-
-						<div class="flex justify-end">
-							<button
-								type="button"
-								class="{buttonBase} app-button-primary"
-								onclick={() => openCraftModal(recipe)}
-							>
-								{$_('donuts.actions.crafted')}
-							</button>
 						</div>
 					</article>
 				{/each}
