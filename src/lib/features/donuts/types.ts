@@ -27,6 +27,8 @@ export type DonutRecipe = {
 	isSpecialLegendary?: boolean;
 };
 
+export type SecondaryAuraType = 'alpha' | 'humungo' | 'teensy';
+
 export type OwnedDonut = {
 	id: string;
 	label: string;
@@ -34,6 +36,8 @@ export type OwnedDonut = {
 	imagePath: string;
 	sparklingLevel: 0 | 1 | 2 | 3;
 	typeId?: string;
+	secondaryAuraType?: SecondaryAuraType;
+	secondaryAuraLevel?: 1 | 2 | 3;
 	quantity: number;
 	reservedForPokemonId?: string;
 	isSpecialLegendary?: boolean;

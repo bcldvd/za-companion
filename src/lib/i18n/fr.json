@@ -179,6 +179,16 @@
     "sparkling": {
       "legend": "Aura brillance"
     },
+    "secondaryAura": {
+      "label": "Aura secondaire",
+      "level": "Niveau d'aura",
+      "none": "Aucune",
+      "types": {
+        "alpha": "Baron",
+        "humungo": "Géante",
+        "teensy": "Minuscule"
+      }
+    },
     "type": {
       "label": "Type"
     },

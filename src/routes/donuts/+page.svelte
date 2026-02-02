@@ -6,7 +6,7 @@
 	import { getPokemonSprite } from '$lib/utils/pokeapi.js';
 	import { loadBerries, getBerryMap, computeFlavorTotals, type Berry } from '$lib/features/donuts/berries';
 	import PokemonSearch from '$lib/components/PokemonSearch.svelte';
-	import type { DonutRecipe, OwnedDonut } from '$lib/features/donuts/types';
+	import type { DonutRecipe, OwnedDonut, SecondaryAuraType } from '$lib/features/donuts/types';
 	import { recommendedDonutRecipes } from '$lib/features/donuts/recommendedDonutRecipes';
 	import { specialLegendaryDonutRecipes } from '$lib/features/donuts/specialLegendaryDonutRecipes';
 	import { loadTypeOptions, getTypeLabel, type TypeOption } from '$lib/features/donuts/typesData';
@@ -41,6 +41,8 @@
 	let showInfoModal = $state(false);
 	let sparklingSelection = $state<1 | 2 | 3>(3);
 	let selectedTypeId = $state<string>('all');
+	let selectedSecondaryAuraType = $state<SecondaryAuraType | ''>('');
+	let selectedSecondaryAuraLevel = $state<1 | 2 | 3>(3);
 
 	let reservationTarget = $state<OwnedDonut | null>(null);
 	let showReservationModal = $state(false);
@@ -121,6 +123,8 @@
 		craftingRecipe = recipe;
 		sparklingSelection = 3;
 		selectedTypeId = 'all';
+		selectedSecondaryAuraType = '';
+		selectedSecondaryAuraLevel = 3;
 		showSparklingModal = true;
 	}
 
@@ -129,7 +133,9 @@
 		const newDonut = createOwnedDonutFromRecipe(
 			craftingRecipe,
 			sparklingSelection,
-			selectedTypeId
+			selectedTypeId,
+			selectedSecondaryAuraType || undefined,
+			selectedSecondaryAuraType ? selectedSecondaryAuraLevel : undefined
 		);
 		setOwnedDonuts(addOwnedDonut(ownedDonuts, newDonut));
 		showSparklingModal = false;
@@ -220,6 +226,18 @@
 	function handlePokemonSelect(pokemon: Pokemon) {
 		applyReservation(pokemon);
 	}
+
+	function getSecondaryAuraLabel(donut: OwnedDonut): string | null {
+		if (!donut.secondaryAuraType || !donut.secondaryAuraLevel) return null;
+		const typeLabel = $_(`donuts.secondaryAura.types.${donut.secondaryAuraType}`);
+		return `${typeLabel} ${donut.secondaryAuraLevel}`;
+	}
+
+	const secondaryAuraTypes: Array<{ id: SecondaryAuraType; labelKey: string }> = [
+		{ id: 'alpha', labelKey: 'donuts.secondaryAura.types.alpha' },
+		{ id: 'humungo', labelKey: 'donuts.secondaryAura.types.humungo' },
+		{ id: 'teensy', labelKey: 'donuts.secondaryAura.types.teensy' }
+	];
 </script>
 
 <div class="min-h-full flex flex-col">
@@ -534,6 +552,11 @@
 													<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5 text-xs">
 														{getTypeLabelById(donut.typeId)}
 													</span>
+													{#if donut.secondaryAuraType && donut.secondaryAuraLevel}
+														<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5 text-xs">
+															{getSecondaryAuraLabel(donut)}
+														</span>
+													{/if}
 													{#if donut.quantity > 1}
 														<span class="text-xs app-text-muted">×{donut.quantity}</span>
 													{/if}
@@ -624,6 +647,11 @@
 												<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5 text-xs">
 													{getTypeLabelById(donut.typeId)}
 												</span>
+												{#if donut.secondaryAuraType && donut.secondaryAuraLevel}
+													<span class="inline-flex items-center rounded-full border app-chip px-2 py-0.5 text-xs">
+														{getSecondaryAuraLabel(donut)}
+													</span>
+												{/if}
 												{#if donut.quantity > 1}
 													<span class="text-xs app-text-muted">×{donut.quantity}</span>
 												{/if}
@@ -721,37 +749,76 @@
 			{/if}
 
 			<div class="space-y-4">
-				<div class="flex flex-wrap items-center justify-between gap-3">
-					<span class="text-sm font-semibold">{$_('donuts.sparkling.legend')}</span>
-					<div class="flex gap-2">
-						{#each sparklingLevels as level}
-							<button
-								type="button"
-								class="{buttonBase} min-w-[56px] {sparklingSelection === level
-									? 'app-button-primary'
-									: 'app-button'}"
-								onclick={() => (sparklingSelection = level)}
-							>
-								{level}
-							</button>
-						{/each}
+				<div class="rounded-lg border app-border p-4 space-y-4">
+					<div class="flex flex-wrap items-center justify-between gap-3">
+						<span class="text-sm font-semibold">{$_('donuts.sparkling.legend')}</span>
+						<div class="flex gap-2">
+							{#each sparklingLevels as level}
+								<button
+									type="button"
+									class="{buttonBase} min-w-[56px] {sparklingSelection === level
+										? 'app-button-primary'
+										: 'app-button'}"
+									onclick={() => (sparklingSelection = level)}
+								>
+									{level}
+								</button>
+							{/each}
+						</div>
+					</div>
+
+					<div class="space-y-2">
+						<label class="text-sm font-semibold" for="donut-type-select">
+							{$_('donuts.type.label')}
+						</label>
+						<select
+							id="donut-type-select"
+							class="w-full rounded-md border app-border app-surface px-3 py-2 text-sm"
+							bind:value={selectedTypeId}
+						>
+							<option value="all">{$_('donuts.types.all')}</option>
+							{#each typeOptions as option}
+								<option value={option.id}>{option.label}</option>
+							{/each}
+						</select>
 					</div>
 				</div>
 
-				<div class="space-y-2">
-					<label class="text-sm font-semibold" for="donut-type-select">
-						{$_('donuts.type.label')}
-					</label>
-					<select
-						id="donut-type-select"
-						class="w-full rounded-md border app-border app-surface px-3 py-2 text-sm"
-						bind:value={selectedTypeId}
-					>
-						<option value="all">{$_('donuts.types.all')}</option>
-						{#each typeOptions as option}
-							<option value={option.id}>{option.label}</option>
-						{/each}
-					</select>
+				<div class="rounded-lg border app-border p-4 space-y-4">
+					<div class="space-y-2">
+						<label class="text-sm font-semibold" for="secondary-aura-select">
+							{$_('donuts.secondaryAura.label')}
+						</label>
+						<select
+							id="secondary-aura-select"
+							class="w-full rounded-md border app-border app-surface px-3 py-2 text-sm"
+							bind:value={selectedSecondaryAuraType}
+						>
+							<option value="">{$_('donuts.secondaryAura.none')}</option>
+							{#each secondaryAuraTypes as auraType}
+								<option value={auraType.id}>{$_(auraType.labelKey)}</option>
+							{/each}
+						</select>
+					</div>
+
+					{#if selectedSecondaryAuraType}
+						<div class="flex flex-wrap items-center justify-between gap-3">
+							<span class="text-sm font-semibold">{$_('donuts.secondaryAura.level')}</span>
+							<div class="flex gap-2">
+								{#each sparklingLevels as level}
+									<button
+										type="button"
+										class="{buttonBase} min-w-[56px] {selectedSecondaryAuraLevel === level
+											? 'app-button-primary'
+											: 'app-button'}"
+										onclick={() => (selectedSecondaryAuraLevel = level)}
+									>
+										{level}
+									</button>
+								{/each}
+							</div>
+						</div>
+					{/if}
 				</div>
 			</div>
 

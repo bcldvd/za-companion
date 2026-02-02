@@ -1,4 +1,4 @@
-import type { DonutRecipe, OwnedDonut } from './types';
+import type { DonutRecipe, OwnedDonut, SecondaryAuraType } from './types';
 
 const STORAGE_KEY = 'pokemon-legends-za-owned-donuts';
 const CRAFTED_LEGENDARY_KEY = 'pokemon-legends-za-crafted-legendary-donuts';
@@ -39,6 +39,8 @@ export function createOwnedDonutFromRecipe(
 	recipe: DonutRecipe,
 	sparklingLevel: 0 | 1 | 2 | 3,
 	typeId: string,
+	secondaryAuraType?: SecondaryAuraType,
+	secondaryAuraLevel?: 1 | 2 | 3,
 	reservedForPokemonId?: string
 ): OwnedDonut {
 	const isSpecialLegendary = recipe.isSpecialLegendary === true;
@@ -51,6 +53,8 @@ export function createOwnedDonutFromRecipe(
 		imagePath: recipe.imagePath,
 		sparklingLevel,
 		typeId,
+		secondaryAuraType: secondaryAuraType || undefined,
+		secondaryAuraLevel: secondaryAuraType ? secondaryAuraLevel : undefined,
 		quantity: 1,
 		reservedForPokemonId: reservedForPokemonId ?? defaultReserved,
 		isSpecialLegendary: isSpecialLegendary || undefined,
