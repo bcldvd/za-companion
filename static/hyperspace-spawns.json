@@ -1,0 +1,4766 @@
+[
+  {
+    "name": "Bulbasaur",
+    "nationalNumber": 1,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Ivysaur",
+    "nationalNumber": 2,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Venusaur",
+    "nationalNumber": 3,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Charmander",
+    "nationalNumber": 4,
+    "types": [
+      "fire"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Charmeleon",
+    "nationalNumber": 5,
+    "types": [
+      "fire"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Charizard",
+    "nationalNumber": 6,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Squirtle",
+    "nationalNumber": 7,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Wartortle",
+    "nationalNumber": 8,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Blastoise",
+    "nationalNumber": 9,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Weedle",
+    "nationalNumber": 13,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Kakuna",
+    "nationalNumber": 14,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Beedrill",
+    "nationalNumber": 15,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pidgey",
+    "nationalNumber": 16,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pidgeotto",
+    "nationalNumber": 17,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pidgeot",
+    "nationalNumber": 18,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Ekans",
+    "nationalNumber": 23,
+    "types": [
+      "poison"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Arbok",
+    "nationalNumber": 24,
+    "types": [
+      "poison"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pikachu",
+    "nationalNumber": 25,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Raichu",
+    "nationalNumber": 26,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Raichu",
+    "nationalNumber": 26,
+    "types": [
+      "electric",
+      "psychic"
+    ],
+    "variant": "-a",
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Clefairy",
+    "nationalNumber": 35,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Clefable",
+    "nationalNumber": 36,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Jigglypuff",
+    "nationalNumber": 39,
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Wigglytuff",
+    "nationalNumber": 40,
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Zubat",
+    "nationalNumber": 41,
+    "types": [
+      "poison",
+      "flying"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Golbat",
+    "nationalNumber": 42,
+    "types": [
+      "poison",
+      "flying"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Meowth",
+    "nationalNumber": 52,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Meowth",
+    "nationalNumber": 52,
+    "types": [
+      "dark"
+    ],
+    "variant": "-a",
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Meowth",
+    "nationalNumber": 52,
+    "types": [
+      "steel"
+    ],
+    "variant": "-g",
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Persian",
+    "nationalNumber": 53,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Persian",
+    "nationalNumber": 53,
+    "types": [
+      "dark"
+    ],
+    "variant": "-a",
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Mankey",
+    "nationalNumber": 56,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Primeape",
+    "nationalNumber": 57,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Abra",
+    "nationalNumber": 63,
+    "types": [
+      "psychic"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Kadabra",
+    "nationalNumber": 64,
+    "types": [
+      "psychic"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Alakazam",
+    "nationalNumber": 65,
+    "types": [
+      "psychic"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Machop",
+    "nationalNumber": 66,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Machoke",
+    "nationalNumber": 67,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Machamp",
+    "nationalNumber": 68,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Bellsprout",
+    "nationalNumber": 69,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Weepinbell",
+    "nationalNumber": 70,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Victreebel",
+    "nationalNumber": 71,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Slowpoke",
+    "nationalNumber": 79,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Slowpoke",
+    "nationalNumber": 79,
+    "types": [
+      "psychic"
+    ],
+    "variant": "-g",
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Slowbro",
+    "nationalNumber": 80,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Slowbro",
+    "nationalNumber": 80,
+    "types": [
+      "poison",
+      "psychic"
+    ],
+    "variant": "-g",
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Farfetch'd",
+    "nationalNumber": 83,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Farfetch'd",
+    "nationalNumber": 83,
+    "types": [
+      "fighting"
+    ],
+    "variant": "-g",
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Gastly",
+    "nationalNumber": 92,
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Haunter",
+    "nationalNumber": 93,
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Gengar",
+    "nationalNumber": 94,
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Onix",
+    "nationalNumber": 95,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Cubone",
+    "nationalNumber": 104,
+    "types": [
+      "ground"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Marowak",
+    "nationalNumber": 105,
+    "types": [
+      "ground"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Marowak",
+    "nationalNumber": 105,
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "variant": "-a",
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Kangaskhan",
+    "nationalNumber": 115,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Staryu",
+    "nationalNumber": 120,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Starmie",
+    "nationalNumber": 121,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Mr. Mime",
+    "nationalNumber": 122,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Mr. Mime",
+    "nationalNumber": 122,
+    "types": [
+      "ice",
+      "psychic"
+    ],
+    "variant": "-g",
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Scyther",
+    "nationalNumber": 123,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pinsir",
+    "nationalNumber": 127,
+    "types": [
+      "bug"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Magikarp",
+    "nationalNumber": 129,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Gyarados",
+    "nationalNumber": 130,
+    "types": [
+      "water",
+      "flying"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Eevee",
+    "nationalNumber": 133,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Vaporeon",
+    "nationalNumber": 134,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Jolteon",
+    "nationalNumber": 135,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Flareon",
+    "nationalNumber": 136,
+    "types": [
+      "fire"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Porygon",
+    "nationalNumber": 137,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Aerodactyl",
+    "nationalNumber": 142,
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Dratini",
+    "nationalNumber": 147,
+    "types": [
+      "dragon"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Dragonair",
+    "nationalNumber": 148,
+    "types": [
+      "dragon"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Chikorita",
+    "nationalNumber": 152,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Bayleef",
+    "nationalNumber": 153,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Meganium",
+    "nationalNumber": 154,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Totodile",
+    "nationalNumber": 158,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Croconaw",
+    "nationalNumber": 159,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Feraligatr",
+    "nationalNumber": 160,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Spinarak",
+    "nationalNumber": 167,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Ariados",
+    "nationalNumber": 168,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Crobat",
+    "nationalNumber": 169,
+    "types": [
+      "poison",
+      "flying"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pichu",
+    "nationalNumber": 172,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Cleffa",
+    "nationalNumber": 173,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Igglybuff",
+    "nationalNumber": 174,
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Mareep",
+    "nationalNumber": 179,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Flaaffy",
+    "nationalNumber": 180,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Ampharos",
+    "nationalNumber": 181,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Espeon",
+    "nationalNumber": 196,
+    "types": [
+      "psychic"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Umbreon",
+    "nationalNumber": 197,
+    "types": [
+      "dark"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Slowking",
+    "nationalNumber": 199,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Slowking",
+    "nationalNumber": 199,
+    "types": [
+      "poison",
+      "psychic"
+    ],
+    "variant": "-g",
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Steelix",
+    "nationalNumber": 208,
+    "types": [
+      "steel",
+      "ground"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Qwilfish",
+    "nationalNumber": 211,
+    "types": [
+      "water",
+      "poison"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Qwilfish",
+    "nationalNumber": 211,
+    "types": [
+      "dark",
+      "poison"
+    ],
+    "variant": "-h",
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Scizor",
+    "nationalNumber": 212,
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Heracross",
+    "nationalNumber": 214,
+    "types": [
+      "bug",
+      "fighting"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Delibird",
+    "nationalNumber": 225,
+    "types": [
+      "ice",
+      "flying"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Skarmory",
+    "nationalNumber": 227,
+    "types": [
+      "steel",
+      "flying"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Houndour",
+    "nationalNumber": 228,
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Houndoom",
+    "nationalNumber": 229,
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Porygon2",
+    "nationalNumber": 233,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Larvitar",
+    "nationalNumber": 246,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pupitar",
+    "nationalNumber": 247,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Tyranitar",
+    "nationalNumber": 248,
+    "types": [
+      "rock",
+      "dark"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Treecko",
+    "nationalNumber": 252,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Grovyle",
+    "nationalNumber": 253,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Sceptile",
+    "nationalNumber": 254,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Torchic",
+    "nationalNumber": 255,
+    "types": [
+      "fire"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Combusken",
+    "nationalNumber": 256,
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Blaziken",
+    "nationalNumber": 257,
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Mudkip",
+    "nationalNumber": 258,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Marshtomp",
+    "nationalNumber": 259,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Swampert",
+    "nationalNumber": 260,
+    "types": [
+      "water",
+      "ground"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Ralts",
+    "nationalNumber": 280,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Kirlia",
+    "nationalNumber": 281,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Gardevoir",
+    "nationalNumber": 282,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Sableye",
+    "nationalNumber": 302,
+    "types": [
+      "dark",
+      "ghost"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Mawile",
+    "nationalNumber": 303,
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Aron",
+    "nationalNumber": 304,
+    "types": [
+      "steel",
+      "rock"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Lairon",
+    "nationalNumber": 305,
+    "types": [
+      "steel",
+      "rock"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Aggron",
+    "nationalNumber": 306,
+    "types": [
+      "steel",
+      "rock"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Meditite",
+    "nationalNumber": 307,
+    "types": [
+      "fighting",
+      "psychic"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Medicham",
+    "nationalNumber": 308,
+    "types": [
+      "fighting",
+      "psychic"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Electrike",
+    "nationalNumber": 309,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Manectric",
+    "nationalNumber": 310,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Roselia",
+    "nationalNumber": 315,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Gulpin",
+    "nationalNumber": 316,
+    "types": [
+      "poison"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Swalot",
+    "nationalNumber": 317,
+    "types": [
+      "poison"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Carvanha",
+    "nationalNumber": 318,
+    "types": [
+      "water",
+      "dark"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Sharpedo",
+    "nationalNumber": 319,
+    "types": [
+      "water",
+      "dark"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Numel",
+    "nationalNumber": 322,
+    "types": [
+      "fire",
+      "ground"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Camerupt",
+    "nationalNumber": 323,
+    "types": [
+      "fire",
+      "ground"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Spoink",
+    "nationalNumber": 325,
+    "types": [
+      "psychic"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Grumpig",
+    "nationalNumber": 326,
+    "types": [
+      "psychic"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Swablu",
+    "nationalNumber": 333,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Altaria",
+    "nationalNumber": 334,
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Zangoose",
+    "nationalNumber": 335,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Seviper",
+    "nationalNumber": 336,
+    "types": [
+      "poison"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Feebas",
+    "nationalNumber": 349,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Kecleon",
+    "nationalNumber": 352,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Shuppet",
+    "nationalNumber": 353,
+    "types": [
+      "ghost"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Banette",
+    "nationalNumber": 354,
+    "types": [
+      "ghost"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Chimecho",
+    "nationalNumber": 358,
+    "types": [
+      "psychic"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Absol",
+    "nationalNumber": 359,
+    "types": [
+      "dark"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Snorunt",
+    "nationalNumber": 361,
+    "types": [
+      "ice"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Glalie",
+    "nationalNumber": 362,
+    "types": [
+      "ice"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Bagon",
+    "nationalNumber": 371,
+    "types": [
+      "dragon"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Shelgon",
+    "nationalNumber": 372,
+    "types": [
+      "dragon"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Beldum",
+    "nationalNumber": 374,
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Metang",
+    "nationalNumber": 375,
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Latias",
+    "nationalNumber": 380,
+    "types": [
+      "dragon",
+      "psychic"
+    ],
+    "starLevels": [
+      5
+    ],
+    "isMainArea": true
+  },
+  {
+    "name": "Latios",
+    "nationalNumber": 381,
+    "types": [
+      "dragon",
+      "psychic"
+    ],
+    "starLevels": [
+      5
+    ],
+    "isMainArea": true
+  },
+  {
+    "name": "Starly",
+    "nationalNumber": 396,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Staravia",
+    "nationalNumber": 397,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Staraptor",
+    "nationalNumber": 398,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Budew",
+    "nationalNumber": 406,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Roserade",
+    "nationalNumber": 407,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Buneary",
+    "nationalNumber": 427,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Lopunny",
+    "nationalNumber": 428,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Chingling",
+    "nationalNumber": 433,
+    "types": [
+      "psychic"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Mime Jr.",
+    "nationalNumber": 439,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Gible",
+    "nationalNumber": 443,
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Gabite",
+    "nationalNumber": 444,
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Riolu",
+    "nationalNumber": 447,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Lucario",
+    "nationalNumber": 448,
+    "types": [
+      "fighting",
+      "steel"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Hippopotas",
+    "nationalNumber": 449,
+    "types": [
+      "ground"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Hippowdon",
+    "nationalNumber": 450,
+    "types": [
+      "ground"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Snover",
+    "nationalNumber": 459,
+    "types": [
+      "grass",
+      "ice"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Abomasnow",
+    "nationalNumber": 460,
+    "types": [
+      "grass",
+      "ice"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Leafeon",
+    "nationalNumber": 470,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Glaceon",
+    "nationalNumber": 471,
+    "types": [
+      "ice"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Porygon-Z",
+    "nationalNumber": 474,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Gallade",
+    "nationalNumber": 475,
+    "types": [
+      "psychic",
+      "fighting"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Froslass",
+    "nationalNumber": 478,
+    "types": [
+      "ice",
+      "ghost"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Rotom",
+    "nationalNumber": 479,
+    "types": [
+      "electric",
+      "ghost"
+    ],
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Rotom",
+    "nationalNumber": 479,
+    "types": [
+      "electric",
+      "ice"
+    ],
+    "variant": "-f",
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Rotom",
+    "nationalNumber": 479,
+    "types": [
+      "electric",
+      "fire"
+    ],
+    "variant": "-h",
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Rotom",
+    "nationalNumber": 479,
+    "types": [
+      "electric",
+      "grass"
+    ],
+    "variant": "-m",
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Rotom",
+    "nationalNumber": 479,
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "variant": "-s",
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Rotom",
+    "nationalNumber": 479,
+    "types": [
+      "electric",
+      "water"
+    ],
+    "variant": "-w",
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Tepig",
+    "nationalNumber": 498,
+    "types": [
+      "fire"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pignite",
+    "nationalNumber": 499,
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Emboar",
+    "nationalNumber": 500,
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Patrat",
+    "nationalNumber": 504,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Watchog",
+    "nationalNumber": 505,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Purrloin",
+    "nationalNumber": 509,
+    "types": [
+      "dark"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Liepard",
+    "nationalNumber": 510,
+    "types": [
+      "dark"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pansage",
+    "nationalNumber": 511,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Simisage",
+    "nationalNumber": 512,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pansear",
+    "nationalNumber": 513,
+    "types": [
+      "fire"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Simisear",
+    "nationalNumber": 514,
+    "types": [
+      "fire"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Panpour",
+    "nationalNumber": 515,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Simipour",
+    "nationalNumber": 516,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Munna",
+    "nationalNumber": 517,
+    "types": [
+      "psychic"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Musharna",
+    "nationalNumber": 518,
+    "types": [
+      "psychic"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Drilbur",
+    "nationalNumber": 529,
+    "types": [
+      "ground"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Excadrill",
+    "nationalNumber": 530,
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Audino",
+    "nationalNumber": 531,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Throh",
+    "nationalNumber": 538,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Sawk",
+    "nationalNumber": 539,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Venipede",
+    "nationalNumber": 543,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Whirlipede",
+    "nationalNumber": 544,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Scolipede",
+    "nationalNumber": 545,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Sandile",
+    "nationalNumber": 551,
+    "types": [
+      "ground",
+      "dark"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Krokorok",
+    "nationalNumber": 552,
+    "types": [
+      "ground",
+      "dark"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Krookodile",
+    "nationalNumber": 553,
+    "types": [
+      "ground",
+      "dark"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Scraggy",
+    "nationalNumber": 559,
+    "types": [
+      "dark",
+      "fighting"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Scrafty",
+    "nationalNumber": 560,
+    "types": [
+      "dark",
+      "fighting"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Yamask",
+    "nationalNumber": 562,
+    "types": [
+      "ghost"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Yamask",
+    "nationalNumber": 562,
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "variant": "-g",
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Cofagrigus",
+    "nationalNumber": 563,
+    "types": [
+      "ghost"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Trubbish",
+    "nationalNumber": 568,
+    "types": [
+      "poison"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Garbodor",
+    "nationalNumber": 569,
+    "types": [
+      "poison"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Vanillite",
+    "nationalNumber": 582,
+    "types": [
+      "ice"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Vanillish",
+    "nationalNumber": 583,
+    "types": [
+      "ice"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Vanilluxe",
+    "nationalNumber": 584,
+    "types": [
+      "ice"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Emolga",
+    "nationalNumber": 587,
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Foongus",
+    "nationalNumber": 590,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Amoonguss",
+    "nationalNumber": 591,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Tynamo",
+    "nationalNumber": 602,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Eelektrik",
+    "nationalNumber": 603,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Eelektross",
+    "nationalNumber": 604,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Litwick",
+    "nationalNumber": 607,
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Lampent",
+    "nationalNumber": 608,
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Chandelure",
+    "nationalNumber": 609,
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Cryogonal",
+    "nationalNumber": 615,
+    "types": [
+      "ice"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Stunfisk",
+    "nationalNumber": 618,
+    "types": [
+      "ground",
+      "electric"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Stunfisk",
+    "nationalNumber": 618,
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "variant": "-g",
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Golett",
+    "nationalNumber": 622,
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Golurk",
+    "nationalNumber": 623,
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Cobalion",
+    "nationalNumber": 638,
+    "types": [
+      "steel",
+      "fighting"
+    ],
+    "starLevels": [
+      5
+    ],
+    "isMainArea": true
+  },
+  {
+    "name": "Terrakion",
+    "nationalNumber": 639,
+    "types": [
+      "rock",
+      "fighting"
+    ],
+    "starLevels": [
+      5
+    ],
+    "isMainArea": true
+  },
+  {
+    "name": "Virizion",
+    "nationalNumber": 640,
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "starLevels": [
+      5
+    ],
+    "isMainArea": true
+  },
+  {
+    "name": "Keldeo",
+    "nationalNumber": 647,
+    "types": [
+      "water",
+      "fighting"
+    ],
+    "starLevels": [
+      5
+    ],
+    "isMainArea": true
+  },
+  {
+    "name": "Meloetta",
+    "nationalNumber": 648,
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "starLevels": [
+      5
+    ],
+    "isMainArea": true
+  },
+  {
+    "name": "Chespin",
+    "nationalNumber": 650,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Quilladin",
+    "nationalNumber": 651,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Chesnaught",
+    "nationalNumber": 652,
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Fennekin",
+    "nationalNumber": 653,
+    "types": [
+      "fire"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Braixen",
+    "nationalNumber": 654,
+    "types": [
+      "fire"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Delphox",
+    "nationalNumber": 655,
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Froakie",
+    "nationalNumber": 656,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Frogadier",
+    "nationalNumber": 657,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Greninja",
+    "nationalNumber": 658,
+    "types": [
+      "water",
+      "dark"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Bunnelby",
+    "nationalNumber": 659,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Diggersby",
+    "nationalNumber": 660,
+    "types": [
+      "normal",
+      "ground"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Fletchling",
+    "nationalNumber": 661,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Fletchinder",
+    "nationalNumber": 662,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Talonflame",
+    "nationalNumber": 663,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Scatterbug",
+    "nationalNumber": 664,
+    "types": [
+      "bug"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Spewpa",
+    "nationalNumber": 665,
+    "types": [
+      "bug"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Vivillon",
+    "nationalNumber": 666,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "variant": "-g",
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Litleo",
+    "nationalNumber": 667,
+    "types": [
+      "fire",
+      "normal"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pyroar",
+    "nationalNumber": 668,
+    "types": [
+      "fire",
+      "normal"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Flab&eacute;b&eacute;",
+    "nationalNumber": 669,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Flab&eacute;b&eacute;",
+    "nationalNumber": 669,
+    "types": [
+      "fairy"
+    ],
+    "variant": "-b",
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Flab&eacute;b&eacute;",
+    "nationalNumber": 669,
+    "types": [
+      "fairy"
+    ],
+    "variant": "-o",
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Flab&eacute;b&eacute;",
+    "nationalNumber": 669,
+    "types": [
+      "fairy"
+    ],
+    "variant": "-w",
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Flab&eacute;b&eacute;",
+    "nationalNumber": 669,
+    "types": [
+      "fairy"
+    ],
+    "variant": "-y",
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Floette",
+    "nationalNumber": 670,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Floette",
+    "nationalNumber": 670,
+    "types": [
+      "fairy"
+    ],
+    "variant": "-b",
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Floette",
+    "nationalNumber": 670,
+    "types": [
+      "fairy"
+    ],
+    "variant": "-o",
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Floette",
+    "nationalNumber": 670,
+    "types": [
+      "fairy"
+    ],
+    "variant": "-w",
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Floette",
+    "nationalNumber": 670,
+    "types": [
+      "fairy"
+    ],
+    "variant": "-y",
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Florges",
+    "nationalNumber": 671,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Florges",
+    "nationalNumber": 671,
+    "types": [
+      "fairy"
+    ],
+    "variant": "-b",
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Florges",
+    "nationalNumber": 671,
+    "types": [
+      "fairy"
+    ],
+    "variant": "-o",
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Florges",
+    "nationalNumber": 671,
+    "types": [
+      "fairy"
+    ],
+    "variant": "-w",
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Florges",
+    "nationalNumber": 671,
+    "types": [
+      "fairy"
+    ],
+    "variant": "-y",
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Skiddo",
+    "nationalNumber": 672,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Gogoat",
+    "nationalNumber": 673,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pancham",
+    "nationalNumber": 674,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pangoro",
+    "nationalNumber": 675,
+    "types": [
+      "fighting",
+      "dark"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Furfrou",
+    "nationalNumber": 676,
+    "types": [
+      "normal"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Espurr",
+    "nationalNumber": 677,
+    "types": [
+      "psychic"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Meowstic",
+    "nationalNumber": 678,
+    "types": [
+      "psychic"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Meowstic",
+    "nationalNumber": 678,
+    "types": [
+      "psychic"
+    ],
+    "variant": "-f",
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Honedge",
+    "nationalNumber": 679,
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Doublade",
+    "nationalNumber": 680,
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Aegislash",
+    "nationalNumber": 681,
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Spritzee",
+    "nationalNumber": 682,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Aromatisse",
+    "nationalNumber": 683,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Swirlix",
+    "nationalNumber": 684,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Slurpuff",
+    "nationalNumber": 685,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Inkay",
+    "nationalNumber": 686,
+    "types": [
+      "dark",
+      "psychic"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Malamar",
+    "nationalNumber": 687,
+    "types": [
+      "dark",
+      "psychic"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Binacle",
+    "nationalNumber": 688,
+    "types": [
+      "rock",
+      "water"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Barbaracle",
+    "nationalNumber": 689,
+    "types": [
+      "rock",
+      "water"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Skrelp",
+    "nationalNumber": 690,
+    "types": [
+      "poison",
+      "water"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Dragalge",
+    "nationalNumber": 691,
+    "types": [
+      "poison",
+      "dragon"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Clauncher",
+    "nationalNumber": 692,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Clawitzer",
+    "nationalNumber": 693,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Helioptile",
+    "nationalNumber": 694,
+    "types": [
+      "electric",
+      "normal"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Heliolisk",
+    "nationalNumber": 695,
+    "types": [
+      "electric",
+      "normal"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Tyrunt",
+    "nationalNumber": 696,
+    "types": [
+      "rock",
+      "dragon"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Tyrantrum",
+    "nationalNumber": 697,
+    "types": [
+      "rock",
+      "dragon"
+    ],
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Amaura",
+    "nationalNumber": 698,
+    "types": [
+      "rock",
+      "ice"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Aurorus",
+    "nationalNumber": 699,
+    "types": [
+      "rock",
+      "ice"
+    ],
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Sylveon",
+    "nationalNumber": 700,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Hawlucha",
+    "nationalNumber": 701,
+    "types": [
+      "fighting",
+      "flying"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Dedenne",
+    "nationalNumber": 702,
+    "types": [
+      "electric",
+      "fairy"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Carbink",
+    "nationalNumber": 703,
+    "types": [
+      "rock",
+      "fairy"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Goomy",
+    "nationalNumber": 704,
+    "types": [
+      "dragon"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Sliggoo",
+    "nationalNumber": 705,
+    "types": [
+      "dragon"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Sliggoo",
+    "nationalNumber": 705,
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "variant": "-h",
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Goodra",
+    "nationalNumber": 706,
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "variant": "-h",
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Klefki",
+    "nationalNumber": 707,
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Phantump",
+    "nationalNumber": 708,
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Trevenant",
+    "nationalNumber": 709,
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Pumpkaboo",
+    "nationalNumber": 710,
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Gourgeist",
+    "nationalNumber": 711,
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Bergmite",
+    "nationalNumber": 712,
+    "types": [
+      "ice"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Avalugg",
+    "nationalNumber": 713,
+    "types": [
+      "ice"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Avalugg",
+    "nationalNumber": 713,
+    "types": [
+      "ice",
+      "rock"
+    ],
+    "variant": "-h",
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Noibat",
+    "nationalNumber": 714,
+    "types": [
+      "flying",
+      "dragon"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Noivern",
+    "nationalNumber": 715,
+    "types": [
+      "flying",
+      "dragon"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Crabrawler",
+    "nationalNumber": 739,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Crabominable",
+    "nationalNumber": 740,
+    "types": [
+      "fighting",
+      "ice"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Wimpod",
+    "nationalNumber": 767,
+    "types": [
+      "bug",
+      "water"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Golisopod",
+    "nationalNumber": 768,
+    "types": [
+      "bug",
+      "water"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Sandygast",
+    "nationalNumber": 769,
+    "types": [
+      "ghost",
+      "ground"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Palossand",
+    "nationalNumber": 770,
+    "types": [
+      "ghost",
+      "ground"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Mimikyu",
+    "nationalNumber": 778,
+    "types": [
+      "ghost",
+      "fairy"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Drampa",
+    "nationalNumber": 780,
+    "types": [
+      "normal",
+      "dragon"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Zeraora",
+    "nationalNumber": 807,
+    "types": [
+      "electric"
+    ],
+    "starLevels": [
+      5
+    ],
+    "isMainArea": true
+  },
+  {
+    "name": "Rookidee",
+    "nationalNumber": 821,
+    "types": [
+      "flying"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Corvisquire",
+    "nationalNumber": 822,
+    "types": [
+      "flying"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Corviknight",
+    "nationalNumber": 823,
+    "types": [
+      "flying",
+      "steel"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Nickit",
+    "nationalNumber": 827,
+    "types": [
+      "dark"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Thievul",
+    "nationalNumber": 828,
+    "types": [
+      "dark"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Toxel",
+    "nationalNumber": 848,
+    "types": [
+      "electric",
+      "poison"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Toxtricity",
+    "nationalNumber": 849,
+    "types": [
+      "electric",
+      "poison"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Toxtricity",
+    "nationalNumber": 849,
+    "types": [
+      "electric",
+      "poison"
+    ],
+    "variant": "-l",
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Clobbopus",
+    "nationalNumber": 852,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Grapploct",
+    "nationalNumber": 853,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Perrserker",
+    "nationalNumber": 863,
+    "types": [
+      "steel"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Mr. Rime",
+    "nationalNumber": 866,
+    "types": [
+      "ice",
+      "psychic"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Falinks",
+    "nationalNumber": 870,
+    "types": [
+      "fighting"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Indeedee",
+    "nationalNumber": 876,
+    "types": [
+      "psychic",
+      "normal"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Indeedee",
+    "nationalNumber": 876,
+    "types": [
+      "psychic",
+      "normal"
+    ],
+    "variant": "-f",
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Morpeko",
+    "nationalNumber": 877,
+    "types": [
+      "electric",
+      "dark"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Kleavor",
+    "nationalNumber": 900,
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Overqwil",
+    "nationalNumber": 904,
+    "types": [
+      "dark",
+      "poison"
+    ],
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Fidough",
+    "nationalNumber": 926,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Dachsbun",
+    "nationalNumber": 927,
+    "types": [
+      "fairy"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Squawkabilly",
+    "nationalNumber": 931,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Squawkabilly",
+    "nationalNumber": 931,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "variant": "-b",
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Squawkabilly",
+    "nationalNumber": 931,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "variant": "-w",
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Squawkabilly",
+    "nationalNumber": 931,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "variant": "-y",
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Nacli",
+    "nationalNumber": 932,
+    "types": [
+      "rock"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Naclstack",
+    "nationalNumber": 933,
+    "types": [
+      "rock"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Garganacl",
+    "nationalNumber": 934,
+    "types": [
+      "rock"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Charcadet",
+    "nationalNumber": 935,
+    "types": [
+      "fire"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Maschiff",
+    "nationalNumber": 942,
+    "types": [
+      "dark"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Mabosstiff",
+    "nationalNumber": 943,
+    "types": [
+      "dark"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Shroodle",
+    "nationalNumber": 944,
+    "types": [
+      "poison",
+      "normal"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Grafaiai",
+    "nationalNumber": 945,
+    "types": [
+      "poison",
+      "normal"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Capsakid",
+    "nationalNumber": 951,
+    "types": [
+      "grass"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Scovillain",
+    "nationalNumber": 952,
+    "types": [
+      "grass",
+      "fire"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Tinkatink",
+    "nationalNumber": 957,
+    "types": [
+      "fairy",
+      "steel"
+    ],
+    "starLevels": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Tinkatuff",
+    "nationalNumber": 958,
+    "types": [
+      "fairy",
+      "steel"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Tinkaton",
+    "nationalNumber": 959,
+    "types": [
+      "fairy",
+      "steel"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Cyclizar",
+    "nationalNumber": 967,
+    "types": [
+      "dragon",
+      "normal"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Glimmet",
+    "nationalNumber": 969,
+    "types": [
+      "rock",
+      "poison"
+    ],
+    "starLevels": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Glimmora",
+    "nationalNumber": 970,
+    "types": [
+      "rock",
+      "poison"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Greavard",
+    "nationalNumber": 971,
+    "types": [
+      "ghost"
+    ],
+    "starLevels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Houndstone",
+    "nationalNumber": 972,
+    "types": [
+      "ghost"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Flamigo",
+    "nationalNumber": 973,
+    "types": [
+      "flying",
+      "fighting"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Dondozo",
+    "nationalNumber": 977,
+    "types": [
+      "water"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Tatsugiri",
+    "nationalNumber": 978,
+    "types": [
+      "dragon",
+      "water"
+    ],
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Tatsugiri",
+    "nationalNumber": 978,
+    "types": [
+      "dragon",
+      "water"
+    ],
+    "variant": "-d",
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Tatsugiri",
+    "nationalNumber": 978,
+    "types": [
+      "dragon",
+      "water"
+    ],
+    "variant": "-s",
+    "starLevels": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Frigibax",
+    "nationalNumber": 996,
+    "types": [
+      "dragon",
+      "ice"
+    ],
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Arctibax",
+    "nationalNumber": 997,
+    "types": [
+      "dragon",
+      "ice"
+    ],
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Baxcalibur",
+    "nationalNumber": 998,
+    "types": [
+      "dragon",
+      "ice"
+    ],
+    "starLevels": [
+      5
+    ]
+  },
+  {
+    "name": "Gimmighoul",
+    "nationalNumber": 999,
+    "types": [
+      "ghost"
+    ],
+    "starLevels": [
+      5
+    ]
+  }
+]

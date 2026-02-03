@@ -5,8 +5,13 @@
 	import { loadPokedex, getLocalizedPokemonName } from '$lib/utils/pokedex.js';
 	import { getPokemonSprite } from '$lib/utils/pokeapi.js';
 	import { loadBerries, getBerryMap, computeFlavorTotals, type Berry } from '$lib/features/donuts/berries';
-	import PokemonSearch from '$lib/components/PokemonSearch.svelte';
+	import HyperspacePokemonPicker from '$lib/components/HyperspacePokemonPicker.svelte';
 	import type { DonutRecipe, OwnedDonut, SecondaryAuraType } from '$lib/features/donuts/types';
+	import {
+		loadHyperspaceSpawns,
+		formatStarLevels,
+		type HyperspaceSpawn
+	} from '$lib/features/donuts/hyperspaceSpawns';
 	import { recommendedDonutRecipes } from '$lib/features/donuts/recommendedDonutRecipes';
 	import { specialLegendaryDonutRecipes } from '$lib/features/donuts/specialLegendaryDonutRecipes';
 	import { loadTypeOptions, getTypeLabel, type TypeOption } from '$lib/features/donuts/typesData';
@@ -48,6 +53,7 @@
 	let showReservationModal = $state(false);
 	let craftedLegendaryIds = $state<Set<string>>(new Set());
 	let expandedLegendaryIds = $state<Set<string>>(new Set());
+	let hyperspaceSpawns = $state<HyperspaceSpawn[] | null>(null);
 	let pokemonSprites = $state<Map<string, string>>(new Map());
 	const sparklingLevels: Array<1 | 2 | 3> = [1, 2, 3];
 	const buttonBase =
@@ -61,6 +67,15 @@
 		if (!pokedex) return map;
 		for (const pokemon of pokedex) {
 			map.set(String(pokemon.nationalNumber), pokemon);
+		}
+		return map;
+	});
+
+	const spawnMap = $derived.by(() => {
+		const map = new Map<number, HyperspaceSpawn>();
+		if (!hyperspaceSpawns) return map;
+		for (const spawn of hyperspaceSpawns) {
+			map.set(spawn.nationalNumber, spawn);
 		}
 		return map;
 	});
@@ -81,9 +96,14 @@
 		craftedLegendaryIds = loadCraftedLegendaryIds();
 
 		try {
-			pokedex = await loadPokedex();
+			const [loadedPokedex, loadedSpawns] = await Promise.all([
+				loadPokedex(),
+				loadHyperspaceSpawns()
+			]);
+			pokedex = loadedPokedex;
+			hyperspaceSpawns = loadedSpawns;
 		} catch (error) {
-			console.error('Failed to load pokedex:', error);
+			console.error('Failed to load pokedex or spawns:', error);
 		}
 	});
 
@@ -231,6 +251,18 @@
 		if (!donut.secondaryAuraType || !donut.secondaryAuraLevel) return null;
 		const typeLabel = $_(`donuts.secondaryAura.types.${donut.secondaryAuraType}`);
 		return `${typeLabel} ${donut.secondaryAuraLevel}`;
+	}
+
+	function getStarLevelsForPokemon(pokemonId?: string): number[] {
+		if (!pokemonId) return [];
+		const spawn = spawnMap.get(Number(pokemonId));
+		return spawn?.starLevels ?? [];
+	}
+
+	function getStarLevelsLabel(pokemonId?: string): string | null {
+		const starLevels = getStarLevelsForPokemon(pokemonId);
+		if (starLevels.length === 0) return null;
+		return `★ ${formatStarLevels(starLevels)}`;
 	}
 
 	const secondaryAuraTypes: Array<{ id: SecondaryAuraType; labelKey: string }> = [
@@ -563,18 +595,24 @@
 												</div>
 											</div>
 											{#if donut.reservedForPokemonId}
-												<div class="flex items-center gap-1.5 shrink-0">
-													{#if pokemonSprite}
-														<img
-															src={pokemonSprite}
-															alt={getReservationLabel(donut) ?? ''}
-															class="h-10 w-10 object-contain"
-															loading="lazy"
-														/>
+												{@const starLabel = getStarLevelsLabel(donut.reservedForPokemonId)}
+												<div class="flex flex-col items-end gap-0.5 shrink-0">
+													<div class="flex items-center gap-1.5">
+														{#if pokemonSprite}
+															<img
+																src={pokemonSprite}
+																alt={getReservationLabel(donut) ?? ''}
+																class="h-10 w-10 object-contain"
+																loading="lazy"
+															/>
+														{/if}
+														<span class="text-xs font-medium app-text-muted hidden sm:block">
+															{getReservationLabel(donut)}
+														</span>
+													</div>
+													{#if starLabel}
+														<span class="text-xs app-text-muted">{starLabel}</span>
 													{/if}
-													<span class="text-xs font-medium app-text-muted hidden sm:block">
-														{getReservationLabel(donut)}
-													</span>
 												</div>
 											{/if}
 										</div>
@@ -864,15 +902,20 @@
 			</div>
 
 			{#if reservationTarget}
-				<p class="app-text-muted">{getDonutLabel(reservationTarget)}</p>
+				<div class="space-y-1">
+					<p class="app-text-muted">{getDonutLabel(reservationTarget)}</p>
+					{#if reservationTarget.typeId && reservationTarget.typeId !== 'all'}
+						<p class="text-xs app-text-muted">
+							{$_('donuts.reservationModal.filteringByType', { values: { type: getTypeLabelById(reservationTarget.typeId) } })}
+						</p>
+					{/if}
+				</div>
 			{/if}
 
-			<div class="space-y-2">
-				<label class="text-sm font-semibold">
-					{$_('donuts.reservationModal.searchLabel')}
-				</label>
-				<PokemonSearch onSelect={handlePokemonSelect} />
-			</div>
+			<HyperspacePokemonPicker
+				onSelect={handlePokemonSelect}
+				filterType={reservationTarget?.typeId}
+			/>
 		</div>
 	</div>
 {/if}

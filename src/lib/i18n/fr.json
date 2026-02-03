@@ -201,11 +201,19 @@
     "reservationModal": {
       "title": "Réserver pour un Pokémon",
       "searchLabel": "Rechercher un Pokémon",
-      "searchPlaceholder": "Tapez un nom de Pokémon...",
+      "searchPlaceholder": "Filtrer par nom...",
       "loading": "Chargement des données Pokémon...",
       "nationalNumber": "National # {number}",
       "noResults": "Aucun Pokémon trouvé correspondant à « {query} »",
-      "startPrompt": "Commencez à taper pour rechercher"
+      "noPokemonForType": "Aucun Pokémon disponible pour ce type",
+      "pokemonCount": "{count} Pokémon",
+      "startPrompt": "Commencez à taper pour rechercher",
+      "filteringByType": "Pokémon de type {type} dans l'Hyperespace"
+    },
+    "starLevels": {
+      "label": "Étoiles",
+      "mainArea": "Légendaire Zone Principale",
+      "legendary": "Légendaire"
     },
     "infoModal": {
       "title": "Comment fonctionnent les donuts",
